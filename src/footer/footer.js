@@ -52,6 +52,7 @@ class Footer extends Component {
                             <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
                             <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
                             <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                            <a href="#" className="linkedin"><i className="bx bxl-whatsapp"></i></a>
                             </div>
                         </div>
 

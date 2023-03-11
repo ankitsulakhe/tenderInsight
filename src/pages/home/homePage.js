@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component,useState } from 'react'
 import wordMap from './map.png'; 
 
-class HomePage extends Component {
-    render(){
+
+class HomePage extends Component {   
+    render(){        
         return(
             <main className='bodyMain'>
                 <section className='mainBanner p-0'>
@@ -11,21 +12,34 @@ class HomePage extends Component {
                             <div className='col-md-8 px-0 flevalgin'>
                             <img src={wordMap} alt="mapImage" className='imgWorldMap' />    
                             <div className="searcHhome">
+                                <div className='mainSearchflex'>
                                 <div className='flexSearch'>
-                                <div class="selectSearch">
-                                        <select class="form-control customInput customInputIcon" id="select1" name="type">
-                                            <option value="Keywords ">Keywords </option>
-                                            <option value="Region">Region</option>
-                                            <option value="Country">Country</option>                                            
-                                        </select>
-                                    </div>
                                     <div class="selectInput">
-                                        <input type="text" size="30" name="search_text" class="form-control customInput customInputIcon" id="input1" placeholder="Free text search" />
+                                        <input type="text" size="30" name="search_text" class="form-control customInput customInputIcon" id="input1" placeholder="Free text search..." />
                                         <div id="livesearch"></div>
                                     </div>
-                                    <div class="selectButton">
-                                        <button class="awe-btn awe-btn-13 custombutton" id="btn-search1" ><i class="bi bi-search"></i></button>
+                                    <div class="selectSearch">
+                                    <select class="form-control customInput customInputIcon" id="select1" name="type">
+                                        <option value="" selected disabled>Country</option>
+                                            <option value="Africa">Africa </option>
+                                            <option value="UAE">UAE</option>
+                                            <option value="India">India</option>                                            
+                                        </select>
                                     </div>
+                                    <div class="selectSearch">
+                                        <select class="form-control customInput customInputIcon" id="select1" name="type">
+                                        <option value="" selected disabled>Region</option>
+                                            <option value="Africa">Africa </option>
+                                            <option value="UAE">UAE</option>
+                                            <option value="India">India</option>                                            
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="selectButton">
+                                        <button class="awe-btn awe-btn-13 custombutton" id="btn-search1" ><i class="bi bi-search"></i> Search</button>
+                                    </div>                                
+                                </div>
+                                <a className='advancBtn'><i className="bi bi-funnel-fill"></i>Advanced Search</a>
                                 </div>
                              </div>                                                   
                             </div>
@@ -34,7 +48,9 @@ class HomePage extends Component {
                                     <div className="section-title pb-0">                                
                                         <h3>Customer Login</h3>                                    
                                     </div>
-                                    <div className='mainBoxLogin commonBoxShadow'>
+
+                                    {/* Login Div Start here  */}
+                                    <div className='mainBoxLogin commonBoxShadow' id='loginBox'>
                                         <div className="section-title-p text-center loginBox">                                            
                                             <p className='wid100'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
                                             <form  method="post" role="form" className="php-email-form">
@@ -50,9 +66,30 @@ class HomePage extends Component {
                                                 </div>                                               
                                                 <div className="text-center"><button type="submit" className='commonBtn loginBtn'>Login</button></div>
                                             </form>
-                                            <span className='d-block forgotLink'>Forgot Password? </span>
+                                            <span className='d-block forgotLink' id='fogotLoginbtn'>Forgot Password? </span>
                                         </div>
-                                    </div>  
+                                    </div> 
+                                    {/* Login Div End here  */}
+
+
+                                    {/* forgot Div start here  */}
+                                    <div className='mainBoxLogin commonBoxShadow d-none' id='forgotBox'>
+                                        <div className="section-title-p text-center loginBox">                                            
+                                            <p className='wid100'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                            <form  method="post" role="form" className="php-email-form">
+                                                <div className="row">
+                                                    <div className="form-group mb-40">
+                                                        <label>Email</label>
+                                                         <input type="email" name="name" className="form-control" id="name" placeholder="Your Name" required="" />
+                                                    </div>
+                                                                                                       
+                                                </div>                                               
+                                                <div className="text-center"><button type="submit" className='commonBtn loginBtn'>Login</button></div>
+                                            </form>
+                                            <span className='d-block forgotLink' id='backloginbtn' >Back to login </span>
+                                        </div>
+                                    </div> 
+                                   {/* forgot Div End here  */}
                                     <div className='loginBottom'>
                                         <div className='loginbtmtext text-center'>
                                             <p>
@@ -81,62 +118,54 @@ class HomePage extends Component {
                         <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="100">
                             <div className="icon-box">
                             <div className="icon"><i className="bx bxl-dribbble"></i></div>
-                            <h4><a href="">Lorem Ipsum</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <h4><a href="">Lorem Ipsum</a></h4>                            
                             </div>
                         </div>
 
                         <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="200">
                             <div className="icon-box">
                             <div className="icon"><i className="bx bx-file"></i></div>
-                            <h4><a href="">Category Name</a></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                            <h4><a href="">Category Name</a></h4>                        
                             </div>
                         </div>
 
                         <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
                             <div className="icon-box">
                             <div className="icon"><i className="bx bx-tachometer"></i></div>
-                            <h4><a href="">Category Name</a></h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                            <h4><a href="">Category Name</a></h4>                            
                             </div>
                         </div>
 
                         <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="100">
                             <div className="icon-box">
                             <div className="icon"><i className="bx bx-world"></i></div>
-                            <h4><a href="">Category Name</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                            <h4><a href="">Category Name</a></h4>                            
                             </div>
                         </div>
 
                         <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="200">
                             <div className="icon-box">
                             <div className="icon"><i className="bx bx-slideshow"></i></div>
-                            <h4><a href="">Category Name</a></h4>
-                            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                            <h4><a href="">Category Name</a></h4>                            
                             </div>
                         </div>
 
                         <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
                             <div className="icon-box">
                             <div className="icon"><i className="bx bx-arch"></i></div>
-                            <h4><a href="">Category Name</a></h4>
-                            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                            <h4><a href="">Category Name</a></h4>                            
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
                             <div className="icon-box">
                             <div className="icon"><i className="bx bx-arch"></i></div>
-                            <h4><a href="">Category Name</a></h4>
-                            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                            <h4><a href="">Category Name</a></h4>                            
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
                             <div className="icon-box">
                             <div className="icon"><i className="bx bx-arch"></i></div>
-                            <h4><a href="">Category Name</a></h4>
-                            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                            <h4><a href="">Category Name</a></h4>                            
                             </div>
                         </div>
 
@@ -163,7 +192,7 @@ class HomePage extends Component {
                                         <i className='bx bx-globe'></i>Global Tenders
                                         </button>
                                         <button className="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                                        <i className='bx bx-globe'></i>Tenders From India
+                                        <i className='bx bx-globe'></i>India Tenders
                                         </button>                                   
                                     </div>
                                 </nav>
