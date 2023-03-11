@@ -8,8 +8,26 @@ class HomePage extends Component {
                 <section className='mainBanner p-0'>
                     <div className='container-fluid'>
                         <div className='row'>
-                            <div className='col-md-8'>
-                            <img src={wordMap} alt="mapImage" className='imgWorldMap' />
+                            <div className='col-md-8 px-0 flevalgin'>
+                            <img src={wordMap} alt="mapImage" className='imgWorldMap' />    
+                            <div className="searcHhome">
+                                <div className='flexSearch'>
+                                <div class="selectSearch">
+                                        <select class="form-control customInput customInputIcon" id="select1" name="type">
+                                            <option value="Keywords ">Keywords </option>
+                                            <option value="Region">Region</option>
+                                            <option value="Country">Country</option>                                            
+                                        </select>
+                                    </div>
+                                    <div class="selectInput">
+                                        <input type="text" size="30" name="search_text" class="form-control customInput customInputIcon" id="input1" placeholder="Free text search" />
+                                        <div id="livesearch"></div>
+                                    </div>
+                                    <div class="selectButton">
+                                        <button class="awe-btn awe-btn-13 custombutton" id="btn-search1" ><i class="bi bi-search"></i></button>
+                                    </div>
+                                </div>
+                             </div>                                                   
                             </div>
                             <div className='col-md-4 bg-grey'>
                                 <div className='homeLoginMain'>
@@ -50,7 +68,7 @@ class HomePage extends Component {
                         </div>
                     </div>
                 </section>
-                <section id="TopTenders" className="services section-bg">
+                <section id="TopTenders" className="services ">
                     <div className="container" data-aos="fade-up">
 
                         <div className="section-title">
@@ -127,7 +145,7 @@ class HomePage extends Component {
                     </div>
                     </section>
 
-                    <section id="GlobalTenders" className="services">
+                    <section id="GlobalTenders" className="services section-bg">
                     <div className="container" data-aos="fade-up">
 
                         <div className="section-title">
