@@ -655,14 +655,16 @@
   --------------------------------------------------------------*/
   .breadcrumbs {
     padding: 20px 0;
-    background-color: #f1f6fe;
     min-height: 40px;
+    background: var(--waymain-color);
+    color: #fff;
   }
   
   .breadcrumbs h2 {
-    font-size: 24px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 400;
     margin: 0;
+    color: #fff;
   }
   
   @media (max-width: 992px) {
@@ -1873,7 +1875,7 @@ button.commonBtn {
 .form-control {
     border: 1px solid #0f396663;
     border-radius: 0;
-    padding: 10px;
+    padding: 6px;
     background: #f6f9fe;
 }
 .form-group label {
@@ -2099,4 +2101,33 @@ a.advancBtn i {
 }
 .selectButton {
   width: 18%;
+}
+.breadcrumbs ol li a {
+    color: #fff;
+}
+section.loginPage {
+  background: #f2eeee;
+  padding: 0;
+}
+.loginPagePadding .homeLoginMain {
+  padding: 10%;
+}
+
+.signupPagePadding {
+  background: #fff;
+  padding: 0;
+}
+
+.signupPagePadding .homeLoginMain {
+  padding: 10%;
+}
+.signupPagePadding div#loginBox {
+  background: #f2eeee;
+}
+.form-group.mb-40.wid-50 {
+  width: 48%;
+}
+
+.d-flex.flex-wrap.signupflex {
+  justify-content: space-between;
 }
