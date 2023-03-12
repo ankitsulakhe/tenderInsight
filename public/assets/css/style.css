@@ -2032,10 +2032,12 @@ ul.d-flex.topBarMenu li {
   border: 1px solid #0f3966;
   justify-content: space-between;
   background: #fff;
+  height: 46px;
 }
 
 .selectInput input {
   border: 0;
+  height: 100%;
 }
 
 .selectInput {
@@ -2051,6 +2053,7 @@ ul.d-flex.topBarMenu li {
   background-repeat: no-repeat;
   background-position: 94%;
   background-size: 16px;
+  height: 100%;
 }
 
 .selectSearch {
