@@ -195,7 +195,7 @@ class HomePage extends Component {
                                             <i className='bx bx-globe'></i>Global Tenders
                                             </button>
                                             <button className="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                                            <i className='bx bx-globe'></i>India Tenders
+                                            <i className='bx bx-globe'></i>Indian Tenders
                                             </button>                                   
                                         </div>
                                     </nav>

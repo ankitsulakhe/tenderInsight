@@ -1,6 +1,7 @@
 import React, { Component, useEffect  } from 'react'
 import HomePage from './pages/home/homePage';
 import LoginPage from './pages/login/loginPage';
+import AboutPage from './pages/about/aboutPage'; 
 import './App.css';
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
 
   return (
     <div className="WebsitePage">
-        {/* <LoginPage/> */}
-        <HomePage/>
+         <AboutPage/>
+        {/* <HomePage/> */}
         <div id="preloader" className='loaderPre'></div>
     </div>
   );

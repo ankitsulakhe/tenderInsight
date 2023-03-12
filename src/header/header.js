@@ -14,7 +14,7 @@ class Header extends Component {
                     <div className="social-links d-none d-md-flex align-items-center">
                     <ul className='d-flex topBarMenu'>
                         <li><a className="nav-link scrollto active" href="#hero">Advanced Search </a></li>
-                        <li><a className="nav-link scrollto" href="#about">Indian Tenders</a></li>
+                        <li><a className="nav-link scrollto" href="#about">Public Procurement</a></li>
                         <li><a className="nav-link scrollto" href="#services">Contact Us </a></li>
                         <li><a className="nav-link scrollto " href="#portfolio">Subscribe </a></li>
                         <li><a className="nav-link scrollto" href="#team"> Login /  Register </a></li>

@@ -143,7 +143,7 @@ class LoginPage extends Component {
                             </div>
                             </div>
                         </div>
-                    </section>
+                    </section>                    
                 </main>
                 <Footer/>
             </div>
