@@ -2196,9 +2196,11 @@ section.loginPage {
 }
 
 .about .content ul.cstm_list li i {
-  font-size: 18px;
-  padding: 14px;
+  font-size: 24px;
+  padding: 10px 5px;
   border-radius: 0;
+  font-weight: 800;
+  box-shadow: none;
 }
 
 .about .content ul.cstm_list {

@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="WebsitePage">
-         <HomePage/>
+         <AboutPage/>
         {/* <HomePage/> */}
         <div id="preloader" className='loaderPre'></div>
     </div>
