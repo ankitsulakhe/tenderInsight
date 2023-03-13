@@ -75,7 +75,7 @@ class AboutPage extends Component {
 
           <div className="row">
           
-            <div className="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">             
+            <div className="col-lg-7 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">             
             <ul class="cstm_list">
                 <li>
                   <div className="abtflex">
@@ -115,7 +115,7 @@ class AboutPage extends Component {
                 </li>
               </ul>              
             </div>
-            <div className="col-lg-6 d-flex align-center" data-aos="fade-right" data-aos-delay="100">
+            <div className="col-lg-5 d-flex align-center" data-aos="fade-left" data-aos-delay="100">
             <img src={imageAboutFeature} className="img-fluid" alt="" />
             </div>
           </div>
