@@ -1,5 +1,13 @@
 import React, { Component,useState } from 'react'
 import wordMap from './map.png'; 
+import radar from './radar.png'; 
+import defence from './defence.png'; 
+import consultation from './consultation.png'; 
+import pharmaceutical from './pharmaceutical.png'; 
+import patient from './patient.png'; 
+import transportation from './transportation.png'; 
+import airport from './airport.png'; 
+import architect from './architect.png'; 
 import Header  from '../../header/header';
 import Footer from '../../footer/footer'
 
@@ -120,55 +128,69 @@ class HomePage extends Component {
                             <div className="row">
                             <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="100">
                                 <div className="icon-box">
-                                <div className="icon"><i className="bx bxl-dribbble"></i></div>
-                                <h4><a href="">Lorem Ipsum</a></h4>                            
+                                <div className="icon nobg"><img src={defence}/></div>
+                                <h4><a href="">Defence</a></h4>                            
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="200">
                                 <div className="icon-box">
-                                <div className="icon"><i className="bx bx-file"></i></div>
-                                <h4><a href="">Category Name</a></h4>                        
+                                <div className="icon nobg"><img src={radar}/></div>
+                                <h4><a href="">Telecommunication </a></h4>                        
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
                                 <div className="icon-box">
-                                <div className="icon"><i className="bx bx-tachometer"></i></div>
-                                <h4><a href="">Category Name</a></h4>                            
+                                <div className="icon nobg"><img src={defence}/></div>
+                                <h4><a href="">Engineering & Consultancy</a></h4>                            
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="100">
                                 <div className="icon-box">
-                                <div className="icon"><i className="bx bx-world"></i></div>
-                                <h4><a href="">Category Name</a></h4>                            
+                                <div className="icon nobg"><img src={consultation}/></div>
+                                <h4><a href="">Construction </a></h4>                            
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="200">
                                 <div className="icon-box">
-                                <div className="icon"><i className="bx bx-slideshow"></i></div>
-                                <h4><a href="">Category Name</a></h4>                            
+                                <div className="icon nobg"><img src={airport}/></div>
+                                <h4><a href="">Aviation </a></h4>                            
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
                                 <div className="icon-box">
-                                <div className="icon"><i className="bx bx-arch"></i></div>
-                                <h4><a href="">Category Name</a></h4>                            
+                                <div className="icon nobg"><img src={transportation}/></div>
+                                <h4><a href="">Transportation </a></h4>                            
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
                                 <div className="icon-box">
-                                <div className="icon"><i className="bx bx-arch"></i></div>
-                                <h4><a href="">Category Name</a></h4>                            
+                                <div className="icon nobg"><img src={patient}/></div>
+                                <h4><a href="">Medical & Healthcare</a></h4>                            
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
                                 <div className="icon-box">
-                                <div className="icon"><i className="bx bx-arch"></i></div>
-                                <h4><a href="">Category Name</a></h4>                            
+                                <div className="icon nobg"><img src={pharmaceutical}/></div>
+                                <h4><a href="">Pharmaceutical </a></h4>                            
+                                </div>
+                            </div>
+
+                            <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
+                                <div className="icon-box">
+                                <div className="icon nobg"><img src={radar}/></div>
+                                <h4><a href="">Information Technology </a></h4>                            
+                                </div>
+                            </div>
+
+                            <div className="col-lg-3 col-md-6 d-flex align-items-stretch mb-4 mt-2" data-aos="fade-up" data-aos-delay="300">
+                                <div className="icon-box">
+                                <div className="icon nobg"><img src={architect}/></div>
+                                <h4><a href="">Manufacturing </a></h4>                            
                                 </div>
                             </div>
 
