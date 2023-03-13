@@ -29,6 +29,7 @@ class Footer extends Component {
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Advanced Search</a></li>
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Login / Register</a></li>
+                            <li><i className="bx bx-chevron-right"></i> <a href="#">Terms and condition </a></li>
                             </ul>
                         </div>
 
@@ -40,6 +41,9 @@ class Footer extends Component {
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Contract Awards</a></li>
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Company Data</a></li>
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Subscribe</a></li>
+                            <li><i className="bx bx-chevron-right"></i> <a href="#">Public Procurement</a></li>
+                            
+
                             </ul>
                         </div>
 
