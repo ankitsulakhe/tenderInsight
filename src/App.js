@@ -59,7 +59,7 @@ function App() {
                     </a>
                   </li>
                   <li>
-                    <Link to="/login" className="nav-link scrollto ">
+                    <Link to="bidsinfoglobal/login" className="nav-link scrollto ">
                       Login / Register
                     </Link>
                   </li>
@@ -69,17 +69,17 @@ function App() {
           </section>
           <header id="header" className="d-flex align-items-center">
             <div className="container d-flex align-items-center justify-content-between">
-              <a href="index.html">
+            <Link to="bidsinfoglobal/">
                 <img src={logo} alt="main logo" className="logo" />
-              </a>
+             </Link>
 
               <nav id="navbar" className="navbar">
                 <ul>
                   <li>
-                    <Link to="">Home</Link>
+                    <Link to="bidsinfoglobal/">Home</Link>
                   </li>
                   <li>
-                    <Link to="/about">About Us</Link>
+                    <Link to="bidsinfoglobal/about">About Us</Link>
                   </li>
                   <li class="dropdown">
                     <a href="#">
@@ -244,9 +244,9 @@ function App() {
             </div>
           </header>
           <Routes>
-            <Route exact path="/" Component={HomePage} />
-            <Route path="/about" Component={AboutPage} />
-            <Route path="/login" Component={LoginPage} />
+            <Route exact path="bidsinfoglobal/" Component={HomePage} />
+            <Route path="bidsinfoglobal/about" Component={AboutPage} />
+            <Route path="bidsinfoglobal/login" Component={LoginPage} />
           </Routes>
           <Footer />
         </Router>
