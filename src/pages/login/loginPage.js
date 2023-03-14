@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import Header  from '../../header/header';
-import Footer from '../../footer/footer'
 
 
 class LoginPage extends Component {   
     render(){        
         return(
-            <div className='Wrapper'>
-                <Header/>
+            <div>
                 <section class="breadcrumbs">
                     <div class="container">
                         <div class="d-flex justify-content-between align-items-center">
@@ -93,8 +90,8 @@ class LoginPage extends Component {
                                                          <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" required="" />
                                                     </div>
                                                     <div className="form-group mb-40 wid-50">
-                                                        <label>Mobile No</label>
-                                                         <input type="number" className="form-control" name="number" id="number" placeholder="Your Mobile No" required="" />
+                                                        <label>Phone No</label>
+                                                         <input type="number" className="form-control" name="number" id="number" placeholder="Your Phone No" required="" />
                                                     </div>
                                                     <div className="form-group mb-40 wid-50">
                                                         <label>Organization name*</label>
@@ -144,8 +141,7 @@ class LoginPage extends Component {
                             </div>
                         </div>
                     </section>                    
-                </main>
-                <Footer/>
+                </main>                
             </div>
         );
     }

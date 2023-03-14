@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import logo from "./logo.jpg";
-
+import {BrowserRouter as Router, Link, Route,Routes} from 'react-router-dom';
 class Header extends Component {
   render() {
     return (
       <div className="headermain">
+         <Router>
         <section id="topbar" className="d-flex align-items-center">
           <div className="container d-flex justify-content-center justify-content-md-between">
             <div className="contact-info d-flex align-items-center">
@@ -38,9 +39,7 @@ class Header extends Component {
                   </a>
                 </li>
                 <li>
-                  <a className="nav-link scrollto" href="#team">
-                    Login / Register
-                  </a>
+                    <Link to="/login"  className="nav-link scrollto ">Login / Register</Link>                  
                 </li>
               </ul>
             </div>
@@ -55,14 +54,10 @@ class Header extends Component {
             <nav id="navbar" className="navbar">
               <ul>
                 <li>
-                  <a className="nav-link active" href="#hero">
-                    Home
-                  </a>
+                  <Link to="">Home</Link>
                 </li>
-                <li>
-                  <a className="nav-link" href="#about">
-                    About Us
-                  </a>
+                <li> 
+                  <Link to="/about">About Us</Link>                  
                 </li>
                 <li class="dropdown">
                   <a href="#">
@@ -198,6 +193,7 @@ class Header extends Component {
             </nav>
           </div>
         </header>
+        </Router>
       </div>
     );
   }

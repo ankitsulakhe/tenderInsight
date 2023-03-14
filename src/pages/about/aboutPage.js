@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import Header from "../../header/header";
-import Footer from "../../footer/footer";
 import imageAbout from "./about.jpg";
 import imageAboutFeature from "./aboutFetures.jpg";
 
 class AboutPage extends Component {
   render() {
     return (
-      <div className="Wrapper">
-        <Header />
+      <div>
         <section className="breadcrumbs">
           <div className="container">
             <div className="d-flex justify-content-between align-items-center">
@@ -123,7 +120,7 @@ class AboutPage extends Component {
         </div>
       </section>
         </main>
-        <Footer />
+      
       </div>
     );
   }
