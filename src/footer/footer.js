@@ -39,9 +39,9 @@ class Footer extends Component {
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Tenders</a></li>
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Project</a></li>
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Contract Awards</a></li>
-                            <li><i className="bx bx-chevron-right"></i> <a href="#">Company Data</a></li>
+                            <li><i className="bx bx-chevron-right"></i> <a href="#">Grants </a></li>
                             <li><i className="bx bx-chevron-right"></i> <a href="#">Subscribe</a></li>
-                            <li><i className="bx bx-chevron-right"></i> <a href="#">Public Procurement</a></li>
+                            <li><i className="bx bx-chevron-right"></i> <a href="#">E - Procurement</a></li>
                             
 
                             </ul>

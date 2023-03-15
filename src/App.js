@@ -4,9 +4,9 @@ import HomePage from "./pages/home/homePage";
 import logo from "./logo.jpg";
 import LoginPage from "./pages/login/loginPage";
 import AboutPage from "./pages/about/aboutPage";
-import Header from "./header/header";
 import Footer from "./footer/footer";
 import "./App.css";
+import TenderDetails from "./pages/TenderDetails/TenderDetails";
 
 function App() {
   function someRequest() {
@@ -45,7 +45,7 @@ function App() {
                   </li>
                   <li>
                     <a className="nav-link scrollto" href="#about">
-                      Public Procurement
+                      E - Procurement
                     </a>
                   </li>
                   <li>
@@ -230,7 +230,7 @@ function App() {
                   </li>
                   <li>
                     <a className="nav-link" href="#contact">
-                      Company Data
+                    Grants
                     </a>
                   </li>
                   <li>
@@ -247,6 +247,7 @@ function App() {
             <Route exact path="bidsinfoglobal/" Component={HomePage} />
             <Route path="bidsinfoglobal/about" Component={AboutPage} />
             <Route path="bidsinfoglobal/login" Component={LoginPage} />
+            <Route path="bidsinfoglobal/TenderDetails" Component={TenderDetails} />
           </Routes>
           <Footer />
         </Router>
