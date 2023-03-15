@@ -44,9 +44,9 @@ function App() {
                     </a>
                   </li>
                   <li>
-                    <a className="nav-link scrollto" href="#about">
+                  <Link to="bidsinfoglobal/TenderDetails" className="nav-link scrollto ">
                       E - Procurement
-                    </a>
+                  </Link>
                   </li>
                   <li>
                     <a className="nav-link scrollto" href="#services">
