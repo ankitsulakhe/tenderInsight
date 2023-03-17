@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react'
+import React, { Component } from 'react'
 import wordMap from './map.png'; 
 import radar from './radar.png'; 
 import defence from './defence.png'; 
@@ -8,6 +8,7 @@ import patient from './patient.png';
 import transportation from './transportation.png'; 
 import airport from './airport.png'; 
 import architect from './architect.png'; 
+import SearchBar from "../searchBar/SearchBar";
 
 
 class HomePage extends Component {   
@@ -18,38 +19,8 @@ class HomePage extends Component {
                     <div className='container-fluid'>
                         <div className='row'>
                             <div className='col-md-8 px-0 flevalgin'>
-                            <img src={wordMap} alt="mapImage" className='imgWorldMap' />    
-                            <div className="searcHhome">
-                                <div className='mainSearchflex'>
-                                <div className='flexSearch'>
-                                    <div class="selectInput">
-                                        <input type="text" size="30" name="search_text" class="form-control customInput customInputIcon" id="input1" placeholder="Free text search..." />
-                                        <div id="livesearch"></div>
-                                    </div>
-                                    <div class="selectSearch">
-                                    <select class="form-control customInput customInputIcon" id="select1" name="type">
-                                        <option value="" selected disabled>Country</option>
-                                            <option value="Africa">Africa </option>
-                                            <option value="UAE">UAE</option>
-                                            <option value="India">India</option>                                            
-                                        </select>
-                                    </div>
-                                    <div class="selectSearch">
-                                        <select class="form-control customInput customInputIcon" id="select1" name="type">
-                                        <option value="" selected disabled>Region</option>
-                                            <option value="Africa">Africa </option>
-                                            <option value="UAE">UAE</option>
-                                            <option value="India">India</option>                                            
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="selectButton">
-                                        <button class="awe-btn awe-btn-13 custombutton" id="btn-search1" ><i class="bi bi-search"></i> Search</button>
-                                    </div>                                
-                                </div>
-                                <a className='advancBtn'><i className="bi bi-funnel-fill"></i>Advanced Search</a>
-                                </div>
-                            </div>                                                   
+                                <img src={wordMap} alt="mapImage" className='imgWorldMap' />    
+                                <SearchBar></SearchBar>
                             </div>
                             <div className='col-md-4 bg-grey'>
                                 <div className='homeLoginMain'>
