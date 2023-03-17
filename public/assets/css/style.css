@@ -2262,3 +2262,64 @@ section.loginPage {
 .section-title.sectionList p {
   width: 100%;
 }
+.innerSearchBar {
+  background: #cce5f285;
+}
+.innerSearchBar .searcHhome {
+  width: 100%;
+  margin: 0px auto;
+  background: transparent;
+  padding-left: 0;
+}
+.innerSearchBar .searcHhome .flexSearch {
+  margin-left: 0;
+}
+iframe.mb-4.mb-lg-0.mapFullView {
+  width: 100%;
+  height: 380px;
+}
+.section-title.sectionList.ListPageSection h3 {
+  font-size: 20px;
+}
+.section-title.sectionList.ListPageSection p {
+  font-size: 15px;
+  margin-top: 8px;
+}
+section.CategoryLst {
+  padding-top: 0;
+}
+
+.FLiterListDiv {
+  border: 1px solid #ddd;
+  padding: 0;
+}
+
+.filterTitle h2 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 10px;
+  background: #041c36;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.FilterSerach {
+  padding: 15px;
+}
+
+.FilterSerach .col.form-group {
+  width: 100%;
+  flex: 1;
+}
+.colsP.form-group label {
+    padding-bottom: 5px;
+}
+
+.colsP.form-group {
+    margin-bottom: 10px;
+}
+
+
+

@@ -5,8 +5,12 @@ import logo from "./logo.jpg";
 import LoginPage from "./pages/login/loginPage";
 import AboutPage from "./pages/about/aboutPage";
 import Footer from "./footer/footer";
+import ContactPage from "./pages/contact/contactPage";
 import "./App.css";
-import TenderDetails from "./pages/TenderDetails/TenderDetails";
+import TenderDetails from "./pages/tender/TenderDetails";
+import TenderListing from "./pages/tender/TenderListing";
+import ProjectDetails from "./pages/project/ProjectDetails";
+import  ContractAwardDetails from "./pages/contaractAward/contaractAwardDetails";
 
 function App() {
   function someRequest() {
@@ -49,9 +53,9 @@ function App() {
                   </Link>
                   </li>
                   <li>
-                    <a className="nav-link scrollto" href="#services">
-                      Contact Us
-                    </a>
+                    <Link to="bidsinfoglobal/contact" className="nav-link scrollto ">
+                        Contact Us
+                    </Link>
                   </li>
                   <li>
                     <a className="nav-link scrollto " href="#portfolio">
@@ -246,8 +250,12 @@ function App() {
           <Routes>
             <Route exact path="bidsinfoglobal/" Component={HomePage} />
             <Route path="bidsinfoglobal/about" Component={AboutPage} />
-            <Route path="bidsinfoglobal/login" Component={LoginPage} />
+            <Route path="bidsinfoglobal/login" Component={LoginPage} />            
+            <Route path="bidsinfoglobal/contact" Component={ContactPage} />
+            <Route path="bidsinfoglobal/TenderListing" Component={TenderListing} />
             <Route path="bidsinfoglobal/TenderDetails" Component={TenderDetails} />
+            <Route path="bidsinfoglobal/ContractAwardDetails" Component={ContractAwardDetails} /> 
+            <Route path="bidsinfoglobal/ProjectDetails" Component={ProjectDetails} />                     
           </Routes>
           <Footer />
         </Router>
