@@ -9,6 +9,8 @@ import ContactPage from "./pages/contact/contactPage";
 import "./App.css";
 import allTenderCatrgory from "./pages/tender/AllTenderCategory";
 import TenderListing from "./pages/tender/TenderListing";
+import allProjectCatrgory from "./pages/project/AllProjectCategory";
+import ProjectListing from "./pages/project/ProjectListing";
 import TenderDetails from "./pages/tender/TenderDetails";
 import ProjectDetails from "./pages/project/ProjectDetails";
 import  ContractAwardDetails from "./pages/contaractAward/contaractAwardDetails";
@@ -187,10 +189,10 @@ function App() {
                       <span>Project</span> <i class="bi bi-chevron-down"></i>
                     </a>
                     <ul>
-                      <li class="dropdown">
-                        <a href="#">
+                      <li class="dropdown">                      
+                        <Link to="demo/ProjectListing">
                           <span>Project By Sector</span>
-                        </a>
+                        </Link>
                         <ul>
                           <li>
                              <Link to="demo/ProjectDetails">Defence</Link>
@@ -205,16 +207,16 @@ function App() {
                              <Link to="demo/ProjectDetails">Aviation</Link>
                           </li>
                           <li>
-                          <Link to="demo/TenderCategory"className="AllcatLink">
+                          <Link to="demo/ProjectCategory"className="AllcatLink">
                               More...
                             </Link>
                           </li>
                         </ul>
                       </li>
                       <li class="dropdown">
-                        <a href="#">
+                      <Link to="demo/ProjectListing">
                           <span>Project By Region</span>
-                        </a>
+                        </Link>
                         <ul>
                           <li>
                            <Link to="demo/ProjectDetails">Africa Projects</Link>
@@ -229,7 +231,7 @@ function App() {
                            <Link to="demo/ProjectDetails">Europe Projects</Link>
                           </li>
                           <li>
-                          <Link to="demo/TenderCategory"className="AllcatLink">
+                          <Link to="demo/ProjectCategory"className="AllcatLink">
                               More...
                             </Link>
                           </li>
@@ -265,9 +267,11 @@ function App() {
             <Route path="demo/TenderListing" Component={TenderListing} />
             <Route path="demo/TenderDetails" Component={TenderDetails} />
             <Route path="demo/ContractAwardDetails" Component={ContractAwardDetails} /> 
+            <Route path="demo/ProjectListing" Component={ProjectListing} />
             <Route path="demo/ProjectDetails" Component={ProjectDetails} />   
+            <Route path="demo/ProjectCategory" Component={allProjectCatrgory} />  
             <Route path="demo/TenderCategory" Component={allTenderCatrgory} />   
-                              
+            <Route path="demo/contaractAwardDetails" Component={ContractAwardDetails} />                                 
           </Routes>
           <Footer />
         </Router>
