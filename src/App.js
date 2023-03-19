@@ -7,11 +7,11 @@ import AboutPage from "./pages/about/aboutPage";
 import Footer from "./footer/footer";
 import ContactPage from "./pages/contact/contactPage";
 import "./App.css";
-import TenderDetails from "./pages/tender/TenderDetails";
+import allTenderCatrgory from "./pages/tender/AllTenderCategory";
 import TenderListing from "./pages/tender/TenderListing";
+import TenderDetails from "./pages/tender/TenderDetails";
 import ProjectDetails from "./pages/project/ProjectDetails";
 import  ContractAwardDetails from "./pages/contaractAward/contaractAwardDetails";
-
 function App() {
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 2.5 seconds
@@ -48,12 +48,14 @@ function App() {
                     </a>
                   </li>
                   <li>
-                  <Link to="bidsinfoglobal/TenderDetails" className="nav-link scrollto ">
-                      E - Procurement
-                  </Link>
+                  <li>
+                    <a className="nav-link scrollto " href="#portfolio">
+                    E - Procurement
+                    </a>
+                  </li>                  
                   </li>
                   <li>
-                    <Link to="bidsinfoglobal/contact" className="nav-link scrollto ">
+                    <Link to="demo/contact" className="nav-link scrollto ">
                         Contact Us
                     </Link>
                   </li>
@@ -63,7 +65,7 @@ function App() {
                     </a>
                   </li>
                   <li>
-                    <Link to="bidsinfoglobal/login" className="nav-link scrollto ">
+                    <Link to="demo/login" className="nav-link scrollto ">
                       Login / Register
                     </Link>
                   </li>
@@ -73,17 +75,17 @@ function App() {
           </section>
           <header id="header" className="d-flex align-items-center">
             <div className="container d-flex align-items-center justify-content-between">
-            <Link to="bidsinfoglobal/">
+            <Link to="demo/">
                 <img src={logo} alt="main logo" className="logo" />
              </Link>
 
               <nav id="navbar" className="navbar">
                 <ul>
                   <li>
-                    <Link to="bidsinfoglobal/">Home</Link>
+                    <Link to="demo/">Home</Link>
                   </li>
                   <li>
-                    <Link to="bidsinfoglobal/about">About Us</Link>
+                    <Link to="demo/about">About Us</Link>
                   </li>
                   <li class="dropdown">
                     <a href="#">
@@ -91,82 +93,90 @@ function App() {
                     </a>
                     <ul>
                       <li class="dropdown">
-                        <a href="#">
+                       <Link to="demo/TenderListing">
                           <span>Tenders By Sector</span>
-                        </a>
+                        </Link>
                         <ul>
                           <li>
-                            <a href="#">Defence</a>
+                             <Link to="demo/TenderDetails">
+                              Defence
+                              </Link>
                           </li>
                           <li>
-                            <a href="#">Telecommunication</a>
+                             <Link to="demo/TenderDetails">
+                              Telecommunication
+                              </Link>
                           </li>
                           <li>
-                            <a href="#">Construction</a>
+                             <Link to="demo/TenderDetails">
+                              Construction
+                              </Link>
                           </li>
                           <li>
-                            <a href="#">Aviation</a>
+                             <Link to="demo/TenderDetails">
+                              Aviation
+                              </Link>
                           </li>
                           <li>
-                            <a href="#" className="AllcatLink">
+                          <Link to="demo/TenderCategory" className="AllcatLink">
                               More...
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
                       <li class="dropdown">
-                        <a href="#">
+                       <Link to="demo/TenderListing">
                           <span>Tenders By Region</span>
-                        </a>
+                        </Link>
                         <ul>
                           <li>
-                            <a href="#">Africa Tenders</a>
+                            <Link to="demo/TenderDetails">Africa Tenders</Link>
                           </li>
                           <li>
-                            <a href="#">Asia Pacific Tenders</a>
+                            <Link to="demo/TenderDetails">Asia Pacific Tenders</Link>
                           </li>
                           <li>
-                            <a href="#">Balkan Region Tenders</a>
+                            <Link to="demo/TenderDetails">Balkan Region Tenders</Link>
                           </li>
                           <li>
-                            <a href="#">Europe Tenders</a>
+                            <Link to="demo/TenderDetails">Europe Tenders</Link>
                           </li>
-                          <li>
-                            <a href="#" className="AllcatLink">
+                          <li>                          
+                          <Link to="demo/TenderCategory"className="AllcatLink">
                               More...
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
                       <li class="dropdown">
-                        <a href="#">
+                       <Link to="demo/TenderListing">
                           <span>Tenders By Products/Services/CPV</span>
-                        </a>
+                        </Link>
                         <ul>
                           <li>
-                            <a href="" target="_blank">
+                             <Link to="demo/TenderDetails">
                               Chemical products Tenders
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="" target="_blank">
+                             <Link to="demo/TenderDetails">
                               Construction materials Tenders
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="" target="_blank">
+                             <Link to="demo/TenderDetails">
                               Fabricated products and materials Tenders
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="" target="_blank">
+                             <Link to="demo/TenderDetails">
                               Road construction works Tenders
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a className="AllcatLink" href="" target="_blank">
-                              More
-                            </a>
+                          <Link to="demo/TenderCategory"className="AllcatLink">
+                              More...
+                            </Link>
                           </li>
                         </ul>
                       </li>
@@ -183,21 +193,21 @@ function App() {
                         </a>
                         <ul>
                           <li>
-                            <a href="#">Defence</a>
+                             <Link to="demo/ProjectDetails">Defence</Link>
                           </li>
                           <li>
-                            <a href="#">Telecommunication</a>
+                             <Link to="demo/ProjectDetails">Telecommunication</Link>
                           </li>
                           <li>
-                            <a href="#">Construction</a>
+                             <Link to="demo/ProjectDetails">Construction</Link>
                           </li>
                           <li>
-                            <a href="#">Aviation</a>
+                             <Link to="demo/ProjectDetails">Aviation</Link>
                           </li>
                           <li>
-                            <a href="#" className="AllcatLink">
+                          <Link to="demo/TenderCategory"className="AllcatLink">
                               More...
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
@@ -207,30 +217,30 @@ function App() {
                         </a>
                         <ul>
                           <li>
-                            <a href="#">Africa Projects</a>
+                           <Link to="demo/ProjectDetails">Africa Projects</Link>
                           </li>
                           <li>
-                            <a href="#">Asia Pacific Projects</a>
+                           <Link to="demo/ProjectDetails">Asia Pacific Projects</Link>
                           </li>
                           <li>
-                            <a href="#">Balkan Region Projects</a>
+                           <Link to="demo/ProjectDetails">Balkan Region Projects</Link>
                           </li>
                           <li>
-                            <a href="#">Europe Projects</a>
+                           <Link to="demo/ProjectDetails">Europe Projects</Link>
                           </li>
                           <li>
-                            <a href="#" className="AllcatLink">
+                          <Link to="demo/TenderCategory"className="AllcatLink">
                               More...
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <a className="nav-link" href="#team">
+                    <Link to="demo/contaractAwardDetails">
                       Contract Awards
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a className="nav-link" href="#contact">
@@ -248,14 +258,16 @@ function App() {
             </div>
           </header>
           <Routes>
-            <Route exact path="bidsinfoglobal/" Component={HomePage} />
-            <Route path="bidsinfoglobal/about" Component={AboutPage} />
-            <Route path="bidsinfoglobal/login" Component={LoginPage} />            
-            <Route path="bidsinfoglobal/contact" Component={ContactPage} />
-            <Route path="bidsinfoglobal/TenderListing" Component={TenderListing} />
-            <Route path="bidsinfoglobal/TenderDetails" Component={TenderDetails} />
-            <Route path="bidsinfoglobal/ContractAwardDetails" Component={ContractAwardDetails} /> 
-            <Route path="bidsinfoglobal/ProjectDetails" Component={ProjectDetails} />                     
+            <Route exact path="demo/" Component={HomePage} />
+            <Route path="demo/about" Component={AboutPage} />
+            <Route path="demo/login" Component={LoginPage} />            
+            <Route path="demo/contact" Component={ContactPage} />
+            <Route path="demo/TenderListing" Component={TenderListing} />
+            <Route path="demo/TenderDetails" Component={TenderDetails} />
+            <Route path="demo/ContractAwardDetails" Component={ContractAwardDetails} /> 
+            <Route path="demo/ProjectDetails" Component={ProjectDetails} />   
+            <Route path="demo/TenderCategory" Component={allTenderCatrgory} />   
+                              
           </Routes>
           <Footer />
         </Router>
