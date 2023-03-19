@@ -57,7 +57,7 @@ function App() {
                   </li>                  
                   </li>
                   <li>
-                    <Link to="demo/contact" className="nav-link scrollto ">
+                    <Link to="contact" className="nav-link scrollto ">
                         Contact Us
                     </Link>
                   </li>
@@ -67,7 +67,7 @@ function App() {
                     </a>
                   </li>
                   <li>
-                    <Link to="demo/login" className="nav-link scrollto ">
+                    <Link to="login" className="nav-link scrollto ">
                       Login / Register
                     </Link>
                   </li>
@@ -77,17 +77,17 @@ function App() {
           </section>
           <header id="header" className="d-flex align-items-center">
             <div className="container d-flex align-items-center justify-content-between">
-            <Link to="demo/">
+            <Link to="">
                 <img src={logo} alt="main logo" className="logo" />
              </Link>
 
               <nav id="navbar" className="navbar">
                 <ul>
                   <li>
-                    <Link to="demo/">Home</Link>
+                    <Link to="">Home</Link>
                   </li>
                   <li>
-                    <Link to="demo/about">About Us</Link>
+                    <Link to="about">About Us</Link>
                   </li>
                   <li class="dropdown">
                     <a href="#">
@@ -95,88 +95,88 @@ function App() {
                     </a>
                     <ul>
                       <li class="dropdown">
-                       <Link to="demo/TenderListing">
+                       <Link to="TenderListing">
                           <span>Tenders By Sector</span>
                         </Link>
                         <ul>
                           <li>
-                             <Link to="demo/TenderDetails">
+                             <Link to="TenderDetails">
                               Defence
                               </Link>
                           </li>
                           <li>
-                             <Link to="demo/TenderDetails">
+                             <Link to="TenderDetails">
                               Telecommunication
                               </Link>
                           </li>
                           <li>
-                             <Link to="demo/TenderDetails">
+                             <Link to="TenderDetails">
                               Construction
                               </Link>
                           </li>
                           <li>
-                             <Link to="demo/TenderDetails">
+                             <Link to="TenderDetails">
                               Aviation
                               </Link>
                           </li>
                           <li>
-                          <Link to="demo/TenderCategory" className="AllcatLink">
+                          <Link to="TenderCategory" className="AllcatLink">
                               More...
                             </Link>
                           </li>
                         </ul>
                       </li>
                       <li class="dropdown">
-                       <Link to="demo/TenderListing">
+                       <Link to="TenderListing">
                           <span>Tenders By Region</span>
                         </Link>
                         <ul>
                           <li>
-                            <Link to="demo/TenderDetails">Africa Tenders</Link>
+                            <Link to="TenderDetails">Africa Tenders</Link>
                           </li>
                           <li>
-                            <Link to="demo/TenderDetails">Asia Pacific Tenders</Link>
+                            <Link to="TenderDetails">Asia Pacific Tenders</Link>
                           </li>
                           <li>
-                            <Link to="demo/TenderDetails">Balkan Region Tenders</Link>
+                            <Link to="TenderDetails">Balkan Region Tenders</Link>
                           </li>
                           <li>
-                            <Link to="demo/TenderDetails">Europe Tenders</Link>
+                            <Link to="TenderDetails">Europe Tenders</Link>
                           </li>
                           <li>                          
-                          <Link to="demo/TenderCategory"className="AllcatLink">
+                          <Link to="TenderCategory"className="AllcatLink">
                               More...
                             </Link>
                           </li>
                         </ul>
                       </li>
                       <li class="dropdown">
-                       <Link to="demo/TenderListing">
+                       <Link to="TenderListing">
                           <span>Tenders By Products/Services/CPV</span>
                         </Link>
                         <ul>
                           <li>
-                             <Link to="demo/TenderDetails">
+                             <Link to="TenderDetails">
                               Chemical products Tenders
                             </Link>
                           </li>
                           <li>
-                             <Link to="demo/TenderDetails">
+                             <Link to="TenderDetails">
                               Construction materials Tenders
                             </Link>
                           </li>
                           <li>
-                             <Link to="demo/TenderDetails">
+                             <Link to="TenderDetails">
                               Fabricated products and materials Tenders
                             </Link>
                           </li>
                           <li>
-                             <Link to="demo/TenderDetails">
+                             <Link to="TenderDetails">
                               Road construction works Tenders
                             </Link>
                           </li>
                           <li>
-                          <Link to="demo/TenderCategory"className="AllcatLink">
+                          <Link to="TenderCategory"className="AllcatLink">
                               More...
                             </Link>
                           </li>
@@ -190,48 +190,48 @@ function App() {
                     </a>
                     <ul>
                       <li class="dropdown">                      
-                        <Link to="demo/ProjectListing">
+                        <Link to="ProjectListing">
                           <span>Project By Sector</span>
                         </Link>
                         <ul>
                           <li>
-                             <Link to="demo/ProjectDetails">Defence</Link>
+                             <Link to="ProjectDetails">Defence</Link>
                           </li>
                           <li>
-                             <Link to="demo/ProjectDetails">Telecommunication</Link>
+                             <Link to="ProjectDetails">Telecommunication</Link>
                           </li>
                           <li>
-                             <Link to="demo/ProjectDetails">Construction</Link>
+                             <Link to="ProjectDetails">Construction</Link>
                           </li>
                           <li>
-                             <Link to="demo/ProjectDetails">Aviation</Link>
+                             <Link to="ProjectDetails">Aviation</Link>
                           </li>
                           <li>
-                          <Link to="demo/ProjectCategory"className="AllcatLink">
+                          <Link to="ProjectCategory"className="AllcatLink">
                               More...
                             </Link>
                           </li>
                         </ul>
                       </li>
                       <li class="dropdown">
-                      <Link to="demo/ProjectListing">
+                      <Link to="ProjectListing">
                           <span>Project By Region</span>
                         </Link>
                         <ul>
                           <li>
-                           <Link to="demo/ProjectDetails">Africa Projects</Link>
+                           <Link to="ProjectDetails">Africa Projects</Link>
                           </li>
                           <li>
-                           <Link to="demo/ProjectDetails">Asia Pacific Projects</Link>
+                           <Link to="ProjectDetails">Asia Pacific Projects</Link>
                           </li>
                           <li>
-                           <Link to="demo/ProjectDetails">Balkan Region Projects</Link>
+                           <Link to="ProjectDetails">Balkan Region Projects</Link>
                           </li>
                           <li>
-                           <Link to="demo/ProjectDetails">Europe Projects</Link>
+                           <Link to="ProjectDetails">Europe Projects</Link>
                           </li>
                           <li>
-                          <Link to="demo/ProjectCategory"className="AllcatLink">
+                          <Link to="ProjectCategory"className="AllcatLink">
                               More...
                             </Link>
                           </li>
@@ -240,7 +240,7 @@ function App() {
                     </ul>
                   </li>
                   <li>
-                    <Link to="demo/contaractAwardDetails">
+                    <Link to="contaractAwardDetails">
                       Contract Awards
                     </Link>
                   </li>
@@ -260,18 +260,18 @@ function App() {
             </div>
           </header>
           <Routes>
-            <Route exact path="demo/" Component={HomePage} />
-            <Route path="demo/about" Component={AboutPage} />
-            <Route path="demo/login" Component={LoginPage} />            
-            <Route path="demo/contact" Component={ContactPage} />
-            <Route path="demo/TenderListing" Component={TenderListing} />
-            <Route path="demo/TenderDetails" Component={TenderDetails} />
-            <Route path="demo/ContractAwardDetails" Component={ContractAwardDetails} /> 
-            <Route path="demo/ProjectListing" Component={ProjectListing} />
-            <Route path="demo/ProjectDetails" Component={ProjectDetails} />   
-            <Route path="demo/ProjectCategory" Component={allProjectCatrgory} />  
-            <Route path="demo/TenderCategory" Component={allTenderCatrgory} />   
-            <Route path="demo/contaractAwardDetails" Component={ContractAwardDetails} />                                 
+            <Route exact path="" Component={HomePage} />
+            <Route path="about" Component={AboutPage} />
+            <Route path="login" Component={LoginPage} />            
+            <Route path="contact" Component={ContactPage} />
+            <Route path="TenderListing" Component={TenderListing} />
+            <Route path="TenderDetails" Component={TenderDetails} />
+            <Route path="ContractAwardDetails" Component={ContractAwardDetails} /> 
+            <Route path="ProjectListing" Component={ProjectListing} />
+            <Route path="ProjectDetails" Component={ProjectDetails} />   
+            <Route path="ProjectCategory" Component={allProjectCatrgory} />  
+            <Route path="TenderCategory" Component={allTenderCatrgory} />   
+            <Route path="contaractAwardDetails" Component={ContractAwardDetails} />                                 
           </Routes>
           <Footer />
         </Router>
