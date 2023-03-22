@@ -7,16 +7,20 @@ import AboutPage from "./pages/about/aboutPage";
 import Footer from "./footer/footer";
 import ContactPage from "./pages/contact/contactPage";
 import "./App.css";
-import allTenderCatrgory from "./pages/tender/AllTenderCategory";
+import AllTenderByCPV from "./pages/tender/AllTenderByCPV";
+import AllTenderByRegion from "./pages/tender/AllTenderByRegion";
+import AllTenderBySector from "./pages/tender/AllTenderBySector";
 import TenderListingBySector from "./pages/tender/TenderListingBySector";
 import TenderListingByRegion from "./pages/tender/TenderListingByRegion";
 import TenderListingByCPV from "./pages/tender/TenderListingByCPV";
-import allProjectCatrgory from "./pages/project/AllProjectCategory";
+import AllProjectBySector from "./pages/project/AllProjectBySector";
+import AllProjectByRegion from "./pages/project/AllProjectByRegion";
 import ProjectListingBySector from "./pages/project/ProjectListingBySector";
 import ProjectListingByRegion from "./pages/project/ProjectListingByRegion";
 import TenderDetails from "./pages/tender/TenderDetails";
 import ProjectDetails from "./pages/project/ProjectDetails";
 import  ContractAwardDetails from "./pages/contaractAward/contaractAwardDetails";
+import  contaractAwardListing from "./pages/contaractAward/contaractAwardListing";
 import  subscribePage from "./pages/subscribe/subscribePage";
 import  ServicePage from "./pages/service/service";
 import  termandcondition from "./pages/termandcondition/termandcondition";
@@ -134,7 +138,7 @@ function App() {
                               </Link>
                           </li>
                           <li>
-                          <Link to="TenderCategory" className="AllcatLink">
+                          <Link to="AllTenderBySector" className="AllcatLink">
                               More...
                             </Link>
                           </li>
@@ -158,7 +162,7 @@ function App() {
                             <Link to="TenderDetails">Europe Tenders</Link>
                           </li>
                           <li>                          
-                          <Link to="TenderCategory"className="AllcatLink">
+                          <Link to="AllTenderByRegion"className="AllcatLink">
                               More...
                             </Link>
                           </li>
@@ -190,7 +194,7 @@ function App() {
                             </Link>
                           </li>
                           <li>
-                          <Link to="TenderCategory"className="AllcatLink">
+                          <Link to="AllTenderByCPV"className="AllcatLink">
                               More...
                             </Link>
                           </li>
@@ -221,7 +225,7 @@ function App() {
                              <Link to="ProjectDetails">Aviation</Link>
                           </li>
                           <li>
-                          <Link to="ProjectCategory"className="AllcatLink">
+                          <Link to="AllProjectBySector"className="AllcatLink">
                               More...
                           </Link>
                           </li>
@@ -245,7 +249,7 @@ function App() {
                            <Link to="ProjectDetails">Europe Projects</Link>
                           </li>
                           <li>
-                          <Link to="ProjectCategory"className="AllcatLink">
+                          <Link to="AllProjectByRegion"className="AllcatLink">
                               More...
                             </Link>
                           </li>
@@ -282,12 +286,15 @@ function App() {
             <Route path="TenderListingByRegion" Component={TenderListingByRegion} />
             <Route path="TenderListingByCPV" Component={TenderListingByCPV} />
             <Route path="TenderDetails" Component={TenderDetails} />
-            <Route path="ContractAwardDetails" Component={ContractAwardDetails} /> 
+            <Route path="contaractAwardListing" Component={contaractAwardListing} />             
             <Route path="ProjectListingBySector" Component={ProjectListingBySector} />
             <Route path="ProjectListingByRegion" Component={ProjectListingByRegion} />
             <Route path="ProjectDetails" Component={ProjectDetails} />   
-            <Route path="ProjectCategory" Component={allProjectCatrgory} />  
-            <Route path="TenderCategory" Component={allTenderCatrgory} />   
+            <Route path="AllProjectByRegion" Component={AllProjectByRegion} /> 
+            <Route path="AllProjectBySector" Component={AllProjectBySector} />  
+            <Route path="AllTenderBySector" Component={AllTenderBySector} />   
+            <Route path="AllTenderByCPV" Component={AllTenderByCPV} />   
+            <Route path="AllTenderByRegion" Component={AllTenderByRegion} />   
             <Route path="contaractAwardDetails" Component={ContractAwardDetails} />      
             <Route path="subscribePage" Component={subscribePage} />       
             <Route path="ServicePage" Component={ServicePage} /> 

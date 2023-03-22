@@ -13,7 +13,7 @@ class ContractAwardDetails extends Component {
                 <li>
                   <a href="index.html">Home</a>
                 </li>
-                <li>Contract</li>
+                <li>Contaract Award</li>
               </ol>
             </div>
           </div>
