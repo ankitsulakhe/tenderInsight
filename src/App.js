@@ -8,12 +8,21 @@ import Footer from "./footer/footer";
 import ContactPage from "./pages/contact/contactPage";
 import "./App.css";
 import allTenderCatrgory from "./pages/tender/AllTenderCategory";
-import TenderListing from "./pages/tender/TenderListing";
+import TenderListingBySector from "./pages/tender/TenderListingBySector";
+import TenderListingByRegion from "./pages/tender/TenderListingByRegion";
+import TenderListingByCPV from "./pages/tender/TenderListingByCPV";
 import allProjectCatrgory from "./pages/project/AllProjectCategory";
-import ProjectListing from "./pages/project/ProjectListing";
+import ProjectListingBySector from "./pages/project/ProjectListingBySector";
+import ProjectListingByRegion from "./pages/project/ProjectListingByRegion";
 import TenderDetails from "./pages/tender/TenderDetails";
 import ProjectDetails from "./pages/project/ProjectDetails";
 import  ContractAwardDetails from "./pages/contaractAward/contaractAwardDetails";
+import  subscribePage from "./pages/subscribe/subscribePage";
+import  ServicePage from "./pages/service/service";
+import  termandcondition from "./pages/termandcondition/termandcondition";
+import  grantsDetails from "./pages/grants/grantsDetails";
+import  EProcurement from "./pages/EProcurement/EProcurement";
+
 function App() {
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 2.5 seconds
@@ -51,9 +60,9 @@ function App() {
                   </li>
                   <li>
                   <li>
-                    <a className="nav-link scrollto " href="#portfolio">
-                    E - Procurement
-                    </a>
+                    <Link to="EProcurement" className="nav-link scrollto ">
+                      E - Procurement
+                    </Link>                    
                   </li>                  
                   </li>
                   <li>
@@ -62,13 +71,18 @@ function App() {
                     </Link>
                   </li>
                   <li>
-                    <a className="nav-link scrollto " href="#portfolio">
+                    <Link to="subscribePage" className="nav-link scrollto ">
                       Subscribe
-                    </a>
+                    </Link>                    
                   </li>
                   <li>
                     <Link to="login" className="nav-link scrollto ">
                       Login / Register
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="termandcondition" className="nav-link scrollto ">
+                      Terms & Condition
                     </Link>
                   </li>
                 </ul>
@@ -95,7 +109,7 @@ function App() {
                     </a>
                     <ul>
                       <li class="dropdown">
-                       <Link to="TenderListing">
+                       <Link to="TenderListingBySector">
                           <span>Tenders By Sector</span>
                         </Link>
                         <ul>
@@ -127,7 +141,7 @@ function App() {
                         </ul>
                       </li>
                       <li class="dropdown">
-                       <Link to="TenderListing">
+                       <Link to="TenderListingByRegion">
                           <span>Tenders By Region</span>
                         </Link>
                         <ul>
@@ -151,7 +165,7 @@ function App() {
                         </ul>
                       </li>
                       <li class="dropdown">
-                       <Link to="TenderListing">
+                       <Link to="TenderListingByCPV">
                           <span>Tenders By Products/Services/CPV</span>
                         </Link>
                         <ul>
@@ -190,7 +204,7 @@ function App() {
                     </a>
                     <ul>
                       <li class="dropdown">                      
-                        <Link to="ProjectListing">
+                        <Link to="ProjectListingBySector">
                           <span>Project By Sector</span>
                         </Link>
                         <ul>
@@ -209,12 +223,12 @@ function App() {
                           <li>
                           <Link to="ProjectCategory"className="AllcatLink">
                               More...
-                            </Link>
+                          </Link>
                           </li>
                         </ul>
                       </li>
                       <li class="dropdown">
-                      <Link to="ProjectListing">
+                      <Link to="ProjectListingByRegion">
                           <span>Project By Region</span>
                         </Link>
                         <ul>
@@ -245,14 +259,14 @@ function App() {
                     </Link>
                   </li>
                   <li>
-                    <a className="nav-link" href="#contact">
-                    Grants
-                    </a>
+                  <Link to="grantsDetails">
+                      Grants
+                    </Link>                                        
                   </li>
                   <li>
-                    <a className="nav-link" href="#contact">
+                    <Link to="ServicePage">
                       Services
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <i className="bi bi-list mobile-nav-toggle"></i>
@@ -264,14 +278,22 @@ function App() {
             <Route path="about" Component={AboutPage} />
             <Route path="login" Component={LoginPage} />            
             <Route path="contact" Component={ContactPage} />
-            <Route path="TenderListing" Component={TenderListing} />
+            <Route path="TenderListingBySector" Component={TenderListingBySector} />
+            <Route path="TenderListingByRegion" Component={TenderListingByRegion} />
+            <Route path="TenderListingByCPV" Component={TenderListingByCPV} />
             <Route path="TenderDetails" Component={TenderDetails} />
             <Route path="ContractAwardDetails" Component={ContractAwardDetails} /> 
-            <Route path="ProjectListing" Component={ProjectListing} />
+            <Route path="ProjectListingBySector" Component={ProjectListingBySector} />
+            <Route path="ProjectListingByRegion" Component={ProjectListingByRegion} />
             <Route path="ProjectDetails" Component={ProjectDetails} />   
             <Route path="ProjectCategory" Component={allProjectCatrgory} />  
             <Route path="TenderCategory" Component={allTenderCatrgory} />   
-            <Route path="contaractAwardDetails" Component={ContractAwardDetails} />                                 
+            <Route path="contaractAwardDetails" Component={ContractAwardDetails} />      
+            <Route path="subscribePage" Component={subscribePage} />       
+            <Route path="ServicePage" Component={ServicePage} /> 
+            <Route path="termandcondition" Component={termandcondition} />  
+            <Route path="grantsDetails" Component={grantsDetails} />                
+            <Route path="EProcurement" Component={EProcurement} /> 
           </Routes>
           <Footer />
         </Router>

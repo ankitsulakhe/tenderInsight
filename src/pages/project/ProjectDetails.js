@@ -61,7 +61,7 @@ class ProjectDetails extends Component {
                                 <p>Global Tender Org</p>
                               </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-lg-8 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
                               <div class="box">
                                 <h3>Project Background </h3>
                                 <p>Global Tender Org</p>

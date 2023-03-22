@@ -307,7 +307,7 @@ li.dropdown a i {
   visibility: visible;
   width: 100%;
 }
-
+a:hover{cursor: pointer;}
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
@@ -354,6 +354,7 @@ li.dropdown a i {
   top: 100%;
   visibility: visible;
   display: flex;
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -773,6 +774,7 @@ section {
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
+  border: 1px solid #ddd;
 }
 
 .featured-services .icon-box::before {
@@ -811,13 +813,15 @@ section {
 }
 
 .featured-services .title a {
-  color: #111;
+  color: #003c5e;
 }
 
 .featured-services .description {
-  font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
+  color: #003c5e;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .featured-services .icon-box:hover .title a,
@@ -1417,6 +1421,7 @@ section {
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  border: 1px solid #003c5e;
 }
 
 .pricing .box h3 {
@@ -1425,8 +1430,9 @@ section {
   padding: 20px 15px;
   font-size: 16px;
   font-weight: 600;
-  color: #777777;
+  color: #003c5e;
   background: #f8f8f8;
+  border-bottom: 1px solid #003c5e;
 }
 
 .pricing .box h4 {
@@ -1444,9 +1450,9 @@ section {
 }
 
 .pricing .box h4 span {
-  color: #bababa;
+  color: #003c5e;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .pricing .box ul {
@@ -1459,7 +1465,10 @@ section {
 }
 
 .pricing .box ul li {
-  padding-bottom: 16px;
+  padding-bottom: 8px;
+  color: #003c5e;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .pricing .box ul i {
@@ -1469,7 +1478,7 @@ section {
 }
 
 .pricing .box ul .na {
-  color: #ccc;
+  color: #003c5e61;
   text-decoration: line-through;
 }
 
@@ -1478,6 +1487,7 @@ section {
   padding: 20px 15px;
   background: #f8f8f8;
   text-align: center;
+  border-top: 1px solid #003c5e;
 }
 
 .pricing .btn-buy {
@@ -1536,7 +1546,7 @@ section {
   padding: 20px;
 }
 
-.pricing.pdlr10 .box h3 {
+.faq .faq-list .pricing.pdlr10 .box h3 {
   margin-bottom: 0;
   padding: 15px;
   color: #003c5e;
@@ -2283,6 +2293,7 @@ section.loginPage {
   border-radius: 0;
   font-weight: 800;
   box-shadow: none;
+  background: transparent;
 }
 
 .about .content ul.cstm_list {
@@ -2450,4 +2461,80 @@ section.CategoryLst.services.section-bg.pd10 {
 }
 section.CategoryLst.spacelr {
   margin: 0 2%;
+}
+th.TableHeader.p-sortable-column span.p-sortable-column-icon.pi {
+  color: #fff !important;
+  font-size: 12px;
+}
+th.TableHeader.p-sortable-column:hover, th.TableHeader.p-sortable-column:hover span.p-sortable-column-icon.pi.pi {
+  color: #041c36 !important;
+  font-weight: 500;
+}
+.navbar .dropdown ul li.dropdown >  a {
+    background: #041c3617;
+}
+.section-title.fullwidth p {
+  width: 100%;
+}
+.termsPageDiv h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #041c36;
+  margin-bottom: 12px;
+}
+.termsPageDiv {
+  border-bottom: 1px solid #041c36;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+.termsPageDiv p {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-bottom: 7px;
+}
+.termsPageDiv:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.termsPages {
+  margin-top: 10px;
+  border-top: 1px solid #303437;
+  padding-top: 30px;
+}
+
+section#about.iconPlost .icon-box {
+  width: 100%;
+  background: #fff;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+
+section#about.iconPlost .icon-box i.bx {
+  font-size: 40px;
+  padding: 15px;
+}
+
+section#about.iconPlost .icon-box h4 a {
+  color: #041c36;
+}
+section#about.iconPlost .icon-box:after {
+    width: 90%;
+    height: 80%;
+    border: 1px solid #003c5e;
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 10%;
+}
+section#about.iconPlost .icon-box h4 {
+  font-size: 20px;
+}
+section.formContact {
+  padding: 0;
+}
+section.formContact .homeLoginMain {
+  padding: 5% 10%;
 }

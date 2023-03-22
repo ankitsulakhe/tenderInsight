@@ -15,12 +15,12 @@ export default function StripedRowsDemo() {
       <section className="breadcrumbs">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
-            <h2>Global Consultancy Tenders</h2>
+            <h2>Project By Sector</h2>
             <ol>
               <li>
                 <a href="index.html">Home</a>
               </li>
-              <li>Project</li>
+              <li>Project By Sector</li>
             </ol>
           </div>
         </div>
