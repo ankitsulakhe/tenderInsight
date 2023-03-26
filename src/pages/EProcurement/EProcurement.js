@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import imageAbout from "./about.jpg";
 
-class ServicePage extends Component {
+class eprocurement extends Component {
   render() {
     return (
       <div>
@@ -288,4 +287,4 @@ class ServicePage extends Component {
     );
   }
 }
-export default ServicePage;
+export default eprocurement;

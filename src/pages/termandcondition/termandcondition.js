@@ -21,7 +21,7 @@ class termandcondition extends Component {
       <div class="container" data-aos="fade-up">
       <div className="section-title fullwidth">
         <h2>Term & Condition</h2>                
-        <p>These terms and conditions ("the Terms") govern your use of this Website ("www.tendersinfo.com")owned Euclid Infotech Limited(Formerly known as Euclid Infotech Private Limited). Please read through this document carefully. If you do not agree with the Terms, do not use this Website. If you do use the Website, your conduct indicates that you agree to be bound by the Terms.</p>
+        <p>These terms and conditions ("the Terms") govern your use of this Website ("www.bidsinfoglobal.com")owned bidsinfoglobal(Formerly known as bidsinfoglobal). Please read through this document carefully. If you do not agree with the Terms, do not use this Website. If you do use the Website, your conduct indicates that you agree to be bound by the Terms.</p>
       </div>      
       <div className="row">
         <div className="col-md-12">

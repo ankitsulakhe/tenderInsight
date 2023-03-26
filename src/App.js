@@ -26,6 +26,7 @@ import  ServicePage from "./pages/service/service";
 import  termandcondition from "./pages/termandcondition/termandcondition";
 import  grantsDetails from "./pages/grants/grantsDetails";
 import  EProcurement from "./pages/EProcurement/EProcurement";
+import  advanceSearch from "./pages/advanceSearch/advanceSearch";
 
 function App() {
   function someRequest() {
@@ -58,9 +59,9 @@ function App() {
               <div className="social-links d-none d-md-flex align-items-center">
                 <ul className="d-flex topBarMenu">
                   <li>
-                    <a className="nav-link scrollto active" href="#hero">
-                      Advanced Search
-                    </a>
+                  <Link to="advanceSearch" className="nav-link scrollto ">                    
+                      Advanced Search                    
+                    </Link>
                   </li>
                   <li>
                   <li>
@@ -301,6 +302,7 @@ function App() {
             <Route path="termandcondition" Component={termandcondition} />  
             <Route path="grantsDetails" Component={grantsDetails} />                
             <Route path="EProcurement" Component={EProcurement} /> 
+            <Route path="advanceSearch" Component={advanceSearch} /> 
           </Routes>
           <Footer />
         </Router>

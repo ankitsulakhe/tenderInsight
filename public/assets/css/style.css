@@ -2538,3 +2538,28 @@ section.formContact {
 section.formContact .homeLoginMain {
   padding: 5% 10%;
 }
+section#advanceSerachBg .signupPagePadding div#loginBox {
+    background: #fff;
+    margin: 0;
+    width: 100%;
+}
+
+section#advanceSerachBg .signupPagePadding div#loginBox .homeLoginMain {
+    padding: 0;
+}
+
+section#advanceSerachBg .signupPagePadding .homeLoginMain {
+    padding: 0;
+}
+section#advanceSerachBg .signupPagePadding {
+  padding: 0;
+  margin: 50px 0;
+}
+.form-group.mb-40.wid-30 {
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-group.mb-40.wid-30 label {
+  width: 100%;
+}
