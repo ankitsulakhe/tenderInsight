@@ -307,7 +307,11 @@ li.dropdown a i {
   visibility: visible;
   width: 100%;
 }
-a:hover{cursor: pointer;}
+
+a:hover {
+  cursor: pointer;
+}
+
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
@@ -2385,13 +2389,16 @@ section.CategoryLst {
 .colsP.form-group label {
   padding-bottom: 5px;
 }
+
 .colsP.form-group {
   margin-bottom: 10px;
 }
+
 span.readMoreLink:hover {
   background: var(--waymain-color);
   color: #fff;
 }
+
 span.readMoreLink {
   cursor: pointer;
   color: var(--waymain-color);
@@ -2401,12 +2408,14 @@ span.readMoreLink {
   margin: 20px auto 10px auto;
   padding: 3px 5px;
 }
+
 h3.ModalTitle {
   font-size: 18px;
   margin: 00px 0 5px 0;
   color: var(--waymain-color);
   font-weight: 600;
 }
+
 .p-dialog.ModalMaindiwo .p-dialog-header .p-dialog-title {
   font-size: 20px;
   color: var(--waymain-color);
@@ -2415,9 +2424,11 @@ h3.ModalTitle {
   border-bottom: 1px solid var(--waymain-color);
   padding-bottom: 15px;
 }
+
 .modal_dialog_box {
   margin-top: 20px;
 }
+
 h3.result_page {
   font-size: 16px;
   background: #f8f9fa;
@@ -2425,12 +2436,14 @@ h3.result_page {
   text-align: center;
   border: 1px solid var(--waymain-color);
 }
+
 .p-datatable.TableMainData th.TableHeader {
   padding: 5px 10px;
   background: var(--waymain-color);
   color: #fff;
   font-weight: 400;
 }
+
 .CategoryLst.services .icon-box h4 {
   font-size: 14px;
   width: 100%;
@@ -2441,63 +2454,77 @@ h3.result_page {
 .CategoryLst.services .icon-box {
   position: relative;
 }
+
 .CategoryLst.services .icon-box .catListCount {
-    position: absolute;
-    bottom: 0;
-    background: #041c36;
-    width: 100%;
-    left: 0;
-    color: #fff;
-    padding: 2px;
+  position: absolute;
+  bottom: 0;
+  background: #041c36;
+  width: 100%;
+  left: 0;
+  color: #fff;
+  padding: 2px;
 }
+
 section.CategoryLst.services.section-bg.pd10 {
   padding: 60px 0;
 }
-.p-datatable .p-datatable-tbody > tr > td.TableHeader {
+
+.p-datatable .p-datatable-tbody>tr>td.TableHeader {
   font-size: 14px;
   padding: 10px 5px;
   font-weight: 500;
   color: var(--waymain-color);
 }
+
 section.CategoryLst.spacelr {
   margin: 0 2%;
 }
+
 th.TableHeader.p-sortable-column span.p-sortable-column-icon.pi {
   color: #fff !important;
   font-size: 12px;
 }
-th.TableHeader.p-sortable-column:hover, th.TableHeader.p-sortable-column:hover span.p-sortable-column-icon.pi.pi {
+
+th.TableHeader.p-sortable-column:hover,
+th.TableHeader.p-sortable-column:hover span.p-sortable-column-icon.pi.pi {
   color: #041c36 !important;
   font-weight: 500;
 }
-.navbar .dropdown ul li.dropdown >  a {
-    background: #041c3617;
+
+.navbar .dropdown ul li.dropdown>a {
+  background: #041c3617;
 }
+
 .section-title.fullwidth p {
   width: 100%;
 }
+
 .termsPageDiv h2 {
   font-size: 20px;
   font-weight: 600;
   color: #041c36;
   margin-bottom: 12px;
 }
+
 .termsPageDiv {
   border-bottom: 1px solid #041c36;
   padding-bottom: 20px;
   margin-bottom: 25px;
 }
+
 .termsPageDiv p {
   font-size: 16px;
   font-weight: 500;
   opacity: 0.8;
   margin-bottom: 7px;
 }
+
 .termsPageDiv:last-child {
   border-bottom: 0;
   padding-bottom: 0;
   margin-bottom: 0;
 }
+
 .termsPages {
   margin-top: 10px;
   border-top: 1px solid #303437;
@@ -2520,46 +2547,155 @@ section#about.iconPlost .icon-box i.bx {
 section#about.iconPlost .icon-box h4 a {
   color: #041c36;
 }
+
 section#about.iconPlost .icon-box:after {
-    width: 90%;
-    height: 80%;
-    border: 1px solid #003c5e;
-    content: "";
-    position: absolute;
-    left: 5%;
-    top: 10%;
+  width: 90%;
+  height: 80%;
+  border: 1px solid #003c5e;
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 10%;
 }
+
 section#about.iconPlost .icon-box h4 {
   font-size: 20px;
 }
+
 section.formContact {
   padding: 0;
 }
+
 section.formContact .homeLoginMain {
   padding: 5% 10%;
 }
+
 section#advanceSerachBg .signupPagePadding div#loginBox {
-    background: #fff;
-    margin: 0;
-    width: 100%;
+  background: #fff;
+  margin: 0;
+  width: 100%;
 }
 
 section#advanceSerachBg .signupPagePadding div#loginBox .homeLoginMain {
-    padding: 0;
+  padding: 0;
 }
 
 section#advanceSerachBg .signupPagePadding .homeLoginMain {
-    padding: 0;
+  padding: 0;
 }
+
 section#advanceSerachBg .signupPagePadding {
   padding: 0;
   margin: 50px 0;
 }
+
 .form-group.mb-40.wid-30 {
   width: 25%;
   display: flex;
   flex-wrap: wrap;
 }
+
 .form-group.mb-40.wid-30 label {
   width: 100%;
+}
+
+div#advabceSearch .p-inputwrapper {
+  width: 100%;
+}
+
+.card.flex,
+div#advabceSearch input.p-inputtext {
+  width: 90%;
+  text-align: left;
+  padding: 5px 12px;
+  font-size: 14px;
+  background: #e4f1f8;
+}
+
+div#advabceSearch .p-dropdown.p-component,
+div#advabceSearch input.p-inputtext {
+  width: 90%;
+  background: #e4f1f8;
+}
+
+div#advabceSearch .p-dropdown.p-component span.p-dropdown-label {
+  padding: 5px 12px;
+  text-align: left;
+  background: #e4f1f8;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+
+div#advabceSearch .p-dropdown.p-component .p-dropdown-trigger {
+  background: #e4f1f8;
+  border-radius: 0;
+  border-left: 1px solid #ddd;
+  font-size: 14px;
+  width: 40px;
+}
+
+div#advabceSearch .d-flex.flex-wrap.signupflex {
+  justify-content: flex-start;
+}
+
+.p-dropdown-panel input.p-dropdown-filter.p-inputtext.p-component {
+  padding: 5px;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  padding: 5px 20px;
+}
+
+.p-dropdown-panel .p-dropdown-items {
+  padding: 0;
+  font-size: 14px;
+}
+
+
+span.p-calendar.p-component.p-inputwrapper input.p-inputtext.p-component {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.p-overlaypanel .p-overlaypanel-content {
+  padding: 0 !important; 
+}
+
+.p-overlaypanel .p-overlaypanel-content ul li {
+  padding: 5px 15px;
+  list-style: none;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.p-overlaypanel .p-overlaypanel-content ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+div#advabceSearch .p-dropdown.p-component .p-dropdown-trigger .pi.pi-chevron-down {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+button.commonBtn.loginBtn i.pi.pi-search {
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+div#advabceSearch button.commonBtn.loginBtn {
+  width: 150px;
+  padding: 8px 10px;
+}
+.p-overlaypanel .p-overlaypanel-content span.p-calendar.p-component.p-inputwrapper {
+    padding: 10px;
+}
+.p-overlaypanel .p-overlaypanel-content ul li:hover {
+  background: #e4f1f8;
+  cursor: pointer;
+}
+div#advabceSearch .form-group.mb-40.wid-30 label {
+    font-size: 14px;
+    text-transform: capitalize;
 }
