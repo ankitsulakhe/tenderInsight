@@ -92,6 +92,9 @@ export default function AdvanceSearch() {
   const [noticType, setnoticType] = useState(null);
   const noticTypetems = ["Tender  ", "Project", "Contract Award", "Grants"];
 
+  const [geographicalselectedItem, geographicalsetSelectedItem] = useState(null);
+  const geographicalselitems = ["Region  ", "Country", "State & City"];
+  
   return (
     <div>
       <section className="breadcrumbs">
@@ -180,14 +183,25 @@ export default function AdvanceSearch() {
                               </OverlayPanel>
                             </div>
                           </div>
-                          <div className="form-group mb-40 wid-40">
+                          <div className="form-group mb-40 wid-30">
                             <label>Geographical Location Search</label>
+                            <Dropdown
+                              value={geographicalselectedItem}
+                              onChange={(e) => geographicalsetSelectedItem(e.value)}
+                              options={geographicalselitems}
+                              placeholder="Select a Country / Region / State & City"
+                              className="w-full md:w-14rem"
+                            />
+                            
+                          </div>
+                          <div className="form-group mb-40 wid-30">
+                            <label>Region</label>
                             <Dropdown
                               value={selectedCountry}
                               onChange={(e) => setSelectedCountry(e.value)}
                               options={countries}
                               optionLabel="name"
-                              placeholder="Select a Country / Region / State &City"
+                              placeholder="Select a Country / Region / State & City"
                               filter
                               valueTemplate={selectedCountryTemplate}
                               itemTemplate={countryOptionTemplate}
