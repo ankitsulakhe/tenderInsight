@@ -83,6 +83,9 @@ export default function AdvanceSearch() {
   const [selectedItem, setSelectedItem] = useState(null);
   const selitems = ["Domestic ", "International", "Both"];
 
+  const [searchselectedItem, searchsetSelectedItem] = useState(null);
+  const searchselitems = ["Free Text ", "Exact Word", "Any Word", "Relevant Word", "Exclude Word"];
+
   const [tenderType, settenderType] = useState(null);
   const tenderTypetems = ["Live  ", "Archive"];
 
@@ -139,30 +142,18 @@ export default function AdvanceSearch() {
                       >
                         <div className="d-flex flex-wrap signupflex">
                           <div className="form-group mb-40 wid-30">
-                            <label>Free Text </label>
-                            <AutoComplete
-                              value={value}
-                              suggestions={items}
-                              completeMethod={search}
-                              placeholder="Search for keyword"
-                              onChange={(e) => setValue(e.value)}
+                            <label>Search Type </label>
+                            <Dropdown
+                              value={searchselectedItem}
+                              onChange={(e) => searchsetSelectedItem(e.value)}
+                              options={searchselitems}
+                              placeholder="Select Search Type"
+                              className="w-full md:w-14rem"
                             />
-                          </div>
+                          </div>                                                  
                           <div className="form-group mb-40 wid-30">
-                            <label>Exact Word </label>
-                            <InputText value="Type Exact Word" />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Any Word </label>
-                            <InputText value="Type Any Word" />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Relevant Word </label>
-                            <InputText value="Type Relevant Word" />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Exclude Word </label>
-                            <InputText value="Type Exclude Word" />
+                            <label>&nbsp;</label>
+                            <InputText value="Search type" />
                           </div>
                           <div className="form-group mb-40 wid-30">
                             <label>CPV Codes</label>
@@ -189,21 +180,21 @@ export default function AdvanceSearch() {
                               </OverlayPanel>
                             </div>
                           </div>
-                          <div className="form-group mb-40 wid-30">
+                          <div className="form-group mb-40 wid-40">
                             <label>Geographical Location Search</label>
                             <Dropdown
                               value={selectedCountry}
                               onChange={(e) => setSelectedCountry(e.value)}
                               options={countries}
                               optionLabel="name"
-                              placeholder="Select a Country"
+                              placeholder="Select a Country / Region / State &City"
                               filter
                               valueTemplate={selectedCountryTemplate}
                               itemTemplate={countryOptionTemplate}
                               className="w-full md:w-14rem"
                             />
                           </div>
-                          <div className="form-group mb-40 wid-30">
+                          {/* <div className="form-group mb-40 wid-30">
                             <label>Region</label>
                             <div className="card flex justify-content-center">
                               <span
@@ -247,7 +238,7 @@ export default function AdvanceSearch() {
                               completeMethod={search}
                               onChange={(e) => setValue(e.value)}
                             />
-                          </div>
+                          </div> */}
                           <div className="form-group mb-40 wid-30">
                             <label>Contract Value </label>
                             <InputText value="Type Contract Value " />
