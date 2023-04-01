@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { AutoComplete } from "primereact/autocomplete";
+import { MultiSelect } from "primereact/multiselect";
 import { Dropdown } from "primereact/dropdown";
 import { InputText } from "primereact/inputtext";
 import { useOverlayScrollListener } from "primereact/hooks";
@@ -7,6 +7,7 @@ import { OverlayPanel } from "primereact/overlaypanel";
 import { Calendar } from "primereact/calendar";
 import { Tree } from "primereact/tree";
 import { NodeService } from "./NodeService";
+import { TabView, TabPanel } from "primereact/tabview";
 
 export default function AdvanceSearch() {
   const [visible, setVisible] = useState(false);
@@ -84,7 +85,7 @@ export default function AdvanceSearch() {
   const selitems = ["Domestic ", "International", "Both"];
 
   const [searchselectedItem, searchsetSelectedItem] = useState(null);
-  const searchselitems = ["Free Text ", "Exact Word", "Any Word", "Relevant Word", "Exclude Word"];
+  const searchselitems = ["Exact Phrase", "Relevant Word", "Any Word"];
 
   const [tenderType, settenderType] = useState(null);
   const tenderTypetems = ["Live  ", "Archive"];
@@ -92,9 +93,19 @@ export default function AdvanceSearch() {
   const [noticType, setnoticType] = useState(null);
   const noticTypetems = ["Tender  ", "Project", "Contract Award", "Grants"];
 
-  const [geographicalselectedItem, geographicalsetSelectedItem] = useState(null);
+  const [geographicalselectedItem, geographicalsetSelectedItem] =
+    useState(null);
   const geographicalselitems = ["Region  ", "Country", "State & City"];
-  
+
+  const [selectedMFA, setSelectedMFA] = useState(null);
+  const MFA = [
+    { name: "New York", code: "NY" },
+    { name: "Rome", code: "RM" },
+    { name: "London", code: "LDN" },
+    { name: "Istanbul", code: "IST" },
+    { name: "Paris", code: "PRS" },
+  ];
+
   return (
     <div>
       <section className="breadcrumbs">
@@ -111,22 +122,6 @@ export default function AdvanceSearch() {
         </div>
       </section>
       <main className="bodyMain">
-        <section id="about" className="about pb-2">
-          <div className="container" data-aos="fade-up">
-            <div className="section-title fullwidth">
-              <h2>Advance Search</h2>
-              <h3 className="pt-2">
-                Advance Search <span>For Better Result</span>
-              </h3>
-              <p>
-                The Advance Search enables the companies to automate their
-                procurement processes, We BidsInfoGlobal would be glad to help
-                you automate your procurement processes. Kindly find below list
-                of E-Procurement system packages offered by BidsInfoGlobal.
-              </p>
-            </div>
-          </div>
-        </section>
         <section className="formContact section-bg" id="advanceSerachBg">
           <div className="container">
             <div className="row">
@@ -138,234 +133,231 @@ export default function AdvanceSearch() {
                       className="section-title-p text-center loginBox"
                       id="advabceSearch"
                     >
-                      <form
-                        method="post"
-                        role="form"
-                        className="php-email-form"
-                      >
-                        <div className="d-flex flex-wrap signupflex">
-                          <div className="form-group mb-40 wid-30">
-                            <label>Search Type </label>
-                            <Dropdown
-                              value={searchselectedItem}
-                              onChange={(e) => searchsetSelectedItem(e.value)}
-                              options={searchselitems}
-                              placeholder="Select Search Type"
-                              className="w-full md:w-14rem"
-                            />
-                          </div>                                                  
-                          <div className="form-group mb-40 wid-30">
-                            <label>&nbsp;</label>
-                            <InputText value="Search type" />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>CPV Codes</label>
-                            <div className="card flex justify-content-center">
-                              <span
-                                className="postingText"
-                                onClick={(e) => cpv.current.toggle(e)}
-                              >
-                                CPV Codes
-                              </span>
-                              <OverlayPanel ref={cpv}>
-                                <Tree
-                                  value={nodes}
-                                  filter
-                                  filterMode="lenient"
-                                  filterPlaceholder="Lenient Filter"
-                                  selectionMode="checkbox"
-                                  selectionKeys={selectedKeys}
-                                  onSelectionChange={(e) =>
-                                    setSelectedKeys(e.value)
-                                  }
-                                  className="w-full md:w-30rem"
-                                />
-                              </OverlayPanel>
+                      <TabView>
+                        <TabPanel
+                          header="Keyword Search"
+                          leftIcon="pi pi-filter mr-2"
+                        >
+                          <div className="d-flex flex-wrap signupflex">
+                            <div className="form-group mb-40 wid-30">
+                              <label>Search Type </label>
+                              <Dropdown
+                                value={searchselectedItem}
+                                onChange={(e) => searchsetSelectedItem(e.value)}
+                                options={searchselitems}
+                                placeholder="Select Search Type"
+                                className="w-full md:w-14rem"
+                              />
+                            </div>
+                            <div className="form-group mb-40 wid-30">
+                              <label>&nbsp;</label>
+                              <InputText value="Search type" />
+                            </div>
+                            <div className="form-group mb-40 wid-30">
+                              <label>Exclude Word</label>
+                              <InputText value="Exclude Word" />
                             </div>
                           </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Geographical Location Search</label>
-                            <Dropdown
-                              value={geographicalselectedItem}
-                              onChange={(e) => geographicalsetSelectedItem(e.value)}
-                              options={geographicalselitems}
-                              placeholder="Select a Country / Region / State & City"
-                              className="w-full md:w-14rem"
-                            />
-                            
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Region</label>
-                            <Dropdown
-                              value={selectedCountry}
-                              onChange={(e) => setSelectedCountry(e.value)}
-                              options={countries}
-                              optionLabel="name"
-                              placeholder="Select a Country / Region / State & City"
-                              filter
-                              valueTemplate={selectedCountryTemplate}
-                              itemTemplate={countryOptionTemplate}
-                              className="w-full md:w-14rem"
-                            />
-                          </div>
-                          {/* <div className="form-group mb-40 wid-30">
-                            <label>Region</label>
-                            <div className="card flex justify-content-center">
-                              <span
-                                className="postingText"
-                                onClick={(e) => region.current.toggle(e)}
-                              >
-                                Region
-                              </span>
-                              <OverlayPanel ref={region}>
-                                <Tree
-                                  value={nodes}
-                                  filter
-                                  filterMode="lenient"
-                                  filterPlaceholder="Lenient Filter"
-                                  selectionMode="checkbox"
-                                  selectionKeys={selectedKeys}
-                                  onSelectionChange={(e) =>
-                                    setSelectedKeys(e.value)
-                                  }
-                                  className="w-full md:w-30rem"
-                                />
-                              </OverlayPanel>
+                        </TabPanel>
+                        <TabPanel
+                          header="Product & Sector and Geographical Search"
+                          leftIcon="pi pi-map-marker mr-2"
+                        >
+                          <div className="d-flex flex-wrap signupflex">
+                            <div className="form-group mb-40 wid-30">
+                              <label>CPV Codes</label>
+                              <div className="card flex justify-content-center">
+                                <span
+                                  className="postingText"
+                                  onClick={(e) => cpv.current.toggle(e)}
+                                >
+                                  CPV Codes
+                                </span>
+                                <OverlayPanel ref={cpv}>
+                                  <Tree
+                                    value={nodes}
+                                    filter
+                                    filterMode="lenient"
+                                    filterPlaceholder="Lenient Filter"
+                                    selectionMode="checkbox"
+                                    selectionKeys={selectedKeys}
+                                    onSelectionChange={(e) =>
+                                      setSelectedKeys(e.value)
+                                    }
+                                    className="w-full md:w-30rem"
+                                  />
+                                </OverlayPanel>
+                              </div>
+                            </div>
+                            <div className="form-group mb-40 wid-30">
+                              <label>Sector Search</label>
+                              <InputText value="Sector Search" />
+                            </div>
+                            <div className="form-group mb-40 wid-30">
+                              <label>Geographical Location Search</label>
+                              <Dropdown
+                                value={geographicalselectedItem}
+                                onChange={(e) =>
+                                  geographicalsetSelectedItem(e.value)
+                                }
+                                options={geographicalselitems}
+                                placeholder="Select a Country / Region / State & City"
+                                className="w-full md:w-14rem"
+                              />
+                            </div>
+                            <div className="form-group mb-40 wid-30">
+                              <label>&nbsp;&nbsp;</label>
+                              <Dropdown
+                                value={selectedCountry}
+                                onChange={(e) => setSelectedCountry(e.value)}
+                                options={countries}
+                                optionLabel="name"
+                                placeholder="Select a Country / Region / State & City"
+                                filter
+                                valueTemplate={selectedCountryTemplate}
+                                itemTemplate={countryOptionTemplate}
+                                className="w-full md:w-14rem"
+                              />
                             </div>
                           </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Country </label>
-                            <AutoComplete
-                              value={value}
-                              suggestions={items}
-                              completeMethod={search}
-                              placeholder="Enter Country Name"
-                              onChange={(e) => setValue(e.value)}
-                            />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>State & City </label>
-                            <AutoComplete
-                              value={value}
-                              suggestions={items}
-                              placeholder="Enter State/City Name"
-                              completeMethod={search}
-                              onChange={(e) => setValue(e.value)}
-                            />
-                          </div> */}
-                          <div className="form-group mb-40 wid-30">
-                            <label>Contract Value </label>
-                            <InputText value="Type Contract Value " />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Competition Type </label>
-                            <Dropdown
-                              value={selectedItem}
-                              onChange={(e) => setSelectedItem(e.value)}
-                              options={selitems}
-                              placeholder="Select Competition Type"
-                              className="w-full md:w-14rem"
-                            />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>BIG Ref No: </label>
-                            <InputText value="Type BIG Ref No: " />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Tender No: </label>
-                            <InputText value="Type Tender No: " />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Posting Date: </label>
-                            <div className="card flex justify-content-center">
-                              <span
-                                className="postingText"
-                                onClick={(e) => op.current.toggle(e)}
-                              >
-                                Select Posting Date
-                              </span>
-                              <OverlayPanel ref={op}>
-                                <ul>
-                                  <li>Today</li>
-                                  <li class="active">Yesterday</li>
-                                  <li class="">Last 7 Days</li>
-                                  <li class="">Last 15 Days</li>
-                                  <li class="">Last 30 Days</li>
-                                  <li>This Month</li>
-                                  <li>Last Month</li>
-                                  <li>Custom Range</li>
-                                </ul>
-                                <Calendar
-                                  value={dates}
-                                  onChange={(e) => setDates(e.value)}
-                                  selectionMode="range"
-                                  readOnlyInput
-                                  placeholder="Custome Date Picker"
-                                />
-                              </OverlayPanel>
+                        </TabPanel>
+                      
+                        <TabPanel
+                          header="Funding Agencies & Tender Types Search"
+                          leftIcon="pi pi-search mr-2"
+                        >
+                          <div className="d-flex flex-wrap signupflex">
+                            <div className="form-group mb-40 wid-30">
+                              <label>MFA (Funding Agencies) </label>
+                              <MultiSelect
+                                value={selectedMFA}
+                                onChange={(e) => setSelectedMFA(e.value)}
+                                options={MFA}
+                                optionLabel="name"
+                                filter
+                                placeholder="Select MFA"
+                                maxSelectedLabels={3}
+                                className="w-full md:w-20rem"
+                              />
                             </div>
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Closing Date: </label>
-                            <div className="card flex justify-content-center">
-                              <span
-                                className="postingText"
-                                onClick={(e) => op.current.toggle(e)}
-                              >
-                                Select Closing Date
-                              </span>
-                              <OverlayPanel ref={op}>
-                                <ul>
-                                  <li>Today</li>
-                                  <li class="active">Yesterday</li>
-                                  <li class="">Last 7 Days</li>
-                                  <li class="">Last 15 Days</li>
-                                  <li class="">Last 30 Days</li>
-                                  <li>This Month</li>
-                                  <li>Last Month</li>
-                                  <li>Custom Range</li>
-                                </ul>
-                                <Calendar
-                                  value={dates}
-                                  onChange={(e) => setDates(e.value)}
-                                  selectionMode="range"
-                                  readOnlyInput
-                                  placeholder="Custome Date Picker"
-                                />
-                              </OverlayPanel>
+                            <div className="form-group mb-40 wid-30">
+                              <label>Contract Value </label>
+                              <InputText value="Type Contract Value " />
                             </div>
+                            <div className="form-group mb-40 wid-30">
+                              <label>Tender No: </label>
+                              <InputText value="Type Tender No: " />
+                            </div>
+                            <div className="form-group mb-40 wid-30">
+                              <label>BIG Ref No: </label>
+                              <InputText value="Type BIG Ref No: " />
+                            </div>
+                            <div className="form-group mb-40 wid-30">
+                              <label>Competition Type </label>
+                              <Dropdown
+                                value={selectedItem}
+                                onChange={(e) => setSelectedItem(e.value)}
+                                options={selitems}
+                                placeholder="Select Competition Type"
+                                className="w-full md:w-14rem"
+                              />
+                            </div>
+
+                            <div className="form-group mb-40 wid-30">
+                              <label>Notice type</label>
+                              <Dropdown
+                                value={noticType}
+                                onChange={(e) => setnoticType(e.value)}
+                                options={noticTypetems}
+                                placeholder="Select Notice type"
+                                className="w-full md:w-14rem"
+                              />
+                            </div>
+                            <div className="form-group mb-40 wid-30">
+                          <label>Tender Type</label>
+                          <Dropdown
+                            value={tenderType}
+                            onChange={(e) => settenderType(e.value)}
+                            options={tenderTypetems}
+                            placeholder="Select Tender Type"
+                            className="w-full md:w-14rem"
+                          />
+                        </div>
                           </div>
+                        </TabPanel>
+                        <TabPanel
+                          header="Key Dates"
+                          leftIcon="pi pi-calendar mr-2"
+                        >
+                          <div className="d-flex flex-wrap signupflex">
                           <div className="form-group mb-40 wid-30">
-                            <label>Tender Type</label>
-                            <Dropdown
-                              value={tenderType}
-                              onChange={(e) => settenderType(e.value)}
-                              options={tenderTypetems}
-                              placeholder="Select Tender Type"
-                              className="w-full md:w-14rem"
-                            />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>Notice type</label>
-                            <Dropdown
-                              value={noticType}
-                              onChange={(e) => setnoticType(e.value)}
-                              options={noticTypetems}
-                              placeholder="Select Notice type"
-                              className="w-full md:w-14rem"
-                            />
-                          </div>
-                          <div className="form-group mb-40 wid-30">
-                            <label>MFA (Funding Agencies) </label>
-                            <InputText value="Type MFA (Funding Agencies)" />
+                          <label>Posting Date: </label>
+                          <div className="card flex justify-content-center">
+                            <span
+                              className="postingText"
+                              onClick={(e) => op.current.toggle(e)}
+                            >
+                              Select Posting Date
+                            </span>
+                            <OverlayPanel ref={op}>
+                              <ul>
+                                <li>Today</li>
+                                <li class="active">Yesterday</li>
+                                <li class="">Last 7 Days</li>
+                                <li class="">Last 15 Days</li>
+                                <li class="">Last 30 Days</li>
+                                <li>This Month</li>
+                                <li>Last Month</li>
+                                <li>Custom Range</li>
+                              </ul>
+                              <Calendar
+                                value={dates}
+                                onChange={(e) => setDates(e.value)}
+                                selectionMode="range"
+                                readOnlyInput
+                                placeholder="Custome Date Picker"
+                              />
+                            </OverlayPanel>
                           </div>
                         </div>
-                        <div className="text-center">
-                          <button type="submit" className="commonBtn loginBtn">
-                            <i className="pi pi-search"></i> Apply
-                          </button>
+                        <div className="form-group mb-40 wid-30">
+                          <label>Closing Date: </label>
+                          <div className="card flex justify-content-center">
+                            <span
+                              className="postingText"
+                              onClick={(e) => op.current.toggle(e)}
+                            >
+                              Select Closing Date
+                            </span>
+                            <OverlayPanel ref={op}>
+                              <ul>
+                                <li>Today</li>
+                                <li class="active">Yesterday</li>
+                                <li class="">Last 7 Days</li>
+                                <li class="">Last 15 Days</li>
+                                <li class="">Last 30 Days</li>
+                                <li>This Month</li>
+                                <li>Last Month</li>
+                                <li>Custom Range</li>
+                              </ul>
+                              <Calendar
+                                value={dates}
+                                onChange={(e) => setDates(e.value)}
+                                selectionMode="range"
+                                readOnlyInput
+                                placeholder="Custome Date Picker"
+                              />
+                            </OverlayPanel>
+                          </div>
                         </div>
-                      </form>
+                          </div>
+                        </TabPanel>
+                      </TabView>                      
+                      <div className="text-center">
+                        <button type="submit" className="commonBtn loginBtn">
+                          <i className="pi pi-search"></i> Apply
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

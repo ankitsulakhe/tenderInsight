@@ -47,7 +47,7 @@ class TenderDetails extends Component {
                         href="#TenderDetails"
                         className="question"
                       >
-                        Enquiries
+                        Authority Name & Contact
                         <i className="bi bi-chevron-down icon-show"></i>
                         <i className="bi bi-chevron-up icon-close"></i>
                       </div>

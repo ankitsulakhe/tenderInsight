@@ -35,21 +35,25 @@ class subscribePage extends Component {
 
               <div class="row">
                 <div
-                  class="col-lg-3 col-md-6"
+                  class="col-lg-4 col-md-6"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
                   <div class="box">
-                    <h3>Basic</h3>
+                    <h3>Basic Trial</h3>
                     <h4>
                       <sup>Rs.</sup>0<span> / month</span>
                     </h4>
                     <ul>
-                      <li>Tender Information</li>
+                      <li>Tender Information </li>
+                      <li>Contract Awards</li>
+                      <li>Project Information </li>
+                      <li>Grants</li>
                       <li>Dashboard</li>
-                      <li>Customer Care Support</li>
-                      <li class="na">Project Information</li>
-                      <li class="na">Periodical Excel Alerts</li>
+                      <li>Customer Care</li>
+                      <li>Alerts Upto 1 Email Id </li>
+                      <li>Access to Historical Tender Data</li>
+                      <li>1 User Id </li>                      
                     </ul>
                     <div class="btn-wrap">
                       <a href="#" class="btn-buy">
@@ -60,7 +64,7 @@ class subscribePage extends Component {
                 </div>
 
                 <div
-                  class="col-lg-3 col-md-6 mt-4 mt-md-0"
+                  class="col-lg-4 col-md-6 mt-4 mt-md-0"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
@@ -70,11 +74,15 @@ class subscribePage extends Component {
                       <sup>Rs.</sup>1900<span> / month</span>
                     </h4>
                     <ul>
-                      <li>Tender Information</li>
+                      <li>Tender Information </li>
+                      <li>Contract Awards</li>
+                      <li>Project Information </li>
+                      <li>Grants</li>
                       <li>Dashboard</li>
-                      <li>Customer Care Support</li>
-                      <li>Project Information</li>
-                      <li class="na">Periodical Excel Alerts</li>
+                      <li>Customer Care</li>
+                      <li>Alerts Upto 2 Email Id </li>
+                      <li>Access to Historical Tender Data</li>
+                      <li>2 User Id </li>
                     </ul>
                     <div class="btn-wrap">
                       <a href="#" class="btn-buy">
@@ -85,21 +93,29 @@ class subscribePage extends Component {
                 </div>
 
                 <div
-                  class="col-lg-3 col-md-6 mt-4 mt-lg-0"
+                  class="col-lg-4 col-md-6 mt-4 mt-lg-0"
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
                   <div class="box">
-                    <h3>Premium</h3>
+                    <h3>Customise Package </h3>
                     <h4>
                       <sup>Rs.</sup>2900<span> / month</span>
                     </h4>
                     <ul>
-                      <li>Tender Information</li>
+                      <li>Tender Information </li>
+                      <li>Contract Awards</li>
+                      <li>Project Information </li>
+                      <li>Grants</li>
                       <li>Dashboard</li>
-                      <li>Customer Care Support</li>
-                      <li>Project Information</li>
-                      <li>Periodical Excel Alerts</li>
+                      <li>Customer Care</li>
+                      <li>Access to Historical Tender Data </li>
+                      <li>Key Account Manager </li>
+                      <li>Customised Intranet</li>
+                      <li>Micro Site</li>
+                      <li>Company Data Research</li>
+                      <li>Email Alerts</li>
+                      <li>User Id</li>
                     </ul>
                     <div class="btn-wrap">
                       <a href="#" class="btn-buy">
@@ -107,33 +123,7 @@ class subscribePage extends Component {
                       </a>
                     </div>
                   </div>
-                </div>
-
-                <div
-                  class="col-lg-3 col-md-6 mt-4 mt-lg-0"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                >
-                  <div class="box">
-                    <span class="advanced">Advanced</span>
-                    <h3>Enterprise</h3>
-                    <h4>
-                      <sup>Rs.</sup>3900<span> / month</span>
-                    </h4>
-                    <ul>
-                      <li>Tender Information</li>
-                      <li>Dashboard</li>
-                      <li>Customer Care Support</li>
-                      <li>Project Information</li>
-                      <li>Periodical Excel Alerts</li>
-                    </ul>
-                    <div class="btn-wrap">
-                      <a href="#" class="btn-buy">
-                        Choose Plan
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                </div>              
               </div>
             </div>
           </section>

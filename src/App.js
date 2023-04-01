@@ -335,7 +335,7 @@ function App() {
                             <li><i className="bx bx-chevron-right"></i><Link to="tender">Tenders</Link></li>
                             <li><i className="bx bx-chevron-right"></i><Link to="project">Project</Link></li>
                             <li><i className="bx bx-chevron-right"></i><Link to="contaractAward">Contract Awards</Link></li>
-                            <li><i className="bx bx-chevron-right"></i><Link to="grants3">Grants </Link></li>
+                            <li><i className="bx bx-chevron-right"></i><Link to="grantsDetails">Grants </Link></li>
                             <li><i className="bx bx-chevron-right"></i><Link to="subscribe">Subscribe</Link></li>
                             <li><i className="bx bx-chevron-right"></i><Link to="EProcurement">E - Procurement</Link></li>
                             
