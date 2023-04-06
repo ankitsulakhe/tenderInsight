@@ -144,7 +144,7 @@ class HomePage extends Component {
 
             <div className="row">
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -159,7 +159,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
@@ -174,7 +174,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -189,7 +189,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -204,7 +204,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
@@ -219,7 +219,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -233,7 +233,7 @@ class HomePage extends Component {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -247,7 +247,7 @@ class HomePage extends Component {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -262,7 +262,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -277,7 +277,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -292,7 +292,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -307,7 +307,7 @@ class HomePage extends Component {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >

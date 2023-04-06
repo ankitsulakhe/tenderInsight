@@ -1,0 +1,78 @@
+/* ==== Media Queries ===== */
+@media (max-width:1280px) {
+    .mainSearchflex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width:1024px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (max-width:767px) {
+    
+}
+
+@media only screen and (max-width:600px){
+    .flexSearch {
+        flex-wrap: wrap;
+        width: 90%;
+        height: auto;
+        border: 0;
+        padding: 10px;
+    }
+    .selectSearch {
+        width: 49%;
+    }
+    .selectButton {
+        width: 50%;
+        margin: 20px auto 10px auto;
+    }
+    .searcHhome {
+        padding: 20px 0 20px 0;
+    }
+    .selectInput {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .selectInput input {
+        border: 1px solid #0f3966c7;
+        height: 100%;
+        padding: 10px 0 10px 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    .selectSearch .form-control {
+        border: 1px solid #0f3966c7;
+        border-left: 1px solid #0f3966c7;
+    }
+    a.advancBtn {
+        width: 50%;
+        margin: 20px;
+    }
+    .services .icon-box h4 a {
+        font-size: 14px;
+    }
+    .services.TabIconList .icon-box.tabsIcon {
+        width: 95%;
+        margin: 0px auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:480px) {
+}
+
+@media only screen and (max-width:395px) {
+
+}
+
+@media only screen and (max-width:360px) {
+}
+
+@media (max-width:320px) {
+    
+}
