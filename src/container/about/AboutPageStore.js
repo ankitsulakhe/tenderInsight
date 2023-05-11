@@ -5,14 +5,12 @@ import api from "../../store/cms/cmsApis";
 
 const mapStateToProps = (state) => {
     return {
-        home_page: api.endpoints.getHomePageData.select({ type: "home_page" })(state),
-        auth_record: api.endpoints.getAuthRecord.select({ type: "auth_record" })(state),
+        about_us_page: api.endpoints.getAboutUsData.select({ type: "about_us_page" })(state),
     }
 }
 
 const mapDispatch = {
-    getHomePageData: api.endpoints.getHomePageData.initiate,
-    getAuthRecord: api.endpoints.getAuthRecord.initiate,
+    getAboutUsData: api.endpoints.getAboutUsData.initiate,
 };
 
 const mapDispatchToProps = (dispatch) =>

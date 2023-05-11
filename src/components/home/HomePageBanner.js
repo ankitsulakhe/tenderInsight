@@ -2,7 +2,7 @@ import SearchBar from "../../pages-old/searchBar/SearchBar";
 import ForgetPassword from "./ForgetPassword";
 import Login from "./Login";
 
-function HomePageBanner() {
+function HomePageBanner({ data }) {
     return (
         <section className="mainBanner p-0">
             <div className="container-fluid">
@@ -14,11 +14,11 @@ function HomePageBanner() {
                     <div className="col-md-4 bg-grey">
                         <div className="homeLoginMain">
                             <div className="section-title pb-0">
-                                <h3>Customer Login</h3>
+                                <h3>{data?.login_title}</h3>
                             </div>
 
                             {/* Login Div Start here  */}
-                            <Login />
+                            <Login login_description={data?.login_description} />
                             {/* Login Div End here  */}
 
                             {/* forgot Div start here  */}
@@ -27,7 +27,6 @@ function HomePageBanner() {
 
                             <div className="loginBottom">
                                 <div className="loginbtmtext text-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     <span className="d-block createLink">
                                         Click for New User
                                     </span>

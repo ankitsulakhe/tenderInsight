@@ -1,16 +1,33 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import cmsApi from "./cms/cmsApis";
+import { useSelector, useDispatch } from "react-redux";
+import commonSlice from "./common/commonSlice";
 
-import axiosInterceptor from "../helpers/axios.js";
-import commonSlice from "./common/commonSlice.js";
-// import resumeSlice from "./resume/resumeSlice.js";
+const reducers = {
+    [commonSlice.name]: commonSlice.reducer,
+    [cmsApi.reducerPath]: cmsApi.reducer
+};
 
-const store = configureStore({
-  reducer: {
-    common: commonSlice,
-    // resume: resumeSlice,
-  },
+const initialState = {};
+
+const rootReducer = combineReducers(reducers);
+
+export const store = configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => {
+        return getDefaultMiddleware({
+            serializableCheck: false
+        }).concat([
+            cmsApi.middleware
+        ]);
+    },
+    devTools: process.env.NODE_ENV !== 'production',
+    preloadedState: initialState,
+    enhancers: (defaultEnhancers) => [...defaultEnhancers]
 });
 
-axiosInterceptor(store.dispatch);
 
-export { store };
+export const useAppSelector = () => useSelector(rootReducer);
+export const useAppDispatch = () => useDispatch(store.dispatch);
+
+export default store;

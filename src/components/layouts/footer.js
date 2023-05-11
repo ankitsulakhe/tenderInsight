@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({ links, contactDetails }) {
     return (
         <div className='footermain'>
             <footer id="footer">
@@ -11,13 +11,9 @@ function Footer() {
 
                             <div className="col-lg-3 col-md-6 footer-contact">
                                 <h3>Bidsinfoglobal</h3>
-                                <p>
-                                    A108 Adam Street <br />
-                                    New York, NY 535022<br />
-                                    United States <br /><br />
-                                    <strong>Phone:</strong> +1 5589 55488 55<br />
-                                    <strong>Email:</strong> info@example.com<br />
-                                </p>
+                                <p>{contactDetails?.address}</p>
+                                <p><strong>Phone:</strong> {contactDetails?.phone}</p>
+                                <p><strong>Email:</strong> {contactDetails?.email}</p>
                             </div>
 
                             <div className="col-lg-3 col-md-6 footer-links">
@@ -47,15 +43,15 @@ function Footer() {
                             </div>
 
                             <div className="col-lg-3 col-md-6 footer-links">
-                                <h4>Our Social Networks</h4>
-                                <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                                <h4>{links?.title}</h4>
+                                <p>{links?.description}</p>
                                 <div className="social-links mt-3">
-                                    <Link to="/" className="twitter"><i className="bx bxl-twitter"></i></Link>
-                                    <Link to="/" className="facebook"><i className="bx bxl-facebook"></i></Link>
-                                    <Link to="/" className="instagram"><i className="bx bxl-instagram"></i></Link>
-                                    <Link to="/" className="google-plus"><i className="bx bxl-skype"></i></Link>
-                                    <Link to="/" className="linkedin"><i className="bx bxl-linkedin"></i></Link>
-                                    <Link to="/" className="linkedin"><i className="bx bxl-whatsapp"></i></Link>
+                                    {links?.twitter ? <Link to="/" className="twitter"><i className="bx bxl-twitter"></i></Link> : null}
+                                    {links?.facebook ? <Link to="/" className="facebook"><i className="bx bxl-facebook"></i></Link> : null}
+                                    {links?.instagram ? <Link to="/" className="instagram"><i className="bx bxl-instagram"></i></Link> : null}
+                                    {links?.skype ? <Link to="/" className="google-plus"><i className="bx bxl-skype"></i></Link> : null}
+                                    {links?.linkedin ? <Link to="/" className="linkedin"><i className="bx bxl-linkedin"></i></Link> : null}
+                                    {links?.whatsapp ? <Link to="/" className="linkedin"><i className="bx bxl-whatsapp"></i></Link> : null}
                                 </div>
                             </div>
 

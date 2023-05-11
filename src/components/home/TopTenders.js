@@ -1,33 +1,75 @@
-import { Link } from "react-router-dom";
+import GlobalTenders from "./GlobalTenders";
+import IndianTenders from "./IndianTenders";
 
-export default function TopTenders() {
+export default function TopTenders({ data }) {
     return (
-        <section id="TopTenders" className="services ">
+        <section id="GlobalTenders" className="services section-bg">
             <div className="container" data-aos="fade-up">
                 <div className="section-title">
-                    <h2>Tenders</h2>
+                    <h2>Various</h2>
                     <h3>
-                        Top <span>Categories</span>
+                        {data?.tender_title}
                     </h3>
                     <p className="lg-font">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore
+                        {data?.tender_description}
                     </p>
                 </div>
 
                 <div className="row">
                     <div
-                        className="col-lg-3 col-md-6 col-sm-6 col-6 cat_list_style d-flex align-items-stretch mb-4 mt-2"
+                        className="col-lg-12 align-items-stretch mb-4 mt-2"
                         data-aos="fade-up"
                         data-aos-delay="100"
                     >
-                        <div className="icon-box">
-                            <div className="icon nobg">
-                                {/* <img src={defence} /> */}
+                        <div className="tender_tab">
+                            <nav>
+                                <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button
+                                        className="nav-link active"
+                                        id="nav-home-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#nav-home"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="nav-home"
+                                        aria-selected="true"
+                                    >
+                                        <i className="bx bx-globe"></i>Global Tenders
+                                    </button>
+                                    <button
+                                        className="nav-link"
+                                        id="nav-profile-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#nav-profile"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="nav-profile"
+                                        aria-selected="false"
+                                    >
+                                        <i className="bx bx-globe"></i>Indian Tenders
+                                    </button>
+                                </div>
+                            </nav>
+                            <div className="tab-content" id="nav-tabContent">
+                                <div
+                                    className="tab-pane fade show active"
+                                    id="nav-home"
+                                    role="tabpanel"
+                                    aria-labelledby="nav-home-tab"
+                                    tabIndex="0"
+                                >
+                                    <GlobalTenders row={data?.global_tender_data} />
+                                </div>
+                                <div
+                                    className="tab-pane fade"
+                                    id="nav-profile"
+                                    role="tabpanel"
+                                    aria-labelledby="nav-profile-tab"
+                                    tabIndex="0"
+                                >
+                                    <IndianTenders row={data?.indian_tender_data} />
+                                </div>
                             </div>
-                            <h4>
-                                <Link href="">Defence</Link>
-                            </h4>
                         </div>
                     </div>
                 </div>

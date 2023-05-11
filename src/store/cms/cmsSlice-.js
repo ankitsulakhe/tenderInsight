@@ -1,7 +1,34 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { api_get_cms_records } from "./resumeApis";
+import { api_get_cms_records } from "./cmsApis.js";
+import { timeToStale } from './cmsConstants.js';
+
+// First, define my allowed actions
+const ACTIONS = {
+    abort: "abort",
+    error: "error",
+    start: "start",
+    update: "update"
+}
+
+export const abortFetch = () => ({
+    type: ACTIONS.abort
+});
+export const errorFetch = error => ({
+    type: ACTIONS.error,
+    error
+});
+export const startFetch = () => ({
+    type: ACTIONS.start
+});
+export const updateFetch = payload => ({
+    type: ACTIONS.update,
+    payload
+});
 
 const initialState = {
+    error: null,
+    isFetching: false,
+    lastFetched: 0,
     cms_loading: true,
     home_page: {},
     auth_record: {},
@@ -30,38 +57,14 @@ export const getCmsRecords = createAsyncThunk("getCmsRecords", async (params) =>
 export const resume = createSlice({
     name: "resume",
     initialState,
-    reducers: {
-        setExperienceList: (state, action) => {
-            state.show_experience_list = action.payload;
-        },
-        setEducationList: (state, action) => {
-            state.show_education_list = action.payload;
-        },
-        setCustomSectionList: (state, action) => {
-            state.show_custom_section_list = action.payload;
-        },
-        addSkillsData: (state, action) => {
-            state.skillsData = action.payload;
-        },
-        setSelectedTemplate: (state, action) => {
-            state.selected_template = action.payload;
-        },
-        setSelectedSingleResume: (state, action) => {
-            state.single_user_resume = action.payload;
-        },
-        setSuggestion: (state, action) => {
-            state.suggestionRecord = action.payload;
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         // get cms records
         builder.addCase(getCmsRecords.pending, (state, action) => {
             state.cms_loading = true;
         });
         builder.addCase(getCmsRecords.fulfilled, (state, action) => {
-            const { result } = action.payload;
-            console.log(action, "action");
-            state.cms_loading = false;
+
         });
         builder.addCase(getCmsRecords.rejected, (state, action) => {
             state.cms_loading = false;

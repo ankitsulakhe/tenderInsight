@@ -1,3 +1,4 @@
+import { BaseQueryFn } from "@reduxjs/toolkit/query";
 import * as coreAxios from "axios";
 import { baseUrl } from "./constants";
 import { getCookie } from "./cookies";
@@ -6,11 +7,13 @@ import { getCookie } from "./cookies";
 export const axios = coreAxios.default.create({
     baseURL: baseUrl,
     headers: {
-        "Authorization": `${getCookie("token")}`,
-    }
+        Authorization: `${getCookie("token")}`,
+    },
 });
 
 const axiosInterceptor = (dispatch) => {
+    console.log("came here");
+
     axios.interceptors.request.use(
         function (config) {
             // Do something before request is sent
@@ -28,13 +31,13 @@ const axiosInterceptor = (dispatch) => {
             // Any status code that lie within the range of 2xx cause this function to trigger
             // Do something with response data
             // if (method !== "get") {
-                // dispatch(
-                //     setSnackBar({
-                //         open: true,
-                //         message: response?.data?.message || "success",
-                //         severity: "success",
-                //     })
-                // );
+            // dispatch(
+            //     setSnackBar({
+            //         open: true,
+            //         message: response?.data?.message || "success",
+            //         severity: "success",
+            //     })
+            // );
             // }
             return response.data;
         },
@@ -56,5 +59,15 @@ const axiosInterceptor = (dispatch) => {
         }
     );
 };
+
+export const axiosBaseQuery =
+    (): BaseQueryFn<{
+        url: string;
+        method: coreAxios.AxiosRequestConfig["method"];
+        data?: coreAxios.AxiosRequestConfig["data"];
+    }> =>
+    async ({ url, method, data }, api) => {
+        return false;
+    };
 
 export default axiosInterceptor;

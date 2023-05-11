@@ -20,7 +20,7 @@ export default function ForgetPassword() {
                                 type="email"
                                 name="name"
                                 className="form-control"
-                                id="name"
+                                id="forget-email"
                                 placeholder="Your Name"
                                 required=""
                             />

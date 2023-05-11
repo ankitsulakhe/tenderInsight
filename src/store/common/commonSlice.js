@@ -10,7 +10,7 @@ const initialState = {
     authentication_loading: false
 };
 
-export const common = createSlice({
+export const commonSlice = createSlice({
     name: "common",
     initialState,
     reducers: {
@@ -24,6 +24,6 @@ export const common = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setAuthenticationLoading, setSnackBar } = common.actions;
+export const { setAuthenticationLoading, setSnackBar } = commonSlice.actions;
 
-export default common.reducer;
+export default commonSlice;

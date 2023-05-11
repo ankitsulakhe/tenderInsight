@@ -1,13 +1,10 @@
 import React from "react";
 
-function Login() {
+function Login({ login_description }) {
     return (
         <div className="mainBoxLogin commonBoxShadow" id="loginBox">
             <div className="section-title-p text-center loginBox">
-                <p className="wid100">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod.
-                </p>
+                <p className="wid100">{login_description}</p>
                 <form
                     method="post"
                     className="php-email-form"
