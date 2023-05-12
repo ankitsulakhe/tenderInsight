@@ -67,7 +67,7 @@ class AboutPageContainer extends React.Component {
                                     data-aos='fade-up'
                                     data-aos-delay='100'
                                 >
-                                    <ul class='cstm_list'>
+                                    <ul className='cstm_list'>
                                         {data?.list_description &&
                                             data?.list_description.map(
                                                 function (val, ind) {

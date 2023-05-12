@@ -57,23 +57,23 @@ class ContractAwardDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
+                          <div className="row">
                             <div
-                              class="col-lg-4 col-md-6 mgbtmxy"
+                              className="col-lg-4 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Organization Name </h3>
                                 <p>Global Tender Org</p>
                               </div>
                             </div>
                             <div
-                              class="col-md-8 mgbtmxy"
+                              className="col-md-8 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Organization Address</h3>
                                 <p>
                                   501 Prodinsa Building, Cnr Steve Bhiko and
@@ -82,41 +82,41 @@ class ContractAwardDetails extends Component {
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Telephone</h3>
                                 <p>012-14400-21071</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>FAX Number</h3>
                                 <p> N/A</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Email</h3>
                                 <p>luckym@visava.in</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Contact Person</h3>
                                 <p> Laxman Singh</p>
                               </div>
@@ -142,53 +142,53 @@ class ContractAwardDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
+                          <div className="row">
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>BIG Ref No</h3>
                                 <p>RFQ:238-22-IA</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Document Type</h3>
                                 <p>Defense Forces</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Bidding Type</h3>
                                 <p>International</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Project Location</h3>
                                 <p>India</p>
                               </div>
                             </div>
                             <div
-                              class="col-md-6 mgbtmxy"
+                              className="col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Contractor Details</h3>
                                 <p>
                                   The Provision Of Services For The Service Of
@@ -199,21 +199,21 @@ class ContractAwardDetails extends Component {
                             </div>
 
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Tender Notice No</h3>
                                 <p>RFQ:238-22-IA</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Description</h3>
                                 <p>International </p>
                               </div>
@@ -239,33 +239,33 @@ class ContractAwardDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
+                          <div className="row">
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>CPV</h3>
                                 <p>Laxman Singh</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Sector </h3>
                                 <p>Chemical Tenders</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Award Publish Date</h3>
                                 <p>23/04/2024</p>
                               </div>

@@ -75,10 +75,10 @@ class AboutPage extends Component {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  <ul class="cstm_list">
+                  <ul className="cstm_list">
                     <li>
                       <div className="abtflex">
-                        <i class="bi bi-globe-americas"></i>
+                        <i className="bi bi-globe-americas"></i>
                         <h5>
                           4,00,000+ Public / Private Procurement Opportunities
                           from all over the Globe
@@ -87,7 +87,7 @@ class AboutPage extends Component {
                     </li>
                     <li>
                       <div className="abtflex">
-                        <i class="bi bi-briefcase"></i>
+                        <i className="bi bi-briefcase"></i>
                         <h5>
                           30000+ New Business Opportunities posted on
                           Bidsinfoglobal.
@@ -96,7 +96,7 @@ class AboutPage extends Component {
                     </li>
                     <li>
                       <div className="abtflex">
-                        <i class="bi bi-info"></i>
+                        <i className="bi bi-info"></i>
                         <h5>
                           Different Information Sources from across the world
                         </h5>
@@ -104,19 +104,19 @@ class AboutPage extends Component {
                     </li>
                     <li>
                       <div className="abtflex">
-                        <i class="bi bi-shield-check"></i>
+                        <i className="bi bi-shield-check"></i>
                         <h5>Global comprehensive coverage</h5>
                       </div>
                     </li>
                     <li>
                       <div className="abtflex">
-                        <i class="bi bi-search"></i>
+                        <i className="bi bi-search"></i>
                         <h5>150+ Researchers</h5>
                       </div>
                     </li>
                     <li>
                       <div className="abtflex">
-                        <i class="bi bi-bank"></i>
+                        <i className="bi bi-bank"></i>
                         <h5>
                           170+ Multilateral and Bi-lateral Funding Agencies
                           coverage

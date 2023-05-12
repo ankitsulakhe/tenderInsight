@@ -5,9 +5,9 @@ class LoginPage extends Component {
     render(){        
         return(
             <div>
-                <section class="breadcrumbs">
-                    <div class="container">
-                        <div class="d-flex justify-content-between align-items-center">
+                <section className="breadcrumbs">
+                    <div className="container">
+                        <div className="d-flex justify-content-between align-items-center">
                             <h2>Login Page</h2>
                             <ol>
                                 <li><a href="index.html">Home</a></li>
@@ -103,7 +103,7 @@ class LoginPage extends Component {
                                                     </div>
                                                     <div className="form-group mb-40 wid-50">
                                                         <label>Country</label>
-                                                        <select class="form-control customInput customInputIcon" id="select1" name="type">
+                                                        <select className="form-control customInput customInputIcon" id="select1" name="type">
                                                             <option value="" selected disabled>Country</option>
                                                             <option value="Africa">Africa </option>
                                                             <option value="UAE">UAE</option>

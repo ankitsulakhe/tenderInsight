@@ -1,0 +1,1 @@
+export const DROP_DEMO_REQUEST = "/common/demo-request";

@@ -68,12 +68,12 @@ class Header extends Component {
                   <li>
                     <Link to="about">About Us</Link>
                   </li>
-                  <li class="dropdown">
+                  <li className="dropdown">
                     <a href="#">
-                      <span>Tenders</span> <i class="bi bi-chevron-down"></i>
+                      <span>Tenders</span> <i className="bi bi-chevron-down"></i>
                     </a>
                     <ul>
-                      <li class="dropdown">
+                      <li className="dropdown">
                        <Link to="TenderListingBySector">
                           <span>Tenders By Sector</span>
                         </Link>
@@ -105,7 +105,7 @@ class Header extends Component {
                           </li>
                         </ul>
                       </li>
-                      <li class="dropdown">
+                      <li className="dropdown">
                        <Link to="TenderListingByRegion">
                           <span>Tenders By Region</span>
                         </Link>
@@ -129,7 +129,7 @@ class Header extends Component {
                           </li>
                         </ul>
                       </li>
-                      <li class="dropdown">
+                      <li className="dropdown">
                        <Link to="TenderListingByCPV">
                           <span>Tenders By Products/Services/CPV</span>
                         </Link>
@@ -163,12 +163,12 @@ class Header extends Component {
                       </li>
                     </ul>
                   </li>
-                  <li class="dropdown">
+                  <li className="dropdown">
                     <a href="#">
-                      <span>Project</span> <i class="bi bi-chevron-down"></i>
+                      <span>Project</span> <i className="bi bi-chevron-down"></i>
                     </a>
                     <ul>
-                      <li class="dropdown">                      
+                      <li className="dropdown">                      
                         <Link to="ProjectListingBySector">
                           <span>Project By Sector</span>
                         </Link>
@@ -192,7 +192,7 @@ class Header extends Component {
                           </li>
                         </ul>
                       </li>
-                      <li class="dropdown">
+                      <li className="dropdown">
                       <Link to="ProjectListingByRegion">
                           <span>Project By Region</span>
                         </Link>

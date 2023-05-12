@@ -1,5 +1,5 @@
 :root {
-  --main-color: #003c5e;
+--main-color: #003c5e;
   --black-color: #000;
   --waymain-color: #041c36;
   --submain-color: #ff7a56;
@@ -2795,4 +2795,9 @@ ul.checboixpackage {
 .p-checkbox .p-checkbox-box.p-highlight {
   border-color: #003c5e !important;
   background: #003c5e !important;
+}
+.error-text {
+  color: #f00;
+  font-size: 12px;
+  text-align: left;
 }

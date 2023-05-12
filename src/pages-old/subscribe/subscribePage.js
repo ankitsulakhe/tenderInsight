@@ -45,9 +45,9 @@ export default function SubscribeData() {
         </div>
       </section>
       <main className="bodyMain">
-        <section id="pricing" class="pricing">
-          <div class="container" data-aos="fade-up">
-            <div class="section-title">
+        <section id="pricing" className="pricing">
+          <div className="container" data-aos="fade-up">
+            <div className="section-title">
               <h2>Pricing</h2>
               <h3>
                 Check our <span>Pricing</span>
@@ -58,13 +58,13 @@ export default function SubscribeData() {
               </p>
             </div>
 
-            <div class="row">
+            <div className="row">
               <div
-                class="col-lg-4 col-md-6"
+                className="col-lg-4 col-md-6"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <div class="box">
+                <div className="box">
                   <h3>Basic Trial</h3>
                   <h4>
                     <sup>USD</sup>99 <span> / 1 month</span>
@@ -80,8 +80,8 @@ export default function SubscribeData() {
                     <li>Access to Historical Tender Data</li>
                     <li>1 User Id </li>
                   </ul>
-                  <div class="btn-wrap">
-                    <a href="#" class="btn-buy">
+                  <div className="btn-wrap">
+                    <a href="#" className="btn-buy">
                       Choose Plan
                     </a>
                   </div>
@@ -89,11 +89,11 @@ export default function SubscribeData() {
               </div>
 
               <div
-                class="col-lg-4 col-md-6 mt-4 mt-md-0"
+                className="col-lg-4 col-md-6 mt-4 mt-md-0"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                <div class="box featured">
+                <div className="box featured">
                   <h3>Standard</h3>
                   <h4>
                     <sup>USD </sup>399<span> / 6 month</span>
@@ -109,8 +109,8 @@ export default function SubscribeData() {
                     <li>Access to Historical Tender Data</li>
                     <li>2 User Id </li>
                   </ul>
-                  <div class="btn-wrap">
-                    <a href="#" class="btn-buy">
+                  <div className="btn-wrap">
+                    <a href="#" className="btn-buy">
                       Choose Plan
                     </a>
                   </div>
@@ -118,11 +118,11 @@ export default function SubscribeData() {
               </div>
 
               <div
-                class="col-lg-4 col-md-6 mt-4 mt-lg-0"
+                className="col-lg-4 col-md-6 mt-4 mt-lg-0"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <div class="box">
+                <div className="box">
                   <h3>Customise Package </h3>
                   <h4>
                     <sup>USD </sup>199<span> / month</span>
@@ -150,8 +150,8 @@ export default function SubscribeData() {
                       );
                     })}
                   </ul>
-                  <div class="btn-wrap">
-                    <a href="#" class="btn-buy">
+                  <div className="btn-wrap">
+                    <a href="#" className="btn-buy">
                       Choose Plan
                     </a>
                   </div>

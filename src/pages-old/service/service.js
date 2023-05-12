@@ -112,140 +112,140 @@ class ServicePage extends Component {
               </div>
             </div>
           </section>
-          <section id="featured-services" class="featured-services section-bg">
-            <div class="container" data-aos="fade-up">
-              <div class="row">
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon">
+          <section id="featured-services" className="featured-services section-bg">
+            <div className="container" data-aos="fade-up">
+              <div className="row">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="100">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">Contract Awards</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     Contract Awards are the notifications about the companies who had won the contracts in the recent past with description of the won contract and other details as and when available.
                     </p>
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="200">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">TendersInfo Research Archives</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     TendersInfo members have access to Research Archives created over the last few years and containing more than 50,00,000 bid opportunities, projects, profiles that are categorized by date, country, sub-sector & key word to assist in backdated research and further help forecasting.
                     </p>
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="300">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">Key Account Manager Service</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     At TendersInfo, a dedicated Key Account Manager is allocated to every member, who on request gathers more information, assists member on any tender or project that they may be interested in (at no additional costs). Key Account Managers try their best to make available to members with the Schedule of Requirements or Scope of work or even a draft copy of the tender document of various tenders before you make an investment in purchasing the tender document.
                     </p>
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">Request For Future Updates</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     TendersInfo members are entitled to 24*7 personalised services for getting more information on any particular Tender/Project of their interest. Members can request for more information or further update on any opportunity of their interest and concerned team will revert them with requested information instantly.
                     </p>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">Personalised Customer Care</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     We establish a regular cadence of calls with our clients to review their business requirements and to ensure those are being met. Adjustments are made throughout the engagement to meet our client's business needs.
                     </p>
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">TenderTrends</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     TenderTrends provides an in-depth view of your Tendering usage, from the number of Tenders viewed to actual downloads of Bid Documents; to usage throughout the length of your contract. We will even provide you an estimated value of the Bids you potentially could have won.
                     </p>
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">Webinars / Training</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     The idea behind organizing webinars and e-round tables is to help the Bid Managers and decision makers from various geographies to connect, collaborate and share business opportunities. We aim to bring the best practices in tendering and Bid Management through the expertise and experience of our speaker partners and also to a large extent that of participant.                    
                     </p>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">Personalised Customer Care</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     We establish a regular cadence of calls with our clients to review their business requirements and to ensure those are being met. Adjustments are made throughout the engagement to meet our client's business needs.
                     </p>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">Selling Database</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                     We provide data as per requirement, in terms of product, sector and geography. We provide company's name, Website, country, contact person, Email Id, Designation, Telephone numbers, Product profile to our clients.
                     </p>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
-                  <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon">
+                <div className="col-md-6 col-sm-12 d-flex align-items-stretch mb-5 text-center">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div className="icon">
                      <img src={imageAbout} className="img-fluid" alt="" />
                     </div>
-                    <h4 class="title">
+                    <h4 className="title">
                       <a href="">Lead Generation</a>
                     </h4>
-                    <p class="description">
+                    <p className="description">
                       We provide leads as per the requirement for each category. We also analyze opportunities, Identify companies for each category, research for right person with his contact details for all companies, building connect strategy, solution design, presentation, drafting emails based on company's profile, product promotions, strategic communication, marketing mailers, and other mass communication. After establishing connects with the companies, we qualify them and share the leads.
                     </p>
                   </div>

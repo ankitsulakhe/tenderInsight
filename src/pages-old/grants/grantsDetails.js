@@ -57,23 +57,23 @@ class TenderDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
+                          <div className="row">
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Donor</h3>
                                 <p>Global Tender Org</p>
                               </div>
                             </div>
                             <div
-                              class="col-md-6 mgbtmxy"
+                              className="col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Contact Information</h3>
                                 <p>
                                   501 Prodinsa Building, Cnr Steve Bhiko and
@@ -82,11 +82,11 @@ class TenderDetails extends Component {
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Location</h3>
                                 <p>012-14400-21071</p>
                               </div>
@@ -112,73 +112,73 @@ class TenderDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
+                          <div className="row">
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>BIG Ref No</h3>
                                 <p>RFQ:238-22-IA</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Title </h3>
                                 <p>Defense Forces</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Type </h3>
                                 <p>RFQ:238-22-IA</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Status</h3>
                                 <p>WorldBank</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Value </h3>
                                 <p>International </p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Type Of Services</h3>
                                 <p>30 Mar 2023</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Sector </h3>
                                 <p>30 Mar 2023</p>
                               </div>
@@ -204,43 +204,43 @@ class TenderDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
+                          <div className="row">
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Deadline</h3>
                                 <p>Laxman Singh</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Duration </h3>
                                 <p>10 - 15 Million</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Attachment</h3>
                                 <p>N/A</p>
                               </div>
                             </div>
                             <div
-                              class="col-lg-3 col-md-6 mgbtmxy"
+                              className="col-lg-3 col-md-6 mgbtmxy"
                               data-aos="fade-up"
                               data-aos-delay="100"
                             >
-                              <div class="box">
+                              <div className="box">
                                 <h3>Post Date</h3>
                                 <p>N/A</p>
                               </div>

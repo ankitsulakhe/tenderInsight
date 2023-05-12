@@ -1,6 +1,6 @@
 import SearchBar from "../../pages-old/searchBar/SearchBar";
-import ForgetPassword from "./ForgetPassword";
-import Login from "./Login";
+import ForgetPassword from "../common/ForgetPassword";
+import Login from "../common/Login";
 
 function HomePageBanner({ data }) {
     return (

@@ -302,10 +302,10 @@ export default function AdvanceSearch() {
                             <OverlayPanel ref={op}>
                               <ul>
                                 <li>Today</li>
-                                <li class="active">Yesterday</li>
-                                <li class="">Last 7 Days</li>
-                                <li class="">Last 15 Days</li>
-                                <li class="">Last 30 Days</li>
+                                <li className="active">Yesterday</li>
+                                <li className="">Last 7 Days</li>
+                                <li className="">Last 15 Days</li>
+                                <li className="">Last 30 Days</li>
                                 <li>This Month</li>
                                 <li>Last Month</li>
                                 <li>Custom Range</li>
@@ -332,10 +332,10 @@ export default function AdvanceSearch() {
                             <OverlayPanel ref={op}>
                               <ul>
                                 <li>Today</li>
-                                <li class="active">Yesterday</li>
-                                <li class="">Last 7 Days</li>
-                                <li class="">Last 15 Days</li>
-                                <li class="">Last 30 Days</li>
+                                <li className="active">Yesterday</li>
+                                <li className="">Last 7 Days</li>
+                                <li className="">Last 15 Days</li>
+                                <li className="">Last 30 Days</li>
                                 <li>This Month</li>
                                 <li>Last Month</li>
                                 <li>Custom Range</li>

@@ -180,7 +180,7 @@ export default function StripedRowsDemo() {
                           <label for="exampleInputEmail1">Free Text</label>
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="Free Text"
@@ -190,7 +190,7 @@ export default function StripedRowsDemo() {
                           <label for="exampleInputEmail1">Free Text</label>
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="Free Text"
@@ -200,7 +200,7 @@ export default function StripedRowsDemo() {
                           <label for="exampleInputEmail1">Free Text</label>
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="Free Text"
@@ -210,7 +210,7 @@ export default function StripedRowsDemo() {
                           <label for="exampleInputEmail1">Free Text</label>
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="Free Text"
@@ -220,7 +220,7 @@ export default function StripedRowsDemo() {
                           <label for="exampleInputEmail1">Free Text</label>
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="Free Text"
@@ -230,7 +230,7 @@ export default function StripedRowsDemo() {
                           <label for="exampleInputEmail1">Free Text</label>
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="Free Text"
@@ -240,7 +240,7 @@ export default function StripedRowsDemo() {
                           <label for="exampleInputEmail1">Free Text</label>
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="Free Text"

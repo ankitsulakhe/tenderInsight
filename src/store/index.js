@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import cmsApi from "./cms/cmsApis";
+import mastersApi from "./masters/mastersApis";
 import { useSelector, useDispatch } from "react-redux";
 import commonSlice from "./common/commonSlice";
 
 const reducers = {
     [commonSlice.name]: commonSlice.reducer,
-    [cmsApi.reducerPath]: cmsApi.reducer
+    [cmsApi.reducerPath]: cmsApi.reducer,
+    [mastersApi.reducerPath]: mastersApi.reducer
 };
 
 const initialState = {};
@@ -18,7 +20,8 @@ export const store = configureStore({
         return getDefaultMiddleware({
             serializableCheck: false
         }).concat([
-            cmsApi.middleware
+            cmsApi.middleware,
+            mastersApi.middleware
         ]);
     },
     devTools: process.env.NODE_ENV !== 'production',

@@ -54,33 +54,33 @@ class ProjectDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                          <div className="row">
+                            <div className="col-lg-12 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Project Name </h3>
                                 <p>Global Tender Org</p>
                               </div>
                             </div>
-                            <div class="col-lg-12 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                            <div className="col-lg-12 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Project Background </h3>
                                 <p>Global Tender Org</p>
                               </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                            <div className="col-lg-4 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Project Id</h3>
                                 <p>RFQ:238-22-IA</p>
                               </div>
                             </div>
-                            <div class="col-md-4 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                            <div className="col-md-4 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Project Location</h3>
                                 <p>Pretoria</p>
                               </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                            <div className="col-lg-4 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Project Status</h3>
                                 <p>Active</p>
                               </div>
@@ -106,15 +106,15 @@ class ProjectDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">                         
-                            <div class="col-lg-6 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                          <div className="row">                         
+                            <div className="col-lg-6 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Project Publishing Date</h3>
                                 <p>RFQ:238-22-IA</p>
                               </div>
                             </div>
-                            <div class="col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                            <div className="col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Estimated Project Completion Date</h3>
                                 <p>30 Mar 2023</p>
                               </div>
@@ -140,21 +140,21 @@ class ProjectDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
-                            <div class="col-lg-3 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                          <div className="row">
+                            <div className="col-lg-3 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Client Name</h3>
                                 <p>Laxman Singh</p>
                               </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                            <div className="col-lg-6 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Client Address</h3>
                                 <p>501 Prodinsa Building, Bhiko and Pretorius Street - Arcadia - Pretoria - 0001</p>
                               </div>
                             </div>
-                            <div class="col-lg-3 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                            <div className="col-lg-3 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Financer Name</h3>
                                 <p>N/A</p>
                               </div>
@@ -178,15 +178,15 @@ class ProjectDetails extends Component {
                         data-bs-parent=".faq-list"
                       >
                         <div className="pricing pdlr10">
-                          <div class="row">
-                            <div class="col-lg-4 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                          <div className="row">
+                            <div className="col-lg-4 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>Sector</h3>
                                 <p>Chemical Tenders Project</p>
                               </div>
                             </div>
-                            <div class="col-lg-5 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
-                              <div class="box">
+                            <div className="col-lg-5 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                              <div className="box">
                                 <h3>CPV</h3>
                                 <p>Pretoria - 0001</p>
                               </div>

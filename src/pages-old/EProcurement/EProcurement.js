@@ -38,15 +38,15 @@ class eprocurement extends Component {
 
           <section id="about" className="about section-bg iconPlost">
             <div className="container" data-aos="fade-up">
-              <div class="row">
+              <div className="row">
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch"
                   data-aos="zoom-in"
                   data-aos-delay="100"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bxl-dribbble"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bxl-dribbble"></i>
                     </div>
                     <h4>
                       <a href="">Plan 2 Paye</a>
@@ -55,13 +55,13 @@ class eprocurement extends Component {
                 </div>
 
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
                   data-aos="zoom-in"
                   data-aos-delay="200"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bx-file"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bx-file"></i>
                     </div>
                     <h4>
                       <a href="">Sourcing</a>
@@ -70,13 +70,13 @@ class eprocurement extends Component {
                 </div>
 
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
                   data-aos="zoom-in"
                   data-aos-delay="300"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bx-tachometer"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bx-tachometer"></i>
                     </div>
                     <h4>
                       <a href="">e - Rfx</a>
@@ -85,13 +85,13 @@ class eprocurement extends Component {
                 </div>
 
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
                   data-aos="zoom-in"
                   data-aos-delay="100"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bx-world"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bx-world"></i>
                     </div>
                     <h4>
                       <a href="">e - Catalogue Management</a>
@@ -100,13 +100,13 @@ class eprocurement extends Component {
                 </div>
 
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
                   data-aos="zoom-in"
                   data-aos-delay="200"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bx-slideshow"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bx-slideshow"></i>
                     </div>
                     <h4>
                       <a href="">e - Invoices Management</a>
@@ -115,13 +115,13 @@ class eprocurement extends Component {
                 </div>
 
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
                   data-aos="zoom-in"
                   data-aos-delay="300"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bx-arch"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bx-arch"></i>
                     </div>
                     <h4>
                       <a href="">Budget Management</a>
@@ -129,13 +129,13 @@ class eprocurement extends Component {
                   </div>
                 </div>
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
                   data-aos="zoom-in"
                   data-aos-delay="300"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bx-arch"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bx-arch"></i>
                     </div>
                     <h4>
                       <a href="">PO/Contract Management</a>
@@ -143,13 +143,13 @@ class eprocurement extends Component {
                   </div>
                 </div>
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
                   data-aos="zoom-in"
                   data-aos-delay="300"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bx-arch"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bx-arch"></i>
                     </div>
                     <h4>
                       <a href="">Supplier Management</a>
@@ -157,13 +157,13 @@ class eprocurement extends Component {
                   </div>
                 </div>
                 <div
-                  class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+                  className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
                   data-aos="zoom-in"
                   data-aos-delay="300"
                 >
-                  <div class="icon-box">
-                    <div class="icon">
-                      <i class="bx bx-arch"></i>
+                  <div className="icon-box">
+                    <div className="icon">
+                      <i className="bx bx-arch"></i>
                     </div>
                     <h4>
                       <a href="">eDisposals</a>
@@ -253,7 +253,7 @@ class eprocurement extends Component {
                             <div className="form-group mb-40 wid-50">
                               <label>Country</label>
                               <select
-                                class="form-control customInput customInputIcon"
+                                className="form-control customInput customInputIcon"
                                 id="select1"
                                 name="type"
                               >

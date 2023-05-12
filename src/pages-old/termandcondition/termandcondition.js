@@ -17,8 +17,8 @@ class termandcondition extends Component {
           </div>
         </section>
         <main className="bodyMain">
-        <section id="featured-services" class="featured-services">
-      <div class="container" data-aos="fade-up">
+        <section id="featured-services" className="featured-services">
+      <div className="container" data-aos="fade-up">
       <div className="section-title fullwidth">
         <h2>Term & Condition</h2>                
         <p>These terms and conditions ("the Terms") govern your use of this Website 

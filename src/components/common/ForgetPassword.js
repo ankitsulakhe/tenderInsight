@@ -1,13 +1,11 @@
-export default function ForgetPassword() {
+export default function ForgetPassword({ forget_password, show, handleShowPassword }) {
     return (
         <div
-            className="mainBoxLogin commonBoxShadow d-none"
-            id="forgotBox"
+            className={`mainBoxLogin commonBoxShadow ${show ? "" : "d-none"}`}
         >
             <div className="section-title-p text-center loginBox">
                 <p className="wid100">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod.
+                    {forget_password}
                 </p>
                 <form
                     method="post"
@@ -32,7 +30,7 @@ export default function ForgetPassword() {
                         </button>
                     </div>
                 </form>
-                <span className="d-block forgotLink" id="backloginbtn">
+                <span className="d-block forgotLink" onClick={handleShowPassword}>
                     Back to login{" "}
                 </span>
             </div>
