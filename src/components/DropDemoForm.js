@@ -36,15 +36,10 @@ export default function DropDemoForm(props) {
         },
         onSubmit: (values) => {
             onSubmit(values);
+            formik.resetForm();
         },
         validationSchema: validateAdd,
     });
-
-    useEffect(() => {
-        if (response) {
-            formik.resetForm();
-        }
-    }, [response, formik])
 
     return (
         <form

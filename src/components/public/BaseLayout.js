@@ -4,12 +4,21 @@ import Footer from "../layouts/footer";
 
 const BaseLayout = (props) => {
 
-    const { ChildComponent, social_links, contactDetails } = props;
+    const { ChildComponent, social_links, contactDetails,
+        sectors_data, sectors_data_loading,
+        regions_data, regions_data_loading,
+        cpv_codes_data, cpv_codes_data_loading,
+    } = props;
 
     return (
         <div className='wrapper'>
             <Topbar email={contactDetails?.email} phone={contactDetails?.phone} />
-            <Header />
+            <Header
+                sectors_data={sectors_data} sectors_data_loading={sectors_data_loading}
+                regions_data={regions_data} regions_data_loading={regions_data_loading}
+                cpv_codes_data={cpv_codes_data} cpv_codes_data_loading={cpv_codes_data_loading}
+                navigate={props.navigate}
+            />
 
             <ChildComponent />
 

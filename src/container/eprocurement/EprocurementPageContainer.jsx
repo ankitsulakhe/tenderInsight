@@ -18,6 +18,7 @@ class EprocurementPageContainer extends React.Component {
     render() {
         const { data, isLoading } = this.props.eprocurment_page;
         const { drop_demo_submit_loading, drop_demo_response } = this.props;
+
         if (isLoading) return <FullScreenLoadingGrow />;
 
         return (

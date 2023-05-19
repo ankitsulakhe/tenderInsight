@@ -1,17 +1,21 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import api from "../../../store/cms/cmsApis";
+import cmsApis from "../../../store/cms/cmsApis";
+import mastersApis from "../../../store/masters/mastersApis";
 
 const mapStateToProps = (state) => {
   return {
-    social_links: api.endpoints.getSocialLinks.select({ type: "social_links" })(state),
-    contact_details: api.endpoints.getContactDetails.select({ type: "contact_details" })(state),
+    social_links: cmsApis.endpoints.getSocialLinks.select({ type: "social_links" })(state),
+    contact_details: cmsApis.endpoints.getContactDetails.select({ type: "contact_details" })(state)
   };
 };
 
 const mapDispatch = {
-  getSocialLinks: api.endpoints.getSocialLinks.initiate,
-  getContactDetails: api.endpoints.getContactDetails.initiate,
+  getSocialLinks: cmsApis.endpoints.getSocialLinks.initiate,
+  getContactDetails: cmsApis.endpoints.getContactDetails.initiate,
+  getSectorsData: mastersApis.endpoints.getSectorsData.initiate,
+  getRegionsData: mastersApis.endpoints.getRegionsData.initiate,
+  getCpvCodesData: mastersApis.endpoints.getCpvCodesData.initiate,
 };
 
 const mapDispatchToProps = (dispatch) =>

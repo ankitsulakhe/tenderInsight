@@ -1,7 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({
+    sectors_data, sectors_data_loading,
+    regions_data, regions_data_loading,
+    cpv_codes_data, cpv_codes_data_loading,
+    navigate
+}) {
+
+    const handleActionClick = (e, payload, type, url) => {
+        e.preventDefault();
+        navigate(url, { state: { [type]: [payload] } })
+    }
     return (
         <header id="header" className="d-flex align-items-center">
             <div className="container d-flex align-items-center justify-content-between">
@@ -23,88 +33,81 @@ function Header() {
                             </Link>
                             <ul>
                                 <li className="dropdown">
-                                    <Link to="TenderListingBySector">
+                                    <Link to={"/tenders-list"}>
                                         <span>Tenders By Sector</span>
                                     </Link>
                                     <ul>
+                                        {
+                                            sectors_data_loading
+                                                ?
+                                                <>Loading...</>
+                                                :
+                                                sectors_data && sectors_data.map(function (val, ind) {
+                                                    return (
+                                                        <li key={ind}>
+                                                            <Link to={"/tenders-list"} onClick={(e) => handleActionClick(e, val, "sectorVal", "/tenders-list")}>
+                                                                {val.name}
+                                                            </Link>
+                                                        </li>
+                                                    )
+                                                })
+                                        }
                                         <li>
-                                            <Link to="TenderDetails">
-                                                Defence
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">
-                                                Telecommunication
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">
-                                                Construction
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">
-                                                Aviation
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="AllTenderBySector" className="AllcatLink">
+                                            <Link to={"/tenders-by-sectors"} className="AllcatLink">
                                                 More...
                                             </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="dropdown">
-                                    <Link to="TenderListingByRegion">
+                                    <Link to={"/tenders-list"}>
                                         <span>Tenders By Region</span>
                                     </Link>
                                     <ul>
+                                        {
+                                            regions_data_loading
+                                                ?
+                                                <>Loading...</>
+                                                :
+                                                regions_data && regions_data.map(function (val, ind) {
+                                                    return (
+                                                        <li key={ind}>
+                                                            <Link to={"/tenders-list"} onClick={(e) => handleActionClick(e, val, "regionsVal", "/tenders-list")}>
+                                                                {val.name}
+                                                            </Link>
+                                                        </li>
+                                                    )
+                                                })
+                                        }
                                         <li>
-                                            <Link to="TenderDetails">Africa Tenders</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">Asia Pacific Tenders</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">Balkan Region Tenders</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">Europe Tenders</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="AllTenderByRegion" className="AllcatLink">
+                                            <Link to={"/tenders-by-regions"} className="AllcatLink">
                                                 More...
                                             </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="dropdown">
-                                    <Link to="TenderListingByCPV">
+                                    <Link to={"/tenders-list"}>
                                         <span>Tenders By Products/Services/CPV</span>
                                     </Link>
                                     <ul>
+                                        {
+                                            cpv_codes_data_loading
+                                                ?
+                                                <>Loading...</>
+                                                :
+                                                cpv_codes_data && cpv_codes_data.map(function (val, ind) {
+                                                    return (
+                                                        <li key={ind}>
+                                                            <Link to={"/tenders-list"} onClick={(e) => handleActionClick(e, val, "cpvCodesVal", "/tenders-list")}>
+                                                                {val.code}
+                                                            </Link>
+                                                        </li>
+                                                    )
+                                                })
+                                        }
                                         <li>
-                                            <Link to="TenderDetails">
-                                                Chemical products Tenders
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">
-                                                Construction materials Tenders
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">
-                                                Fabricated products and materials Tenders
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="TenderDetails">
-                                                Road construction works Tenders
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="AllTenderByCPV" className="AllcatLink">
+                                            <Link to={"/tenders-by-cpvcodes"} className="AllcatLink">
                                                 More...
                                             </Link>
                                         </li>
@@ -118,48 +121,54 @@ function Header() {
                             </Link>
                             <ul>
                                 <li className="dropdown">
-                                    <Link to="ProjectListingBySector">
+                                    <Link to={"/projects-list"}>
                                         <span>Project By Sector</span>
                                     </Link>
                                     <ul>
+                                        {
+                                            sectors_data_loading
+                                                ?
+                                                <>Loading...</>
+                                                :
+                                                sectors_data && sectors_data.map(function (val, ind) {
+                                                    return (
+                                                        <li key={ind}>
+                                                            <Link to={"/projects-list"} onClick={(e) => handleActionClick(e, val, "sectorVal", "/projects-list")}>
+                                                                {val.name}
+                                                            </Link>
+                                                        </li>
+                                                    )
+                                                })
+                                        }
                                         <li>
-                                            <Link to="ProjectDetails">Defence</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="ProjectDetails">Telecommunication</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="ProjectDetails">Construction</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="ProjectDetails">Aviation</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="AllProjectBySector" className="AllcatLink">
+                                            <Link to={"/projects-by-sectors"} className="AllcatLink">
                                                 More...
                                             </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="dropdown">
-                                    <Link to="ProjectListingByRegion">
+                                    <Link to={"/projects-list"}>
                                         <span>Project By Region</span>
                                     </Link>
                                     <ul>
+                                        {
+                                            regions_data_loading
+                                                ?
+                                                <>Loading...</>
+                                                :
+                                                regions_data && regions_data.map(function (val, ind) {
+                                                    return (
+                                                        <li key={ind}>
+                                                            <Link to={"/projects-list"} onClick={(e) => handleActionClick(e, val, "regionsVal", "/projects-list")}>
+                                                                {val.name}
+                                                            </Link>
+                                                        </li>
+                                                    )
+                                                })
+                                        }
                                         <li>
-                                            <Link to="ProjectDetails">Africa Projects</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="ProjectDetails">Asia Pacific Projects</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="ProjectDetails">Balkan Region Projects</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="ProjectDetails">Europe Projects</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="AllProjectByRegion" className="AllcatLink">
+                                            <Link to={"/projects-by-regions"} className="AllcatLink">
                                                 More...
                                             </Link>
                                         </li>
@@ -168,17 +177,17 @@ function Header() {
                             </ul>
                         </li>
                         <li>
-                            <Link to="contaractAwardDetails">
+                            <Link to={"contract-awards-list"}>
                                 Contract Awards
                             </Link>
                         </li>
                         <li>
-                            <Link to="grantsDetails">
+                            <Link to={"grants-list"}>
                                 Grants
                             </Link>
                         </li>
                         <li>
-                            <Link to="ServicePage">
+                            <Link to="service">
                                 Services
                             </Link>
                         </li>

@@ -1,14 +1,6 @@
 import { Spinner } from "react-bootstrap";
 
-export const Button = (props) => {
-    const {
-        className,
-        type,
-        id,
-        onClick = () => { },
-        value,
-        loading
-    } = props;
+export const Button = ({ className, type, id, onClick = () => { }, value, loading }) => {
     return (
         <button title={value} className={className} type={type} id={id} onClick={onClick} disabled={loading ? true : false} >
             {

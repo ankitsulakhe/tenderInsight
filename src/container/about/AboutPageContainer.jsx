@@ -10,8 +10,6 @@ class AboutPageContainer extends React.Component {
     render() {
         const { data, isLoading } = this.props.about_us_page;
 
-        console.log(data);
-
         if (isLoading) return <FullScreenLoadingGrow />;
 
         return (
