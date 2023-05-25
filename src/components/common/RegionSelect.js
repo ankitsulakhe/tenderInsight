@@ -3,7 +3,7 @@ import { AutoComplete } from "primereact/autocomplete";
 import { Fragment, useState } from "react";
 
 
-export default function RegionSelect({ getRegionsData, name, multiple, onChange, id, value }) {
+export default function RegionSelect({ getRegionsData, name, multiple, onChange, id, value, placeholder = "Type regions here" }) {
     const [records, setRecords] = useState([]);
 
     const fetchFunction = async (event) => {
@@ -24,20 +24,17 @@ export default function RegionSelect({ getRegionsData, name, multiple, onChange,
 
 
     return (
-        <Fragment>
-            <AutoComplete
-                id={id}
-                name={name}
-                field={"name"}
-                multiple={multiple}
-                value={value}
-                suggestions={records}
-                completeMethod={fetchFunction}
-                onChange={onChange}
-                className="w-100"
-                panelClassName="w-100 form-control"
-                placeholder="Type sector name"
-            />
-        </Fragment>
+        <AutoComplete
+            id={id}
+            name={name}
+            field={"name"}
+            multiple={multiple}
+            value={value}
+            suggestions={records}
+            completeMethod={fetchFunction}
+            onChange={onChange}
+            placeholder={placeholder}
+            className="w-100"
+        />
     )
 }

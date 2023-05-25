@@ -1,20 +1,20 @@
 
 import { AutoComplete } from "primereact/autocomplete";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 
-export default function SectorSelect({ getSectorsData, name, multiple, onChange, id, value }) {
+export default function StateSelect({ getStatesData, name, multiple, onChange, id, value, placeholder = "Type state here" }) {
     const [records, setRecords] = useState([]);
 
     const fetchFunction = async (event) => {
 
         setTimeout(async () => {
             let keyword = event.query.toLowerCase();
-            let res = await getSectorsData({
+            let res = await getStatesData({
                 pageNo: "0",
                 limit: "10",
                 sortBy: "1",
-                sortField: "name",
+                sortField: "code",
                 keyword: keyword
             })
             setRecords(res.data?.result || [])
@@ -33,8 +33,7 @@ export default function SectorSelect({ getSectorsData, name, multiple, onChange,
             suggestions={records}
             completeMethod={fetchFunction}
             onChange={onChange}
-            placeholder="Type sector name"
-            className="w-100"
+            placeholder={placeholder}
         />
     )
 }

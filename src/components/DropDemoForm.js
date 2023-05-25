@@ -158,7 +158,7 @@ export default function DropDemoForm(props) {
                         onChange={formik.handleChange("country")}
                         value={formik?.values?.country || ""}
                     >
-                        <option value='' selected disabled>Country</option>
+                        <option value='' disabled>Country</option>
                         {
                             countryRecord.length > 0 && countryRecord.map(function (row, ind) {
                                 return (

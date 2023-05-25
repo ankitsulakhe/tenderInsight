@@ -6,10 +6,9 @@ import CpvCodeSelect from "./CpvCodeSelect";
 import SectorSelect from "./SectorSelect";
 import RegionSelect from "./RegionSelect";
 import FundingAgencySelect from "./FundingAgencySelect";
+import { noticeTypeConst } from "../../helpers/constants";
 
 export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, sectorVal = [], cpvCodesVal = [], regionsVal = [], noticeType }) {
-
-    const noticeTypetems = ["Tender", "Project", "Contract Award", "Grants"];
 
     const handleSubmit = (values) => {
         let payload = { ...values };
@@ -126,7 +125,7 @@ export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData,
                             id="notice_type"
                             value={formik?.values?.notice_type || noticeType}
                             onChange={formik.handleChange("notice_type")}
-                            options={noticeTypetems}
+                            options={noticeTypeConst}
                             placeholder="Select Notice type"
                             className="w-full md:w-14rem"
                         />

@@ -104,7 +104,7 @@ class LoginPage extends Component {
                                                     <div className="form-group mb-40 wid-50">
                                                         <label>Country</label>
                                                         <select className="form-control customInput customInputIcon" id="select1" name="type">
-                                                            <option value="" selected disabled>Country</option>
+                                                            <option value="" disabled>Country</option>
                                                             <option value="Africa">Africa </option>
                                                             <option value="UAE">UAE</option>
                                                             <option value="India">India</option>                                            

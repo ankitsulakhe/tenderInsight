@@ -257,7 +257,7 @@ class eprocurement extends Component {
                                 id="select1"
                                 name="type"
                               >
-                                <option value="" selected disabled>
+                                <option value="" disabled>
                                   Country
                                 </option>
                                 <option value="Africa">Africa </option>

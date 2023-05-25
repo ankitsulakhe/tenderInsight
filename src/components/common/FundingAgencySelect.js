@@ -24,20 +24,18 @@ export default function FundingAgencySelect({ getFundingAgencyData, name, multip
 
 
     return (
-        <Fragment>
-            <AutoComplete
-                id={id}
-                name={name}
-                field={"title"}
-                multiple={multiple}
-                value={value}
-                suggestions={records}
-                completeMethod={fetchFunction}
-                onChange={onChange}
-                className="w-100"
-                panelClassName="w-100 form-control"
-                placeholder="Type code or keyword..."
-            />
-        </Fragment>
+        <AutoComplete
+            id={id}
+            name={name}
+            field={"title"}
+            multiple={multiple}
+            value={value}
+            suggestions={records}
+            completeMethod={fetchFunction}
+            onChange={onChange}
+            className="w-100"
+            panelClassName="w-100 form-control"
+            placeholder="Type code or keyword..."
+        />
     )
 }

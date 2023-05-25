@@ -9,6 +9,7 @@ const EprocurementPage = lazy(() =>
 );
 const ContactUsPage = lazy(() => import("../pages/public/ContactUsPage.jsx"));
 const ServicePage = lazy(() => import("../pages/public/ServicePage.jsx"));
+const AdvanceSearch = lazy(() => import("../pages/public/AdvanceSearch.jsx"));
 
 const TendersBySectors = lazy(() =>
     import("../pages/tenders/TendersBySectors.jsx")
@@ -62,6 +63,9 @@ const PublicRoutes = () => {
             <Route path='/eprocurement' element={<EprocurementPage />} />
             <Route path='/contact' element={<ContactUsPage />} />
             <Route path='/service' element={<ServicePage />} />
+            
+            <Route path='/advance-search' element={<AdvanceSearch />} />
+
             <Route path='/tenders-by-sectors' element={<TendersBySectors />} />
             <Route path='/tenders-by-regions' element={<TendersByRegions />} />
             <Route

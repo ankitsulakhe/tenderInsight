@@ -84,6 +84,31 @@ export const sectorParser = (response) => {
     }
 }
 
+export const statesParser = (response) => {
+    try {
+        if (response?.result) {
+            response = response.result;
+        }
+        if (!response) {
+            return [];
+        }
+
+        response.result = response.result.map(function (val) {
+            let obj = {
+                _id: val?._id,
+                name: val?.name,
+                code: val?.code
+            }
+            return obj;
+        })
+
+        return response;
+
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
 export const regionParser = (response) => {
     try {
         if (response?.result) {

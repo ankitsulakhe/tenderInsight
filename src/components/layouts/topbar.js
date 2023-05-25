@@ -22,7 +22,7 @@ function Topbar({ phone, email }) {
                 <div className="social-links d-none d-md-flex align-items-center">
                     <ul className="d-flex topBarMenu">
                         <li>
-                            <Link to="advanceSearch" className="nav-link scrollto ">
+                            <Link to={'/advance-search'} className="nav-link scrollto ">
                                 Advanced Search
                             </Link>
                         </li>

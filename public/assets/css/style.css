@@ -2716,6 +2716,11 @@ div#advabceSearch button.commonBtn.loginBtn {
     cursor: pointer;
 }
 
+.p-overlaypanel .p-overlaypanel-content ul li.active {
+    background: #e4f1f8;
+    cursor: pointer;
+}
+
 div#advabceSearch .form-group.mb-40.wid-30 label {
     font-size: 15px;
     text-transform: capitalize;
@@ -2843,4 +2848,11 @@ ul.checboixpackage {
 }
 .cursor-not-allowed {
     cursor: not-allowed !important;
+}
+
+.w-90 {
+    width: 90% !important;
+}
+.b-0 {
+    border: 0 !important;
 }
