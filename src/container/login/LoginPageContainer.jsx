@@ -3,6 +3,7 @@ import FullScreenLoadingGrow from "../../components/common/FullScreenLoadingGrow
 import BreadCrumbs from "../../components/common/BreadCrumbs";
 import LoginPageComponent from "../../components/LoginPageComponent";
 import RegisterComponent from "../../components/RegisterComponent";
+import { isAuth } from "../../helpers/cookies";
 
 class LoginPageContainer extends React.Component {
     constructor() {
@@ -12,7 +13,11 @@ class LoginPageContainer extends React.Component {
         };
     }
     componentDidMount() {
+        if (isAuth()) {
+            window.location.href = "/";
+        }
         this.props.getAuthRecord({ type: "auth_record" });
+        this.props.getCountryData();
     }
 
     handleShowPassword = () => {
@@ -46,6 +51,7 @@ class LoginPageContainer extends React.Component {
                                         data?.register_description
                                     }
                                     register_title={data?.register_title}
+                                    countryData={this.props.country_all?.data || []}
                                 />
                             </div>
                         </div>

@@ -7,7 +7,7 @@ import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
-export default function ContractAwardsList({ getRegionsData, getSectorsData, getCpvCodesData, data, loading, fetchContractAwards }) {
+export default function ContractAwardsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchContractAwards }) {
     const location = useLocation();
 
     const handleFilter = (payload, extra = {}) => {
@@ -36,6 +36,7 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
                         getRegionsData={getRegionsData}
                         getSectorsData={getSectorsData}
                         getCpvCodesData={getCpvCodesData}
+                        getFundingAgencyData={getFundingAgencyData}
                         onSubmit={(d) => handleFilter({}, d)}
                         noticeType="Contract Award"
                         {...location.state}

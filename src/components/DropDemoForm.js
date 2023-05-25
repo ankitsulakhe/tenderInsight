@@ -151,7 +151,13 @@ export default function DropDemoForm(props) {
                 </div>
                 <div className='form-group mb-40 wid-50'>
                     <label>Country</label>
-                    <select className='form-control customInput customInputIcon' id='select1' name='type' defaultValue={""}>
+                    <select
+                        className='form-control customInput customInputIcon'
+                        id='country'
+                        name="country"
+                        onChange={formik.handleChange("country")}
+                        value={formik?.values?.country || ""}
+                    >
                         <option value='' selected disabled>Country</option>
                         {
                             countryRecord.length > 0 && countryRecord.map(function (row, ind) {

@@ -51,7 +51,7 @@ class ContractAwardsDetailsPageContainer extends React.Component {
                         <div className='container' data-aos='fade-up'>
                             <div className='section-title sectionList'>
                                 <h3>
-                                    ContractAward <span>Information</span>
+                                    Contract Award <span>Information</span>
                                 </h3>
                                 <p>
                                     {

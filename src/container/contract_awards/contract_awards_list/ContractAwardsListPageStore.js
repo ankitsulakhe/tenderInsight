@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
 const mapDispatch = {
     getSectorsData: mastersApis.endpoints.getSectorsData.initiate,
     getCpvCodesData: mastersApis.endpoints.getCpvCodesData.initiate,
+    getFundingAgencyData: mastersApis.endpoints.getFundingAgencyData.initiate,
     getRegionsData: mastersApis.endpoints.getRegionsData.initiate,
     getContractAwardsData: mastersApis.endpoints.getContractAwardsData.initiate
 };

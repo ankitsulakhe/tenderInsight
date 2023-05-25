@@ -15,11 +15,7 @@ function Index() {
         <>
             <Router>
                 <Routes>
-                    {/* {isAuth() ? (
-                        <Route path="/*" element={<PublicRoutes />} />
-                    ) : ( */}
-                        <Route path="/*" element={<PublicLayout />} />
-                    {/* )} */}
+                    <Route path="/*" element={<PublicLayout />} />
                     <Route path="*" element={<Navigate replace to="/" />} />
                 </Routes>
             </Router>

@@ -98,7 +98,7 @@ export default function NonAuthContractAwardsDetails(props) {
                             >
                                 <div className="box">
                                     <h3>CPV</h3>
-                                    <p>{contract_awards_data?.cpv_code}</p>
+                                    <p>{contract_awards_data?.cpv_codes}</p>
                                 </div>
                             </div>
                             <div

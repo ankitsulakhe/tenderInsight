@@ -5,8 +5,9 @@ import { Dropdown } from "primereact/dropdown";
 import CpvCodeSelect from "./CpvCodeSelect";
 import SectorSelect from "./SectorSelect";
 import RegionSelect from "./RegionSelect";
+import FundingAgencySelect from "./FundingAgencySelect";
 
-export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData, getSectorsData, getCpvCodesData, sectorVal = [], cpvCodesVal = [], regionsVal = [], noticeType }) {
+export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, sectorVal = [], cpvCodesVal = [], regionsVal = [], noticeType }) {
 
     const noticeTypetems = ["Tender", "Project", "Contract Award", "Grants"];
 
@@ -20,7 +21,7 @@ export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData,
             return val.name
         }).join(",");
         payload.cpv_codes = payload.cpv_codes && payload.cpv_codes.map((val) => {
-            return val.name
+            return val.code
         }).join(",");
 
         onSubmit(payload);
@@ -134,14 +135,13 @@ export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData,
                         <label htmlFor='funding_agency'>
                             Funding Agency
                         </label>
-                        <Input
-                            type='text'
-                            className='form-control'
-                            id='funding_agency'
+                        <FundingAgencySelect
                             name="funding_agency"
-                            placeholder='Enter funding agency'
+                            id="funding_agency"
                             onChange={formik.handleChange("funding_agency")}
-                            value={formik?.values?.funding_agency || ""}
+                            value={formik?.values?.funding_agency || []}
+                            multiple={true}
+                            getFundingAgencyData={getFundingAgencyData}
                         />
                     </div>
                     <div className='text-center'>

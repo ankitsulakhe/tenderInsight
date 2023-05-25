@@ -28,6 +28,30 @@ export const cpvCodeParser = (response) => {
     }
 }
 
+export const fundingAgencyParser = (response) => {
+    try {
+        if (response?.result) {
+            response = response.result;
+        }
+        if (!response) {
+            return [];
+        }
+
+        response.result = response.result.map(function (val) {
+            let obj = {
+                _id: val?._id,
+                title: val?.title,
+            }
+            return obj;
+        })
+
+        return response;
+
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
 export const sectorParser = (response) => {
     try {
         if (response?.result) {
@@ -41,6 +65,7 @@ export const sectorParser = (response) => {
             let obj = {
                 _id: val?._id,
                 name: val?.name,
+                icon: val?.icon,
                 code: val?.code
             }
             if (response?.by_tenders_count) {
@@ -107,7 +132,9 @@ export const tenderDataParser = (response) => {
                 description: get(val, "description", ""),
                 published_date: get(val, "published_date", ""),
                 big_ref_no: get(val, "big_ref_no", ""),
-                sector: get(val, "sector.name", ""),
+                sectors: get(val, "sectors", ""),
+                regions: get(val, "regions", ""),
+                cpv_codes: get(val, "cpv_codes", "")
             }
         })
 
@@ -153,7 +180,9 @@ export const projectDataParser = (response) => {
                 project_location: get(val, "project_location", "N.A."),
                 project_name: get(val, "project_name", ""),
                 project_publishing_date: get(val, "project_publishing_date", "N.A."),
-                sector: get(val, "sector", "")
+                sectors: get(val, "sectors", ""),
+                regions: get(val, "regions", ""),
+                cpv_codes: get(val, "cpv_codes", "")
             }
         })
 
@@ -196,6 +225,8 @@ export const contractAwardDataParser = (response) => {
                 project_location: get(val, "project_location", ""),
                 big_ref_no: get(val, "big_ref_no", ""),
                 sectors: get(val, "sectors", ""),
+                regions: get(val, "regions", ""),
+                cpv_codes: get(val, "cpv_codes", ""),
                 description: get(val, "description", ""),
                 contractor_details: get(val, "contractor_details", ""),
                 awards_publish_date: get(val, "awards_publish_date", "")
@@ -240,7 +271,7 @@ export const grantsDataParser = (response) => {
                 _id: get(val, "_id", ""),
                 location: get(val, "location", ""),
                 big_ref_no: get(val, "big_ref_no", ""),
-                sector: get(val, "sector", ""),
+                sectors: get(val, "sectors", ""),
                 title: get(val, "title", ""),
                 post_date: get(val, "post_date", ""),
                 deadline: get(val, "deadline", "")

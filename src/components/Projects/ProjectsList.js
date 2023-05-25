@@ -7,7 +7,7 @@ import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
-export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCodesData, data, loading, fetchProjects }) {
+export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchProjects }) {
     const location = useLocation();
 
     const handleFilter = (payload, extra = {}) => {
@@ -36,6 +36,7 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
                         getRegionsData={getRegionsData}
                         getSectorsData={getSectorsData}
                         getCpvCodesData={getCpvCodesData}
+                        getFundingAgencyData={getFundingAgencyData}
                         onSubmit={(d) => handleFilter({}, d)}
                         noticeType={"Project"}
                         {...location.state}
@@ -74,7 +75,7 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='sector'
+                                        field='sectors'
                                         sortable
                                         header='Project Sector'
                                     ></Column>

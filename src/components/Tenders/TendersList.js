@@ -7,7 +7,7 @@ import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
-export default function TendersList({ getRegionsData, getSectorsData, getCpvCodesData, data, loading, fetchTenders }) {
+export default function TendersList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchTenders }) {
     const location = useLocation();
 
     const handleFilter = (payload, extra = {}) => {
@@ -36,8 +36,9 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
                         getRegionsData={getRegionsData}
                         getSectorsData={getSectorsData}
                         getCpvCodesData={getCpvCodesData}
+                        getFundingAgencyData={getFundingAgencyData}
                         onSubmit={(d) => handleFilter({}, d)}
-                        noticeType={"Tenders"}
+                        noticeType={"Tender"}
                         {...location.state}
                     />
                 </div>
@@ -74,9 +75,9 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='sector'
+                                        field='sectors'
                                         sortable
-                                        header='Sector'
+                                        header='Sectors'
                                     ></Column>
                                     <Column
                                         className='TableHeader'

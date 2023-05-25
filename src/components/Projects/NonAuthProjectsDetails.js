@@ -111,13 +111,13 @@ export default function NonAuthProjectsDetails(props) {
                             <div className="col-lg-4 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
                                 <div className="box">
                                     <h3>Sector</h3>
-                                    <p>{projects_data?.sector}</p>
+                                    <p>{projects_data?.sectors}</p>
                                 </div>
                             </div>
                             <div className="col-lg-5 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
                                 <div className="box">
                                     <h3>CPV</h3>
-                                    <p>{projects_data?.cpv_code}</p>
+                                    <p>{projects_data?.cpv_codes}</p>
                                 </div>
                             </div>
                         </div>

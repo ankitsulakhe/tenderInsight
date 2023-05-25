@@ -64,7 +64,7 @@ export default function NonAuthGrantsDetails(props) {
                             >
                                 <div className="box">
                                     <h3>Sector </h3>
-                                    <p>{grants_data?.sector}</p>
+                                    <p>{grants_data?.sectors}</p>
                                 </div>
                             </div>
                         </div>

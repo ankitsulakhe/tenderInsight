@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { isAuth, signout } from "../../helpers/cookies";
 
 function Topbar({ phone, email }) {
+    const handleSignOut = (e) => {
+        e.preventDefault();
+
+        signout(() => window.location.reload());
+    }
     return (
         <section id="topbar" className="d-flex align-items-center">
             <div className="container d-flex justify-content-center justify-content-md-between">
@@ -35,11 +41,22 @@ function Topbar({ phone, email }) {
                                 Subscribe
                             </Link>
                         </li>
-                        <li>
-                            <Link to="login" className="nav-link scrollto ">
-                                Login / Register
-                            </Link>
-                        </li>
+                        {
+                            isAuth()
+                                ?
+                                <li>
+                                    <Link to="/" onClick={(e) => handleSignOut(e)} className="nav-link scrollto ">
+                                        Logout
+                                    </Link>
+                                </li>
+                                :
+                                <li>
+                                    <Link to="login" className="nav-link scrollto ">
+                                        Login / Register
+                                    </Link>
+                                </li>
+                        }
+
                     </ul>
                 </div>
             </div>

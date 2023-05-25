@@ -55,8 +55,11 @@ export const updateLocalStorage = (key, value, next) => {
 
 // Access user info from localstorage
 export const isAuth = () => {
-    if (window !== "undefined") {
-        return false
+    const cookieChecked = getCookie("token");
+    if (cookieChecked) {
+        return true;
+    } else {
+        return false;
     }
 };
 

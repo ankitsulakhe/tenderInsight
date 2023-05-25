@@ -9,7 +9,7 @@ export default function GlobalTenders({ row }) {
                     return (
                         <div className="icon-box tabsIcon" key={ind}>
                             <div className="tabListHeader">
-                                <h4>{val?.sector?.name}</h4>
+                                <h4>{val?.sectors}</h4>
                             </div>
                             <div className="tablistbody">
                                 <h4>

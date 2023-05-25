@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
 import { baseUrl } from "../../helpers/constants";
 import { getCookie } from "../../helpers/cookies";
-import { GET_CONTRACT_AWARDS_DATA, GET_CONTRACT_AWARD_INFO, GET_COUNTRY_DATA, GET_CPV_CODES_DATA, GET_GRANTS_DATA, GET_GRANT_INFO, GET_PROJECTS_DATA, GET_PROJECT_INFO, GET_REGIONS_DATA, GET_SECTORS_DATA, GET_TENDERS_DATA, GET_TENDER_INFO } from "./mastersConstants";
-import { contractAwardDataParser, contractAwardInfoParser, cpvCodeParser, grantsDataParser, grantsInfoParser, projectDataParser, projectInfoParser, regionParser, sectorParser, tenderDataParser, tenderInfoParser } from './mastersParser';
+import { GET_CONTRACT_AWARDS_DATA, GET_CONTRACT_AWARD_INFO, GET_COUNTRY_DATA, GET_CPV_CODES_DATA, GET_FUNDING_AGENCY_DATA, GET_GRANTS_DATA, GET_GRANT_INFO, GET_PROJECTS_DATA, GET_PROJECT_INFO, GET_REGIONS_DATA, GET_SECTORS_DATA, GET_TENDERS_DATA, GET_TENDER_INFO } from "./mastersConstants";
+import { contractAwardDataParser, contractAwardInfoParser, cpvCodeParser, fundingAgencyParser, grantsDataParser, grantsInfoParser, projectDataParser, projectInfoParser, regionParser, sectorParser, tenderDataParser, tenderInfoParser } from './mastersParser';
 
 const mastersApis = createApi({
     reducerPath: 'mastersApis',
@@ -17,7 +17,7 @@ const mastersApis = createApi({
         }
     }),
     keepUnusedDataFor: 30,
-    tagTypes: ['country_all', 'sectors_all', "regions_all", "cpv_codes_all", "tenders_data", "tender_info", "projects_data", "project_info", "contract_awards_data", "contract_award_info", "grants_data", "grant_info"],
+    tagTypes: ['country_all', 'sectors_all', "regions_all", "cpv_codes_all", "funding_agency_all", "tenders_data", "tender_info", "projects_data", "project_info", "contract_awards_data", "contract_award_info", "grants_data", "grant_info"],
     endpoints: build => ({
         getCountryData: build.query({
             query: (params) => ({
@@ -59,6 +59,15 @@ const mastersApis = createApi({
             }),
             transformResponse: (response) => cpvCodeParser(response),
             providesTags: ['cpv_codes_all'],
+        }),
+        getFundingAgencyData: build.query({
+            query: (params) => ({
+                url: GET_FUNDING_AGENCY_DATA,
+                method: "GET",
+                params: params
+            }),
+            transformResponse: (response) => fundingAgencyParser(response),
+            providesTags: ['funding_agency_all'],
         }),
         getTendersData: build.query({
             query: (params) => ({

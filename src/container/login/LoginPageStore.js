@@ -1,15 +1,18 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import api from "../../store/cms/cmsApis";
+import cmsApis from "../../store/cms/cmsApis";
+import mastersApis from "../../store/masters/mastersApis";
 
 const mapStateToProps = (state) => {
     return {
-        auth_record: api.endpoints.getAuthRecord.select({ type: "auth_record" })(state),
+        auth_record: cmsApis.endpoints.getAuthRecord.select({ type: "auth_record" })(state),
+        country_all: mastersApis.endpoints.getCountryData.select()(state),
     }
 }
 
 const mapDispatch = {
-    getAuthRecord: api.endpoints.getAuthRecord.initiate,
+    getAuthRecord: cmsApis.endpoints.getAuthRecord.initiate,
+    getCountryData: mastersApis.endpoints.getCountryData.initiate,
 };
 
 const mapDispatchToProps = (dispatch) =>
