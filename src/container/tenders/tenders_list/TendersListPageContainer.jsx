@@ -14,45 +14,57 @@ class TendersListPageContainer extends React.Component {
     }
 
     fetchTenders = async (payload) => {
-        let tenderRes = await this.props.getTendersData(payload);
-        if (tenderRes.isSuccess) {
-            this.setState({
-                tenders_loading: false,
-                tenders_data: tenderRes.data,
+        const { state } = this.props.location;
+
+        if (state?.advance_search) {
+            await this.props.advanceSearchFunction({
+                ...state.filter,
+                ...payload,
             });
+
+            if (this.props.advance_search_response) {
+                this.setState({
+                    tenders_loading: false,
+                    tenders_data: this.props.advance_search_response,
+                });
+            }
+        } else {
+            if (state?.sectorVal && state.sectorVal.length > 0)
+                payload.sectors = state.sectorVal
+                    .map((val) => {
+                        return val.name;
+                    })
+                    .join(",");
+
+            if (state?.regionsVal && state.regionsVal.length > 0)
+                payload.regions = state.regionsVal
+                    .map((val) => {
+                        return val.name;
+                    })
+                    .join(",");
+            if (state?.cpvCodesVal && state.cpvCodesVal.length > 0)
+                payload.cpv_codes = state.cpvCodesVal
+                    .map((val) => {
+                        return val.name;
+                    })
+                    .join(",");
+
+            let tenderRes = await this.props.getTendersData(payload);
+            if (tenderRes.isSuccess) {
+                this.setState({
+                    tenders_loading: false,
+                    tenders_data: tenderRes.data,
+                });
+            }
         }
     };
 
     componentDidMount() {
-        let extra = {};
-        const { state } = this.props.location;
-
-        if (state?.sectorVal && state.sectorVal.length > 0)
-            extra.sectors = state.sectorVal
-                .map((val) => {
-                    return val.name;
-                })
-                .join(",");
-
-        if (state?.regionsVal && state.regionsVal.length > 0)
-            extra.regions = state.regionsVal
-                .map((val) => {
-                    return val.name;
-                })
-                .join(",");
-        if (state?.cpvCodesVal && state.cpvCodesVal.length > 0)
-            extra.cpv_codes = state.cpvCodesVal
-                .map((val) => {
-                    return val.name;
-                })
-                .join(",");
-
         this.fetchTenders({
             pageNo: "0",
             limit: "15",
             sortBy: "1",
             sortField: "address",
-            ...extra,
         });
     }
 

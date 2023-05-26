@@ -26,24 +26,30 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
 
     return (
         <div className='row'>
-            <div className='col-md-3'>
-                <div className='FLiterListDiv'>
-                    <div className='filterTitle'>
-                        <h2>Filter Your Data</h2>
-                    </div>
 
-                    <TenderSidebarFilter
-                        getRegionsData={getRegionsData}
-                        getSectorsData={getSectorsData}
-                        getCpvCodesData={getCpvCodesData}
-                        getFundingAgencyData={getFundingAgencyData}
-                        onSubmit={(d) => handleFilter({}, d)}
-                        noticeType={"Tender"}
-                        {...location.state}
-                    />
-                </div>
-            </div>
-            <div className='col-md-9'>
+            {
+                !location?.state?.advance_search
+                    ?
+                    <div className='col-md-3'>
+                        <div className='FLiterListDiv'>
+                            <div className='filterTitle'>
+                                <h2>Filter Your Data</h2>
+                            </div>
+                            <TenderSidebarFilter
+                                getRegionsData={getRegionsData}
+                                getSectorsData={getSectorsData}
+                                getCpvCodesData={getCpvCodesData}
+                                getFundingAgencyData={getFundingAgencyData}
+                                onSubmit={(d) => handleFilter({}, d)}
+                                noticeType={"Tender"}
+                                {...location.state}
+                            />
+                        </div>
+                    </div>
+                    :
+                    null
+            }
+            <div className={`col-md-${location?.state?.advance_search ? "12" : "9"}`}>
                 <div className='ListDetailsDiv'>
                     {
                         loading
@@ -54,7 +60,7 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
                                 <div>
                                     <h3 className='result_page'>
                                         {data?.count || 0} - Document matches your
-                                        request
+                                        {location?.state?.advance_search ? " advance search" : ""} request
                                     </h3>
                                 </div>
                                 <DataTable

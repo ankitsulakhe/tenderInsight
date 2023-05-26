@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { api_contact_us_submit, api_drop_demo_request } from "./commonApis";
+import { api_advance_search, api_contact_us_submit, api_drop_demo_request } from "./commonApis";
 
 // initial state that can be used in anywhere in the current application
 const initialState = {
@@ -12,7 +12,10 @@ const initialState = {
     drop_demo_submit_loading: false,
     drop_demo_response: null,
     contact_us_submit_loading: false,
-    contact_us_response: null
+    contact_us_response: null,
+
+    advance_search_response: null,
+    advance_searching_loading: false
 };
 
 export const dropDemoRequestSubmit = createAsyncThunk("dropDemoRequestSubmit", async (payload) => {
@@ -27,6 +30,15 @@ export const dropDemoRequestSubmit = createAsyncThunk("dropDemoRequestSubmit", a
 export const contactUsSubmit = createAsyncThunk("contactUsSubmit", async (payload) => {
     try {
         const response = await api_contact_us_submit(payload);
+        return response;
+    } catch (error) {
+        throw new Error(error);
+    }
+});
+
+export const advanceSearchFunction = createAsyncThunk("advanceSearchFunction", async (payload) => {
+    try {
+        const response = await api_advance_search(payload);
         return response;
     } catch (error) {
         throw new Error(error);
@@ -68,6 +80,18 @@ export const commonSlice = createSlice({
         });
         builder.addCase(contactUsSubmit.rejected, (state, action) => {
             state.contact_us_submit_loading = false;
+        });
+        // contact us submit
+        builder.addCase(advanceSearchFunction.pending, (state, action) => {
+            state.advance_searching_loading = true;
+        });
+        builder.addCase(advanceSearchFunction.fulfilled, (state, action) => {
+            const { data } = action.payload;
+            state.advance_search_response = data.result;
+            state.advance_searching_loading = false;
+        });
+        builder.addCase(advanceSearchFunction.rejected, (state, action) => {
+            state.advance_searching_loading = false;
         });
     }
 });

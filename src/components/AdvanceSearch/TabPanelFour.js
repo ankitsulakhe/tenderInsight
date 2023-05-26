@@ -28,7 +28,6 @@ export default function TabPanelFour({ formik }) {
     const handleClosingDate = (val) => {
         try {
             let date = convertDateToRangeDate(val);
-            console.log(date, "date");
             formik?.setFieldValue("closing_date", date);
             setClosingDate(date);
             setClosingRangeDate(null);

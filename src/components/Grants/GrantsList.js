@@ -26,24 +26,30 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
 
     return (
         <div className='row'>
-            <div className='col-md-3'>
-                <div className='FLiterListDiv'>
-                    <div className='filterTitle'>
-                        <h2>Filter Your Data</h2>
-                    </div>
+            {
+                !location?.state?.advance_search
+                    ?
+                    <div className='col-md-3'>
+                        <div className='FLiterListDiv'>
+                            <div className='filterTitle'>
+                                <h2>Filter Your Data</h2>
+                            </div>
 
-                    <TenderSidebarFilter
-                        getRegionsData={getRegionsData}
-                        getSectorsData={getSectorsData}
-                        getCpvCodesData={getCpvCodesData}
-                        getFundingAgencyData={getFundingAgencyData}
-                        onSubmit={(d) => handleFilter({}, d)}
-                        noticeType="Grants"
-                        {...location.state}
-                    />
-                </div>
-            </div>
-            <div className='col-md-9'>
+                            <TenderSidebarFilter
+                                getRegionsData={getRegionsData}
+                                getSectorsData={getSectorsData}
+                                getCpvCodesData={getCpvCodesData}
+                                getFundingAgencyData={getFundingAgencyData}
+                                onSubmit={(d) => handleFilter({}, d)}
+                                noticeType="Grants"
+                                {...location.state}
+                            />
+                        </div>
+                    </div>
+                    :
+                    null
+            }
+            <div className={`col-md-${location?.state?.advance_search ? "12" : "9"}`}>
                 <div className='ListDetailsDiv'>
                     {
                         loading

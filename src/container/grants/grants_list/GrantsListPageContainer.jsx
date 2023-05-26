@@ -14,12 +14,28 @@ class GrantsListPageContainer extends React.Component {
     }
 
     fetchGrants = async (payload) => {
-        let grantsRes = await this.props.getGrantsData(payload);
-        if (grantsRes.isSuccess) {
-            this.setState({
-                grants_loading: false,
-                grants_data: grantsRes.data,
+        const { state } = this.props.location;
+
+        if (state?.advance_search) {
+            await this.props.advanceSearchFunction({
+                ...state.filter,
+                ...payload,
             });
+
+            if (this.props.advance_search_response) {
+                this.setState({
+                    grants_loading: false,
+                    grants_data: this.props.advance_search_response,
+                });
+            }
+        } else {
+            let grantsRes = await this.props.getGrantsData(payload);
+            if (grantsRes.isSuccess) {
+                this.setState({
+                    grants_loading: false,
+                    grants_data: grantsRes.data,
+                });
+            }
         }
     };
 

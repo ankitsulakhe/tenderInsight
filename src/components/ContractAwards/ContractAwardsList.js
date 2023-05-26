@@ -21,29 +21,35 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
     }
 
     const DescriptionRow = (rowData) => {
-        return <Link target="_blank" to={`/contract-awards/${rowData?.big_ref_no}`}>{rowData.contractor_details}</Link>;
+        return <Link target="_blank" to={`/contract-awards/${rowData?.big_ref_no}`}>{rowData.description}</Link>;
     };
 
     return (
         <div className='row'>
-            <div className='col-md-3'>
-                <div className='FLiterListDiv'>
-                    <div className='filterTitle'>
-                        <h2>Filter Your Data</h2>
-                    </div>
+            {
+                !location?.state?.advance_search
+                    ?
+                    <div className='col-md-3'>
+                        <div className='FLiterListDiv'>
+                            <div className='filterTitle'>
+                                <h2>Filter Your Data</h2>
+                            </div>
 
-                    <TenderSidebarFilter
-                        getRegionsData={getRegionsData}
-                        getSectorsData={getSectorsData}
-                        getCpvCodesData={getCpvCodesData}
-                        getFundingAgencyData={getFundingAgencyData}
-                        onSubmit={(d) => handleFilter({}, d)}
-                        noticeType="Contract Award"
-                        {...location.state}
-                    />
-                </div>
-            </div>
-            <div className='col-md-9'>
+                            <TenderSidebarFilter
+                                getRegionsData={getRegionsData}
+                                getSectorsData={getSectorsData}
+                                getCpvCodesData={getCpvCodesData}
+                                getFundingAgencyData={getFundingAgencyData}
+                                onSubmit={(d) => handleFilter({}, d)}
+                                noticeType="Contract Award"
+                                {...location.state}
+                            />
+                        </div>
+                    </div>
+                    :
+                    null
+            }
+            <div className={`col-md-${location?.state?.advance_search ? "12" : "9"}`}>
                 <div className='ListDetailsDiv'>
                     {
                         loading
@@ -83,7 +89,7 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
                                         className='TableHeader'
                                         body={DescriptionRow}
                                         sortable
-                                        header='Contract Summary'
+                                        header='Description'
                                     ></Column>
                                     <Column
                                         className='TableHeader'

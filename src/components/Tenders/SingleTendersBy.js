@@ -5,7 +5,7 @@ export default function SingleTendersBy({ data, navigate, type }) {
     const handleActionClick = (e, payload) => {
         e.preventDefault();
 
-        navigate("/tenders-list", { state: { [type]: [payload] } })
+        navigate("/tenders-list", { state: { [type]: payload.name } })
     }
 
     return (

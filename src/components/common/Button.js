@@ -2,7 +2,7 @@ import { Spinner } from "react-bootstrap";
 
 export const Button = ({ className, type, id, onClick = () => { }, value, loading }) => {
     return (
-        <button title={value} className={className} type={type} id={id} onClick={onClick} disabled={loading ? true : false} >
+        <button className={className} type={type} id={id} onClick={onClick} disabled={loading ? true : false} >
             {
                 loading
                     ?
@@ -10,8 +10,6 @@ export const Button = ({ className, type, id, onClick = () => { }, value, loadin
                     :
                     value
             }
-
-
         </button>
     )
 }

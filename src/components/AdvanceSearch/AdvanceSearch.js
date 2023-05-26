@@ -4,9 +4,30 @@ import { useFormik } from "formik";
 import TabPanelTwo from "./TabPanelTwo";
 import TabPanelThree from "./TabPanelThree";
 import TabPanelFour from "./TabPanelFour";
-import { competitionType, geoLocationKeyword, noticeTypeConst, searchType, tenderTypeConst } from "../../helpers/constants";
+import { geoLocationKeyword, noticeTypeConst, searchType } from "../../helpers/constants";
+import { Button } from "../common/Button";
 
 export default function AdvanceSearch(props) {
+
+    const handleSubmit = (values) => {
+
+        let payload = { ...values };
+
+        payload.sectors = payload.sectors && payload.sectors.map((val) => {
+            return val.name
+        }).join(",");
+        payload.regions = payload.regions && payload.regions.map((val) => {
+            return val.name
+        }).join(",");
+        payload.cpv_codes = payload.cpv_codes && payload.cpv_codes.map((val) => {
+            return val.code
+        }).join(",");
+        payload.cpv_codes = payload.cpv_codes && payload.cpv_codes.map((val) => {
+            return val.code
+        }).join(",");
+
+        props.submit(payload);
+    }
 
     const formik = useFormik({
         enableReinitialize: true,
@@ -23,14 +44,14 @@ export default function AdvanceSearch(props) {
             contract_value: "",
             tender_no: "",
             big_ref_no: "",
-            competition_type: competitionType[0],
+            competition_type: "",
             notice_type: noticeTypeConst[0],
-            tender_type: tenderTypeConst[0],
+            tender_type: "",
             posting_date: [],
             closing_date: []
         },
         onSubmit: (values) => {
-            console.log(values);
+            handleSubmit(values)
         },
     });
 
@@ -85,9 +106,12 @@ export default function AdvanceSearch(props) {
                                     </TabView>
 
                                     <div className="text-center">
-                                        <button type="submit" className="commonBtn loginBtn">
-                                            <i className="pi pi-search"></i> Apply
-                                        </button>
+                                        <Button
+                                            type={"submit"}
+                                            className={"commonBtn loginBtn"}
+                                            value={<><i className="pi pi-search"></i> Apply</>}
+                                        // loading={props.loading}
+                                        />
                                     </div>
                                 </div>
                             </div>
