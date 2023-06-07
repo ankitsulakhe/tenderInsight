@@ -1,5 +1,29 @@
 import { get } from "lodash-es";
 
+export const homeCountryParser = (response) => {
+    try {
+        if (response?.result) {
+            response = response.result;
+        }
+        if (!response) {
+            return [];
+        }
+
+        response = response.result.map(function (val) {
+            let obj = {
+                country: val?.str_code,
+                value: val?.count
+            }
+            return obj;
+        })
+
+        return response;
+
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
 export const cpvCodeParser = (response) => {
     try {
         if (response?.result) {

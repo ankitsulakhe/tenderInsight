@@ -4,9 +4,15 @@ import SearchBar from "../../pages-old/searchBar/SearchBar";
 import ForgetPassword from "../common/ForgetPassword";
 import Login from "../common/Login";
 import WorldMap from "react-svg-worldmap";
-import { populationData } from "./CountryData.ts";
 
-function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show }) {
+function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show, countryData }) {
+    const data =
+        [
+            { country: "IND", value: 1389618778 }, // china
+        ]
+
+        console.log(countryData);
+
     return (
         <section className="mainBanner p-0">
             <div className="container-fluid">
@@ -16,8 +22,7 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
                             color="#003c5e"
                             borderColor="#003c5e"
                             size="responsive"
-                            frame
-                            data={populationData}
+                            data={countryData}
                             richInteraction
                         />
                         <SearchBar />

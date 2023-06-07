@@ -9,12 +9,28 @@ class HomePageContainer extends React.Component {
         super();
         this.state = {
             show_forget_password: false,
+            countryData: [],
         };
     }
 
-    componentDidMount() {
+    fetchFunction = async () => {
+        let res = await this.props.getHomeCountryData({
+            pageNo: "0",
+            limit: "300",
+            sortBy: "1",
+            sortField: "name",
+            by_tenders: true,
+        });
+
+        if (res?.isSuccess) {
+            this.setState({ countryData: res.data });
+        }
         this.props.getHomePageData({ type: "home_page" });
         this.props.getAuthRecord({ type: "auth_record" });
+    };
+
+    componentDidMount() {
+        this.fetchFunction();
     }
 
     handleShowPassword = () => {
@@ -32,11 +48,14 @@ class HomePageContainer extends React.Component {
             <main className='bodyMain'>
                 {/* Banner with map and login component */}
                 <HomePageBanner
-                    login_description={this.props?.auth_record?.login_description}
+                    login_description={
+                        this.props?.auth_record?.login_description
+                    }
                     login_title={this.props?.auth_record?.login_title}
                     forget_password={this.props?.auth_record?.forget_password}
                     handleShowPassword={this.handleShowPassword}
                     show={this.state.show_forget_password}
+                    countryData={this.state.countryData}
                 />
 
                 <TopCategories data={this.props.home_page?.data} />
