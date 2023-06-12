@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProfileSidebar = ({ full_name, last_logged_in, validity, uid }) => {
+    console.log(full_name, "full_name");
     return (
         <div className="homeLoginMain" id="afterLogin">
             <div className="section-title pb-0">

@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileSidebar from "../../components/home/ProfileSidebar";
 import ForgotPasswordComponent from "../../components/auth/ForgotPasswordComponent";
+import { isAuth } from "../../helpers/cookies";
 
 class PasswordPageContainer extends React.Component {
     handleSubmit = (payload) => {
@@ -37,7 +38,7 @@ class PasswordPageContainer extends React.Component {
                                 </div>
                             </div>
                             <div className='col-md-4 bg-grey'>
-                                <ProfileSidebar />
+                                <ProfileSidebar {...isAuth()} />
                             </div>
                         </div>
                     </div>

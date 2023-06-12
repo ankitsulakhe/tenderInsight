@@ -49,7 +49,7 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
                             </div>
                             :
                             <div className="col-md-4 bg-grey">
-                                <ProfileSidebar data={isAuth()} />
+                                <ProfileSidebar {...isAuth()} />
                             </div>
                     }
 

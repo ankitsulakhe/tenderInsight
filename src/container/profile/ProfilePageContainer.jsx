@@ -52,7 +52,7 @@ class ProfilePageContainer extends React.Component {
                             </div>
                             <div className='col-md-4 bg-grey'>
                                 <ProfileSidebar
-                                    first_name={data?.first_name}
+                                    full_name={data?.full_name}
                                     uid={data?.uid}
                                     last_logged_in={data?.last_logged_in}
                                     validity={data?.validity}
