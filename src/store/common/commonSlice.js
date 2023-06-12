@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { api_advance_search, api_contact_us_submit, api_drop_demo_request } from "./commonApis";
+import { api_advance_search, api_contact_us_submit, api_drop_demo_request, api_submit_business_profile, api_submit_customer_profile, api_update_password } from "./commonApis";
 
 // initial state that can be used in anywhere in the current application
 const initialState = {
@@ -15,7 +15,11 @@ const initialState = {
     contact_us_response: null,
 
     advance_search_response: null,
-    advance_searching_loading: false
+    advance_searching_loading: false,
+
+    update_loading: false,
+    success: false,
+    error: null,
 };
 
 export const dropDemoRequestSubmit = createAsyncThunk("dropDemoRequestSubmit", async (payload) => {
@@ -41,6 +45,35 @@ export const advanceSearchFunction = createAsyncThunk("advanceSearchFunction", a
         const response = await api_advance_search(payload);
         return response;
     } catch (error) {
+        throw new Error(error);
+    }
+});
+
+export const submitCustomerProfile = createAsyncThunk("submitCustomerProfile", async (payload) => {
+    try {
+        const response = await api_submit_customer_profile(payload);
+        return response;
+    } catch (error) {
+        throw new Error(error);
+    }
+});
+
+export const submitBusinessProfile = createAsyncThunk("submitBusinessProfile", async (payload) => {
+    try {
+        const response = await api_submit_business_profile(payload);
+        return response;
+    } catch (error) {
+        throw new Error(error);
+    }
+});
+
+export const updatePassword = createAsyncThunk("updatePassword", async (payload, thunkAPI) => {
+    try {
+        const response = await api_update_password(payload);
+        return response;
+    } catch (error) {
+        thunkAPI.rejectWithValue(error?.response?.data?.message || error.message)
+        // state.response = error?.response?.data?.message || error.message;
         throw new Error(error);
     }
 });
@@ -92,6 +125,43 @@ export const commonSlice = createSlice({
         });
         builder.addCase(advanceSearchFunction.rejected, (state, action) => {
             state.advance_searching_loading = false;
+        });
+        // customer profile submit
+        builder.addCase(submitCustomerProfile.pending, (state, action) => {
+            state.update_loading = true;
+        });
+        builder.addCase(submitCustomerProfile.fulfilled, (state, action) => {
+            const { data } = action.payload;
+            state.update_loading = false;
+            state.success = data?.success;
+        });
+        builder.addCase(submitCustomerProfile.rejected, (state, action) => {
+            state.update_loading = false;
+        });
+        // business profile submit
+        builder.addCase(submitBusinessProfile.pending, (state, action) => {
+            state.update_loading = true;
+        });
+        builder.addCase(submitBusinessProfile.fulfilled, (state, action) => {
+            const { data } = action.payload;
+            state.update_loading = false;
+            state.success = data?.success;
+        });
+        builder.addCase(submitBusinessProfile.rejected, (state, action) => {
+            state.update_loading = false;
+        });
+        // business profile submit
+        builder.addCase(updatePassword.pending, (state, action) => {
+            state.update_loading = true;
+        });
+        builder.addCase(updatePassword.fulfilled, (state, action) => {
+            const { data } = action.payload;
+            state.update_loading = false;
+            state.success = data;
+        });
+        builder.addCase(updatePassword.rejected, (state, action) => {
+            state.update_loading = false;
+            console.log(action)
         });
     }
 });

@@ -10,7 +10,7 @@ const cmsApi = createApi({
         prepareHeaders: (headers, { getState }) => {
             const token = getCookie("token");
             if (token) {
-                headers.set('Authorization', `${token}`)
+                headers.set('Authorization', `BEARER ${token}`)
             }
             return headers;
         }

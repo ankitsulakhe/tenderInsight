@@ -4,20 +4,14 @@ import SearchBar from "../../pages-old/searchBar/SearchBar";
 import ForgetPassword from "../common/ForgetPassword";
 import Login from "../common/Login";
 import WorldMap from "react-svg-worldmap";
+import ProfileSidebar from "./ProfileSidebar";
 
 function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show, countryData }) {
-    const data =
-        [
-            { country: "IND", value: 1389618778 }, // china
-        ]
-
-        console.log(countryData);
-
     return (
         <section className="mainBanner p-0">
             <div className="container-fluid">
                 <div className="row">
-                    <div className={`col-md-${isAuth() ? '12' : '8'} px-0 flevalgin`}>
+                    <div className={`col-md-8 px-0 flevalgin`}>
                         <WorldMap
                             color="#003c5e"
                             borderColor="#003c5e"
@@ -54,7 +48,9 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
                                 </div>
                             </div>
                             :
-                            null
+                            <div className="col-md-4 bg-grey">
+                                <ProfileSidebar data={isAuth()} />
+                            </div>
                     }
 
                 </div>

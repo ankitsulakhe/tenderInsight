@@ -42,8 +42,21 @@ export const removeLocalStorage = (key) => {
     }
 };
 
+// Get from localstorage
+export const getLocalStorage = (key) => {
+    try {
+        if (window !== "undefined") {
+            return JSON.parse(localStorage.getItem(key));
+        }
+    } catch (error) {
+        console.log("error parsing");
+        return false;
+    }
+};
+
 // Auth enticate user by passing data to cookie and localstorage during signin
 export const authenticate = (response, next) => {
+    setLocalStorage("user", response, true);
     setCookie("token", response.access_token);
     next();
 };
@@ -57,13 +70,14 @@ export const updateLocalStorage = (key, value, next) => {
 export const isAuth = () => {
     const cookieChecked = getCookie("token");
     if (cookieChecked) {
-        return true;
+        return getLocalStorage("user");
     } else {
         return false;
     }
 };
 
 export const signout = async (next) => {
+    removeLocalStorage("user");
     removeCookie("token");
     next();
 };

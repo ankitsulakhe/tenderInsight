@@ -6,7 +6,7 @@ import { getCookie } from "./cookies";
 export const axios = coreAxios.default.create({
     baseURL: baseUrl,
     headers: {
-        Authorization: `${getCookie("token")}`,
+        Authorization: `BEARER ${getCookie("token")}`,
     },
 });
 

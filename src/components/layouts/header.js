@@ -191,6 +191,11 @@ function Header({
                                 Services
                             </Link>
                         </li>
+                        <li>
+                            <Link to="profile">
+                                Profile
+                            </Link>
+                        </li>
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>
                 </nav>

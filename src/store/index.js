@@ -1,13 +1,15 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import cmsApi from "./cms/cmsApis";
 import mastersApi from "./masters/mastersApis";
+import authApis from "./auth/authApis";
 import { useSelector, useDispatch } from "react-redux";
 import commonSlice from "./common/commonSlice";
 
 const reducers = {
     [commonSlice.name]: commonSlice.reducer,
     [cmsApi.reducerPath]: cmsApi.reducer,
-    [mastersApi.reducerPath]: mastersApi.reducer
+    [mastersApi.reducerPath]: mastersApi.reducer,
+    [authApis.reducerPath]: authApis.reducer
 };
 
 const initialState = {};
@@ -21,10 +23,11 @@ export const store = configureStore({
             serializableCheck: false
         }).concat([
             cmsApi.middleware,
-            mastersApi.middleware
+            mastersApi.middleware,
+            authApis.middleware
         ]);
     },
-    devTools: process.env.NODE_ENV !== 'production',
+    devTools: true,
     preloadedState: initialState,
     enhancers: (defaultEnhancers) => [...defaultEnhancers]
 });

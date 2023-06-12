@@ -6,7 +6,6 @@ import {
     Navigate,
 } from "react-router-dom";
 
-import { isAuth } from "../helpers/cookies.js";
 import PublicLayout from "../pages/public/layout/PublicLayout.jsx";
 
 function Index() {
