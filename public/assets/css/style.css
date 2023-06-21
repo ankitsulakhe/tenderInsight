@@ -185,6 +185,7 @@ ul.d-flex.topBarMenu li a {
   # Header
   --------------------------------------------------------------*/
 #header {
+    position: relative;
     background: #ffffff;
     transition: all 0.5s;
     z-index: 997;

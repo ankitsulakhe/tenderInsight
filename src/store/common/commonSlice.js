@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { api_advance_search, api_contact_us_submit, api_drop_demo_request, api_submit_business_profile, api_submit_customer_profile, api_update_password } from "./commonApis";
+import { api_advance_search, api_contact_us_submit, api_drop_demo_request, api_submit_business_profile, api_submit_customer_profile, api_subscribe_plan, api_update_password } from "./commonApis";
 
 // initial state that can be used in anywhere in the current application
 const initialState = {
@@ -18,6 +18,7 @@ const initialState = {
     advance_searching_loading: false,
 
     update_loading: false,
+    submit_loading: false,
     success: false,
     error: null,
 };
@@ -74,6 +75,16 @@ export const updatePassword = createAsyncThunk("updatePassword", async (payload,
     } catch (error) {
         thunkAPI.rejectWithValue(error?.response?.data?.message || error.message)
         // state.response = error?.response?.data?.message || error.message;
+        throw new Error(error);
+    }
+});
+
+export const subscribePlan = createAsyncThunk("subscribePlan", async (payload, thunkAPI) => {
+    try {
+        const response = await api_subscribe_plan(payload);
+        return response;
+    } catch (error) {
+        thunkAPI.rejectWithValue(error?.response?.data?.message || error.message)
         throw new Error(error);
     }
 });
@@ -161,6 +172,19 @@ export const commonSlice = createSlice({
         });
         builder.addCase(updatePassword.rejected, (state, action) => {
             state.update_loading = false;
+            console.log(action)
+        });
+        // business profile submit
+        builder.addCase(subscribePlan.pending, (state, action) => {
+            state.submit_loading = true;
+        });
+        builder.addCase(subscribePlan.fulfilled, (state, action) => {
+            const { data } = action.payload;
+            state.submit_loading = false;
+            state.success = data;
+        });
+        builder.addCase(subscribePlan.rejected, (state, action) => {
+            state.submit_loading = false;
             console.log(action)
         });
     }

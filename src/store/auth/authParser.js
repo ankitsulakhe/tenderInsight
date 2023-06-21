@@ -63,3 +63,19 @@ export const businessProfileParser = (response) => {
         throw new Error(error);
     }
 }
+
+export const planListParser = (response) => {
+    try {
+        if (response?.result) {
+            response = response.result;
+        }
+        if (!response) {
+            return {};
+        }
+
+        return response
+
+    } catch (error) {
+        throw new Error(error);
+    }
+}

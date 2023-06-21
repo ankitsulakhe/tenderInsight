@@ -37,7 +37,7 @@ function Topbar({ phone, email }) {
                             </Link>
                         </li>
                         <li>
-                            <Link to="subscribePage" className="nav-link scrollto ">
+                            <Link to="subscribe" className="nav-link scrollto ">
                                 Subscribe
                             </Link>
                         </li>

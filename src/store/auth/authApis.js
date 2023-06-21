@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
 import { baseUrl } from "../../helpers/constants";
 import { getCookie } from "../../helpers/cookies";
-import { GET_CUSTOMER_PROFILE } from "./authConstants";
-import { businessProfileParser, profileParser } from './authParser';
+import { GET_CUSTOMER_PROFILE, GET_PLAN_LIST } from "./authConstants";
+import { businessProfileParser, planListParser, profileParser } from './authParser';
 import { GET_BUSINESS_PROFILE } from './authConstants';
 
 const authApis = createApi({
@@ -18,7 +18,7 @@ const authApis = createApi({
         }
     }),
     keepUnusedDataFor: 30,
-    tagTypes: ["profile", "business"],
+    tagTypes: ["profile", "business", "plan_list"],
     endpoints: build => ({
         getCustomerProfile: build.query({
             query: () => ({
@@ -35,6 +35,14 @@ const authApis = createApi({
             }),
             transformResponse: (response) => businessProfileParser(response),
             providesTags: ['business'],
+        }),
+        getPlanList: build.query({
+            query: () => ({
+                url: GET_PLAN_LIST,
+                method: "GET",
+            }),
+            transformResponse: (response) => planListParser(response),
+            providesTags: ['plan_list'],
         }),
     }),
 });

@@ -2,6 +2,7 @@ import React from "react";
 import ProfileSidebar from "../../components/home/ProfileSidebar";
 import FullScreenLoadingGrow from "../../components/common/FullScreenLoadingGrow";
 import ProfileComponent from "../../components/auth/ProfileComponent";
+import { isAuth } from "../../helpers/cookies";
 
 class ProfilePageContainer extends React.Component {
     componentDidMount() {
@@ -51,12 +52,7 @@ class ProfilePageContainer extends React.Component {
                                 </div>
                             </div>
                             <div className='col-md-4 bg-grey'>
-                                <ProfileSidebar
-                                    full_name={data?.full_name}
-                                    uid={data?.uid}
-                                    last_logged_in={data?.last_logged_in}
-                                    validity={data?.validity}
-                                />
+                                <ProfileSidebar {...isAuth()}/>
                             </div>
                         </div>
                     </div>

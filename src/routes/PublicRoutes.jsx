@@ -9,6 +9,7 @@ import AboutPage from "../pages/public/AboutPage.jsx";
 import LoginPage from "../pages/public/LoginPage.jsx";
 import EprocurementPage from "../pages/public/EprocurementPage.jsx";
 import ContactUsPage from "../pages/public/ContactUsPage.jsx";
+import SubscribePage from "../pages/public/SubscribePage.jsx";
 import ServicePage from "../pages/public/ServicePage.jsx";
 import AdvanceSearch from "../pages/public/AdvanceSearch.jsx";
 
@@ -40,6 +41,7 @@ const PublicRoutes = () => {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/eprocurement' element={<EprocurementPage />} />
             <Route path='/contact' element={<ContactUsPage />} />
+            <Route path='/subscribe' element={<SubscribePage />} />
             <Route path='/service' element={<ServicePage />} />
 
             <Route path='/advance-search' element={<AdvanceSearch />} />

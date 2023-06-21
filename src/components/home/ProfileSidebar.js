@@ -1,8 +1,8 @@
+import { format } from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProfileSidebar = ({ full_name, last_logged_in, validity, uid }) => {
-    console.log(full_name, "full_name");
+const ProfileSidebar = ({ full_name, plans, last_logged_in, uuid }) => {
     return (
         <div className="homeLoginMain" id="afterLogin">
             <div className="section-title pb-0">
@@ -15,13 +15,13 @@ const ProfileSidebar = ({ full_name, last_logged_in, validity, uid }) => {
                 <div className="account-login-Data">
                     <div className="account-login-des">
                         <i className="bi bi-people"></i> <strong>Name : </strong> {full_name}
-                        {" "}({uid || "00000"})
+                        {" "}(#{uuid || "00000"})
                     </div>
                     <div className="account-login-des">
-                        <i className="bi bi-clock"></i> <strong>Last Login : </strong> {last_logged_in}
+                        <i className="bi bi-clock"></i> <strong>Last Login : </strong> {format(new Date(last_logged_in), "dd-MMM yyyy hh:mm:ss a")}
                     </div>
                     <div className="account-login-des">
-                        <i className="bi bi-award"></i> <strong>Validty : </strong> {validity || "Free"}
+                        <i className="bi bi-award"></i> <strong>Validty : </strong> {plans.plan_expire_date !== "Free" ? format(new Date(plans.plan_expire_date), "dd-MMM yyyy hh:mm:ss a") : "Free"}
                     </div>
                 </div>
             </div>
