@@ -3,7 +3,7 @@ import { AutoComplete } from "primereact/autocomplete";
 import { Fragment, useState } from "react";
 
 
-export default function SectorSelect({ getSectorsData, name, multiple, onChange, id, value }) {
+export default function SectorSelect({ getSectorsData, name, multiple, onChange, id, value, className }) {
     const [records, setRecords] = useState([]);
 
     const fetchFunction = async (event) => {
@@ -34,7 +34,7 @@ export default function SectorSelect({ getSectorsData, name, multiple, onChange,
             completeMethod={fetchFunction}
             onChange={onChange}
             placeholder="Type sector name"
-            className="w-100"
+            className={`w-100 ${className}`}
         />
     )
 }

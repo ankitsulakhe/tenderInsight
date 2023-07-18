@@ -3,11 +3,10 @@ import { AutoComplete } from "primereact/autocomplete";
 import { Fragment, useState } from "react";
 
 
-export default function RegionSelect({ getRegionsData, name, multiple, onChange, id, value, placeholder = "Type regions here" }) {
+export default function RegionSelect({ getRegionsData, name, multiple, onChange, id, value, className, placeholder = "Type regions here" }) {
     const [records, setRecords] = useState([]);
 
     const fetchFunction = async (event) => {
-
         setTimeout(async () => {
             let keyword = event.query.toLowerCase();
             let res = await getRegionsData({
@@ -18,10 +17,8 @@ export default function RegionSelect({ getRegionsData, name, multiple, onChange,
                 keyword: keyword
             })
             setRecords(res.data?.result || [])
-
         }, 1000);
     }
-
 
     return (
         <AutoComplete
@@ -34,7 +31,7 @@ export default function RegionSelect({ getRegionsData, name, multiple, onChange,
             completeMethod={fetchFunction}
             onChange={onChange}
             placeholder={placeholder}
-            className="w-100"
+            className={`w-100 ${className}`}
         />
     )
 }

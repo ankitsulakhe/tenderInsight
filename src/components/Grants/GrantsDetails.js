@@ -1,113 +1,174 @@
-export default function NonAuthTenderDetails(props) {
+export default function GrantsDetails(props) {
     const { grants_data } = props;
 
     return (
-        <ul className='faq-list'>
+        <ul className="faq-list">
             <li>
                 <div
-                    data-bs-toggle='collapse'
-                    href='#TenderDetails'
-                    className='question'
+                    href="#TenderDetails"
+                    className={`question ${grants_data?.donor ? '' : 'cursor-not-allowed'}`}
                 >
-                    Authority Name & Contact
-                    <i className='bi bi-chevron-down icon-show'></i>
-                    <i className='bi bi-chevron-up icon-close'></i>
+                    Donor Name & Contact
+                    <i className="bi bi-chevron-down icon-show"></i>
+                    <i className="bi bi-chevron-up icon-close"></i>
                 </div>
                 <div
-                    id='TenderDetails'
-                    className='collapse show'
-                    data-bs-parent='.faq-list'
+                    id="TenderDetails"
+                    className={`collapse ${grants_data?.donor ? 'show' : ''}`}
+                    data-bs-parent=".faq-list"
                 >
-                    <div className='pricing pdlr10'>
-                        <div className='row'>
+                    {
+                        grants_data?.donor
+                            ?
+                            <div className="pricing pdlr10">
+                                <div className="row">
+                                    <div
+                                        className="col-lg-3 col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Donor</h3>
+                                            <p>{grants_data?.donor}</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Contact Information</h3>
+                                            <p>{grants_data.contact_information}</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="col-lg-3 col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Location</h3>
+                                            <p>{grants_data?.location}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            :
+                            null
+                    }
+                </div>
+            </li>
+
+            <li>
+                <div
+                    data-bs-toggle="collapse"
+                    className="collapsed question"
+                    href="#authortyContactDetails"
+                >
+                    Grants Details
+                    <i className="bi bi-chevron-down icon-show"></i>
+                    <i className="bi bi-chevron-up icon-close"></i>
+                </div>
+                <div
+                    id="authortyContactDetails"
+                    className={`collapse ${grants_data?.donor ? '' : 'show'}`}
+                    data-bs-parent=".faq-list"
+                >
+                    <div className="pricing pdlr10">
+                        <div className="row">
                             <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
+                                className="col-lg-3 col-md-6 mgbtmxy"
+                                data-aos="fade-up"
+                                data-aos-delay="100"
                             >
-                                <div className='box'>
-                                    <h3>
-                                        Authority
-                                        Name{" "}
-                                    </h3>
-                                    <p>
-                                        Global
-                                        Tender Org
-                                    </p>
+                                <div className="box">
+                                    <h3>BIG Ref No</h3>
+                                    <p>{grants_data?.big_ref_no}</p>
                                 </div>
                             </div>
                             <div
-                                className='col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
+                                className="col-lg-3 col-md-6 mgbtmxy"
+                                data-aos="fade-up"
+                                data-aos-delay="100"
                             >
-                                <div className='box'>
-                                    <h3>Address</h3>
-                                    <p>
-                                        501 Prodinsa
-                                        Building,
-                                        Cnr Steve
-                                        Bhiko and
-                                        Pretorius
-                                        Street -
-                                        Arcadia -
-                                        Pretoria -
-                                        0001
-                                    </p>
+                                <div className="box">
+                                    <h3>Title </h3>
+                                    <p>{grants_data?.title}</p>
                                 </div>
                             </div>
+                            {
+                                grants_data?.type
+                                    ?
+                                    <div
+                                        className="col-lg-3 col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Type </h3>
+                                            <p>{grants_data?.type}</p>
+                                        </div>
+                                    </div>
+                                    :
+                                    null
+                            }
+                            {
+                                grants_data?.status
+                                    ?
+                                    <div
+                                        className="col-lg-3 col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Status </h3>
+                                            <p>{grants_data?.status}</p>
+                                        </div>
+                                    </div>
+                                    :
+                                    null
+                            }
+                            {
+                                grants_data?.value
+                                    ?
+                                    <div
+                                        className="col-lg-3 col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Value </h3>
+                                            <p>{grants_data?.value}</p>
+                                        </div>
+                                    </div>
+                                    :
+                                    null
+                            }
+                            {
+                                grants_data?.type_of_services
+                                    ?
+                                    <div
+                                        className="col-lg-3 col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Type Of Services </h3>
+                                            <p>{grants_data?.type_of_services}</p>
+                                        </div>
+                                    </div>
+                                    :
+                                    null
+                            }
                             <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
+                                className="col-lg-3 col-md-6 mgbtmxy"
+                                data-aos="fade-up"
+                                data-aos-delay="100"
                             >
-                                <div className='box'>
-                                    <h3>
-                                        Telephone
-                                    </h3>
-                                    <p>
-                                        012-14400-21071
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        FAX Number
-                                    </h3>
-                                    <p> N/A</p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>Email</h3>
-                                    <p>
-                                        luckym@visava.in
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Contact
-                                        Person
-                                    </h3>
-                                    <p>
-                                        {" "}
-                                        Laxman Singh
-                                    </p>
+                                <div className="box">
+                                    <h3>Sector </h3>
+                                    <p>{grants_data?.sectors}</p>
                                 </div>
                             </div>
                         </div>
@@ -117,221 +178,71 @@ export default function NonAuthTenderDetails(props) {
 
             <li>
                 <div
-                    data-bs-toggle='collapse'
-                    className='collapsed question'
-                    href='#authortyContactDetails'
-                >
-                    Tender Details
-                    <i className='bi bi-chevron-down icon-show'></i>
-                    <i className='bi bi-chevron-up icon-close'></i>
-                </div>
-                <div
-                    id='authortyContactDetails'
-                    className='collapse'
-                    data-bs-parent='.faq-list'
-                >
-                    <div className='pricing pdlr10'>
-                        <div className='row'>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        BIG Ref No
-                                    </h3>
-                                    <p>
-                                        RFQ:238-22-IA
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-md-9 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Description
-                                    </h3>
-                                    <p>
-                                        The
-                                        Provision Of
-                                        Services For
-                                        The Service
-                                        Of
-                                        Engineering
-                                        Systems Of
-                                        Buildings Of
-                                        Educational
-                                        Organizations
-                                        Subordinate
-                                        To The
-                                        Department
-                                        Of Education
-                                        And Science
-                                        Of The City
-                                        Of Moscow In
-                                        2023-2025.
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Tender Type
-                                    </h3>
-                                    <p>
-                                        Defense
-                                        Forces
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Tender No
-                                    </h3>
-                                    <p>
-                                        RFQ:238-22-IA
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Financer
-                                    </h3>
-                                    <p>WorldBank</p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Tender
-                                        Competition
-                                    </h3>
-                                    <p>
-                                        International{" "}
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Published
-                                        Date
-                                    </h3>
-                                    <p>
-                                        30 Mar 2023
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Closing Date
-                                    </h3>
-                                    <p>
-                                        30 Mar 2023
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-md-3 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>Country</h3>
-                                    <p>India</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div
-                    data-bs-toggle='collapse'
-                    href='#otherInformation'
-                    className='collapsed question'
+                    data-bs-toggle="collapse"
+                    href="#otherInformation"
+                    className="collapsed question"
                 >
                     Other Information
-                    <i className='bi bi-chevron-down icon-show'></i>
-                    <i className='bi bi-chevron-up icon-close'></i>
+                    <i className="bi bi-chevron-down icon-show"></i>
+                    <i className="bi bi-chevron-up icon-close"></i>
                 </div>
                 <div
-                    id='otherInformation'
-                    className='collapse'
-                    data-bs-parent='.faq-list'
+                    id="otherInformation"
+                    className="collapse"
+                    data-bs-parent=".faq-list"
                 >
-                    <div className='pricing pdlr10'>
-                        <div className='row'>
+                    <div className="pricing pdlr10">
+                        <div className="row">
                             <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
+                                className="col-lg-3 col-md-6 mgbtmxy"
+                                data-aos="fade-up"
+                                data-aos-delay="100"
                             >
-                                <div className='box'>
-                                    <h3>EMD </h3>
-                                    <p>
-                                        Laxman Singh
-                                    </p>
+                                <div className="box">
+                                    <h3>Deadline</h3>
+                                    <p>{grants_data?.deadline}</p>
                                 </div>
                             </div>
+                            {
+                                grants_data?.duration
+                                    ?
+                                    <div
+                                        className="col-lg-3 col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Duration </h3>
+                                            <p>{grants_data?.duration}</p>
+                                        </div>
+                                    </div>
+                                    :
+                                    null
+                            }
+                            {
+                                grants_data?.attachment
+                                    ?
+                                    <div
+                                        className="col-lg-3 col-md-6 mgbtmxy"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100"
+                                    >
+                                        <div className="box">
+                                            <h3>Attachment </h3>
+                                            <p>{grants_data?.attachment}</p>
+                                        </div>
+                                    </div>
+                                    :
+                                    null
+                            }
                             <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
+                                className="col-lg-3 col-md-6 mgbtmxy"
+                                data-aos="fade-up"
+                                data-aos-delay="100"
                             >
-                                <div className='box'>
-                                    <h3>
-                                        Estimated
-                                        Cost
-                                    </h3>
-                                    <p>
-                                        10 - 15
-                                        Million
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Document
-                                    </h3>
-                                    <p>N/A</p>
+                                <div className="box">
+                                    <h3>Post Date</h3>
+                                    <p>{grants_data?.post_date}</p>
                                 </div>
                             </div>
                         </div>

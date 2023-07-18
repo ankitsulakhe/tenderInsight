@@ -16,12 +16,15 @@ export const api_advance_search = async (payload) => {
 export const api_submit_customer_profile = async (payload) => {
     return axios.post(CUSTOMER_PROFILE, payload);
 }
+
 export const api_submit_business_profile = async (payload) => {
     return axios.post(BUSINESS_PROFILE, payload);
 }
+
 export const api_update_password = async (payload) => {
     return axios.post(UPDATE_PASSWORD, payload);
 }
+
 export const api_subscribe_plan = async (payload) => {
     return axios.post(SUBSCRIBE_PLAN, payload);
 }

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import FullScreenLoadingGrow from "../../../components/common/FullScreenLoadingGrow";
 import BreadCrumbs from "../../../components/common/BreadCrumbs";
-import NonAuthContractAwardsDetails from "../../../components/ContractAwards/NonAuthContractAwardsDetails";
+import ContractAwardsDetails from "../../../components/ContractAwards/ContractAwardsDetails";
 
 class ContractAwardsDetailsPageContainer extends React.Component {
     constructor() {
@@ -62,7 +62,7 @@ class ContractAwardsDetailsPageContainer extends React.Component {
 
                             <div className='row justify-content-center'>
                                 <div className='col-md-12'>
-                                    <NonAuthContractAwardsDetails
+                                    <ContractAwardsDetails
                                         {...this.state}
                                     />
                                 </div>

@@ -6,7 +6,7 @@ import Login from "../common/Login";
 import WorldMap from "react-svg-worldmap";
 import ProfileSidebar from "./ProfileSidebar";
 
-function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show, countryData }) {
+function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show, countryData, navigate, getRegionsData, getSectorsData }) {
     return (
         <section className="mainBanner p-0">
             <div className="container-fluid">
@@ -19,7 +19,7 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
                             data={countryData}
                             richInteraction
                         />
-                        <SearchBar />
+                        <SearchBar navigate={navigate} getRegionsData={getRegionsData} getSectorsData={getSectorsData} />
                     </div>
                     {
                         !isAuth() ?

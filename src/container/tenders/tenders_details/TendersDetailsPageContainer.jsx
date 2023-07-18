@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import FullScreenLoadingGrow from "../../../components/common/FullScreenLoadingGrow";
 import BreadCrumbs from "../../../components/common/BreadCrumbs";
-import NonAuthTenderDetails from "../../../components/Tenders/NonAuthTenderDetails";
+import TenderDetails from "../../../components/Tenders/TenderDetails";
 
 class TendersDetailsPageContainer extends React.Component {
     constructor() {
@@ -41,7 +41,7 @@ class TendersDetailsPageContainer extends React.Component {
 
         return (
             <Fragment>
-                <BreadCrumbs main={"tenders_data"} current={"Tender"} />
+                <BreadCrumbs main={""} current={"Tender"} />
 
                 <main className='bodyMain'>
                     <section id='faq' className='faq'>
@@ -55,7 +55,7 @@ class TendersDetailsPageContainer extends React.Component {
 
                             <div className='row justify-content-center'>
                                 <div className='col-md-12'>
-                                    <NonAuthTenderDetails {...this.state} />
+                                    <TenderDetails {...this.state} />
                                 </div>
                             </div>
                         </div>

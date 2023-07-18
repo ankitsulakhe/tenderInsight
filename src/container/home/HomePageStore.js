@@ -15,6 +15,8 @@ const mapDispatch = {
     getHomePageData: cmsApis.endpoints.getHomePageData.initiate,
     getAuthRecord: cmsApis.endpoints.getAuthRecord.initiate,
     getHomeCountryData: mastersApis.endpoints.getHomeCountryData.initiate,
+    getRegionsData: mastersApis.endpoints.getRegionsData.initiate,
+    getSectorsData: mastersApis.endpoints.getSectorsData.initiate,
 };
 
 const mapDispatchToProps = (dispatch) =>

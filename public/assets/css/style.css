@@ -2208,6 +2208,11 @@ ul.d-flex.topBarMenu li {
     background-size: 16px;
     height: 100%;
     border-radius: 0;
+    padding: 0;
+}
+
+.selectSearch .form-control .p-component {
+    border: 0;
 }
 
 .selectSearch {
@@ -2767,6 +2772,7 @@ div#advabceSearch button.commonBtn.loginBtn {
 
 .cursor-not-allowed {
     cursor: not-allowed !important;
+    pointer-events: none;
 }
 
 .w-90 {

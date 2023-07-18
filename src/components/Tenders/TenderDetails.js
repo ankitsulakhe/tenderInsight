@@ -1,4 +1,7 @@
-export default function NonAuthTenderDetails(props) {
+import { format } from "date-fns";
+import { Fragment } from "react";
+
+export default function TenderDetails(props) {
     const { tenders_data } = props;
 
     return (
@@ -7,7 +10,7 @@ export default function NonAuthTenderDetails(props) {
                 <div
                     data-bs-toggle='collapse'
                     href='#TenderDetails'
-                    className='question'
+                    className={`question ${tenders_data?.authority_name ? '' : 'cursor-not-allowed'}`}
                 >
                     Authority Name & Contact
                     <i className='bi bi-chevron-down icon-show'></i>
@@ -15,103 +18,80 @@ export default function NonAuthTenderDetails(props) {
                 </div>
                 <div
                     id='TenderDetails'
-                    className='collapse show'
+                    className={`collapse ${tenders_data?.authority_name ? 'show' : ''}`}
                     data-bs-parent='.faq-list'
                 >
-                    <div className='pricing pdlr10'>
-                        <div className='row'>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Authority
-                                        Name{" "}
-                                    </h3>
-                                    <p>
-                                        Global
-                                        Tender Org
-                                    </p>
+                    {
+                        tenders_data?.authority_name
+                            ?
+                            <div className='pricing pdlr10'>
+                                <div className='row'>
+                                    <div
+                                        className='col-lg-3 col-md-6 mgbtmxy'
+                                        data-aos='fade-up'
+                                        data-aos-delay='100'
+                                    >
+                                        <div className='box'>
+                                            <h3>Authority Name{" "}</h3>
+                                            <p>{tenders_data?.authority_name}</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className='col-md-6 mgbtmxy'
+                                        data-aos='fade-up'
+                                        data-aos-delay='100'
+                                    >
+                                        <div className='box'>
+                                            <h3>Address</h3>
+                                            <p>{tenders_data?.address}</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className='col-lg-3 col-md-6 mgbtmxy'
+                                        data-aos='fade-up'
+                                        data-aos-delay='100'
+                                    >
+                                        <div className='box'>
+                                            <h3>Telephone</h3>
+                                            <p>{tenders_data?.telephone}</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className='col-lg-3 col-md-6 mgbtmxy'
+                                        data-aos='fade-up'
+                                        data-aos-delay='100'
+                                    >
+                                        <div className='box'>
+                                            <h3>FAX Number</h3>
+                                            <p>{tenders_data?.fax_number || "N/A"}</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className='col-lg-3 col-md-6 mgbtmxy'
+                                        data-aos='fade-up'
+                                        data-aos-delay='100'
+                                    >
+                                        <div className='box'>
+                                            <h3>Email</h3>
+                                            <p>{tenders_data?.email || "N/A"}</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className='col-lg-3 col-md-6 mgbtmxy'
+                                        data-aos='fade-up'
+                                        data-aos-delay='100'
+                                    >
+                                        <div className='box'>
+                                            <h3>Contact Person</h3>
+                                            <p>{tenders_data?.contact_person}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div
-                                className='col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>Address</h3>
-                                    <p>
-                                        501 Prodinsa
-                                        Building,
-                                        Cnr Steve
-                                        Bhiko and
-                                        Pretorius
-                                        Street -
-                                        Arcadia -
-                                        Pretoria -
-                                        0001
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Telephone
-                                    </h3>
-                                    <p>
-                                        012-14400-21071
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        FAX Number
-                                    </h3>
-                                    <p> N/A</p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>Email</h3>
-                                    <p>
-                                        luckym@visava.in
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Contact
-                                        Person
-                                    </h3>
-                                    <p>
-                                        {" "}
-                                        Laxman Singh
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            :
+                            null
+                    }
+
                 </div>
             </li>
 
@@ -127,112 +107,97 @@ export default function NonAuthTenderDetails(props) {
                 </div>
                 <div
                     id='authortyContactDetails'
-                    className='collapse'
+                    className={`collapse ${tenders_data?.authority_name ? '' : 'show'}`}
                     data-bs-parent='.faq-list'
                 >
                     <div className='pricing pdlr10'>
                         <div className='row'>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        BIG Ref No
-                                    </h3>
-                                    <p>
-                                        RFQ:238-22-IA
-                                    </p>
-                                </div>
-                            </div>
+                            {
+                                tenders_data?.authority_name
+                                    ?
+                                    <div
+                                        className='col-lg-3 col-md-6 mgbtmxy'
+                                        data-aos='fade-up'
+                                        data-aos-delay='100'
+                                    >
+                                        <div className='box'>
+                                            <h3> BIG Ref No </h3>
+                                            <p> {tenders_data?.big_ref_no} </p>
+                                        </div>
+                                    </div>
+                                    :
+                                    null
+                            }
+
                             <div
                                 className='col-md-9 mgbtmxy'
                                 data-aos='fade-up'
                                 data-aos-delay='100'
                             >
                                 <div className='box'>
-                                    <h3>
-                                        Description
-                                    </h3>
-                                    <p>
-                                        The
-                                        Provision Of
-                                        Services For
-                                        The Service
-                                        Of
-                                        Engineering
-                                        Systems Of
-                                        Buildings Of
-                                        Educational
-                                        Organizations
-                                        Subordinate
-                                        To The
-                                        Department
-                                        Of Education
-                                        And Science
-                                        Of The City
-                                        Of Moscow In
-                                        2023-2025.
-                                    </p>
+                                    <h3> Description </h3>
+                                    <p> {tenders_data?.description} </p>
                                 </div>
                             </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Tender Type
-                                    </h3>
-                                    <p>
-                                        Defense
-                                        Forces
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Tender No
-                                    </h3>
-                                    <p>
-                                        RFQ:238-22-IA
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Financer
-                                    </h3>
-                                    <p>WorldBank</p>
-                                </div>
-                            </div>
-                            <div
-                                className='col-lg-3 col-md-6 mgbtmxy'
-                                data-aos='fade-up'
-                                data-aos-delay='100'
-                            >
-                                <div className='box'>
-                                    <h3>
-                                        Tender
-                                        Competition
-                                    </h3>
-                                    <p>
-                                        International{" "}
-                                    </p>
-                                </div>
-                            </div>
+                            {
+                                tenders_data?.authority_name
+                                    ?
+                                    <Fragment>
+                                        <div
+                                            className='col-lg-3 col-md-6 mgbtmxy'
+                                            data-aos='fade-up'
+                                            data-aos-delay='100'
+                                        >
+                                            <div className='box'>
+                                                <h3>
+                                                    Tender Type
+                                                </h3>
+                                                <p>{tenders_data?.tender_type}</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            className='col-lg-3 col-md-6 mgbtmxy'
+                                            data-aos='fade-up'
+                                            data-aos-delay='100'
+                                        >
+                                            <div className='box'>
+                                                <h3>
+                                                    Tender No
+                                                </h3>
+                                                <p>{tenders_data?.tender_no}</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            className='col-lg-3 col-md-6 mgbtmxy'
+                                            data-aos='fade-up'
+                                            data-aos-delay='100'
+                                        >
+                                            <div className='box'>
+                                                <h3>
+                                                    Financer
+                                                </h3>
+                                                <p>{tenders_data?.funding_agency || "N/A"}</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            className='col-lg-3 col-md-6 mgbtmxy'
+                                            data-aos='fade-up'
+                                            data-aos-delay='100'
+                                        >
+                                            <div className='box'>
+                                                <h3>
+                                                    Tender
+                                                    Competition
+                                                </h3>
+                                                <p>
+                                                    {tenders_data?.tender_competition || "N/A"}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </Fragment>
+                                    :
+                                    null
+                            }
                             <div
                                 className='col-lg-3 col-md-6 mgbtmxy'
                                 data-aos='fade-up'
@@ -244,7 +209,7 @@ export default function NonAuthTenderDetails(props) {
                                         Date
                                     </h3>
                                     <p>
-                                        30 Mar 2023
+                                        {tenders_data?.published_date ? format(new Date(tenders_data?.published_date), "dd-MM-yyyy") : "N/A"}
                                     </p>
                                 </div>
                             </div>
@@ -258,7 +223,7 @@ export default function NonAuthTenderDetails(props) {
                                         Closing Date
                                     </h3>
                                     <p>
-                                        30 Mar 2023
+                                        {tenders_data?.closing_date ? format(new Date(tenders_data?.closing_date), "dd-MM-yyyy") : "N/A"}
                                     </p>
                                 </div>
                             </div>
@@ -269,7 +234,7 @@ export default function NonAuthTenderDetails(props) {
                             >
                                 <div className='box'>
                                     <h3>Country</h3>
-                                    <p>India</p>
+                                    <p>{tenders_data?.country}</p>
                                 </div>
                             </div>
                         </div>
@@ -302,7 +267,7 @@ export default function NonAuthTenderDetails(props) {
                                 <div className='box'>
                                     <h3>EMD </h3>
                                     <p>
-                                        Laxman Singh
+                                        {tenders_data?.emd}
                                     </p>
                                 </div>
                             </div>
@@ -317,8 +282,7 @@ export default function NonAuthTenderDetails(props) {
                                         Cost
                                     </h3>
                                     <p>
-                                        10 - 15
-                                        Million
+                                        {tenders_data?.estimated_cost}
                                     </p>
                                 </div>
                             </div>
@@ -331,7 +295,7 @@ export default function NonAuthTenderDetails(props) {
                                     <h3>
                                         Document
                                     </h3>
-                                    <p>N/A</p>
+                                    <p>{tenders_data?.documents}</p>
                                 </div>
                             </div>
                         </div>

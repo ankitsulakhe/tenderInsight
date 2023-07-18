@@ -56,6 +56,9 @@ class HomePageContainer extends React.Component {
                     handleShowPassword={this.handleShowPassword}
                     show={this.state.show_forget_password}
                     countryData={this.state.countryData}
+                    navigate={this.props.navigate}
+                    getSectorsData={this.props.getSectorsData}
+                    getRegionsData={this.props.getRegionsData}
                 />
 
                 <TopCategories data={this.props.home_page?.data} />
