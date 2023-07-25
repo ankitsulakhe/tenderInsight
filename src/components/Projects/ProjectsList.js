@@ -6,6 +6,7 @@ import FullScreenLoadingGrow from "../common/FullScreenLoadingGrow";
 import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { format, parseISO } from "date-fns";
 
 export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchProjects }) {
     const location = useLocation();
@@ -22,6 +23,14 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
 
     const DescriptionRow = (rowData) => {
         return <Link target="_blank" to={`/projects/${rowData?.project_id}`}>{rowData.project_background}</Link>;
+    };
+
+    const publishDateRow = (rowData) => {
+        return format(parseISO(rowData.project_publishing_date), "dd/MM/yyyy");
+    };
+
+    const estimatedDateRow = (rowData) => {
+        return format(parseISO(rowData.estimated_project_completion_date), "dd/MM/yyyy");
     };
 
     return (
@@ -93,13 +102,13 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='project_publishing_date'
+                                        body={publishDateRow}
                                         sortable
                                         header='Project Date'
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='estimated_project_completion_date'
+                                        body={estimatedDateRow}
                                         sortable
                                         header='Project Deadline'
                                     ></Column>

@@ -20,23 +20,23 @@ function Footer({ links, contactDetails }) {
                                 <h4>Useful Links</h4>
                                 <ul>
                                     <li><i className="bx bx-chevron-right"></i>  <Link to="">Home</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i> <Link to="about">About Us</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="advanceSearch">Advanced Search</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="Contact">Contact Us</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="login">Login / Register</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="termandcondition">Terms and condition </Link></li>
+                                    <li><i className="bx bx-chevron-right"></i> <Link to="/about">About Us</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/advance-search">Advanced Search</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/contact">Contact Us</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/login">Login / Register</Link></li>
+                                    {/* <li><i className="bx bx-chevron-right"></i><Link to="termandcondition">Terms and condition </Link></li> */}
                                 </ul>
                             </div>
 
                             <div className="col-lg-3 col-md-6 footer-links">
                                 <h4>Our Services</h4>
                                 <ul>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="tender">Tenders</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="project">Project</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="contaractAward">Contract Awards</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="grantsDetails">Grants </Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="subscribe">Subscribe</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="EProcurement">E - Procurement</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/tenders-list">Tenders</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/projects-list">Project</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/contract-awards-list">Contract Awards</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/grants-list">Grants </Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/subscribe">Subscribe</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/EProcurement">E - Procurement</Link></li>
 
 
                                 </ul>

@@ -1,3 +1,5 @@
+import { format, parseISO } from "date-fns";
+
 export default function ContractAwardsDetails(props) {
     const { contract_awards_data } = props;
 
@@ -252,7 +254,7 @@ export default function ContractAwardsDetails(props) {
                             >
                                 <div className="box">
                                     <h3>Award Publish Date</h3>
-                                    <p>{contract_awards_data?.awards_publish_date}</p>
+                                    <p>{format(parseISO(contract_awards_data?.awards_publish_date), "dd/MM/yyyy")}</p>
                                 </div>
                             </div>
                         </div>

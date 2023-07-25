@@ -6,6 +6,7 @@ import FullScreenLoadingGrow from "../common/FullScreenLoadingGrow";
 import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { format, parseISO } from "date-fns";
 
 export default function ContractAwardsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchContractAwards }) {
     const location = useLocation();
@@ -22,6 +23,9 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
 
     const DescriptionRow = (rowData) => {
         return <Link target="_blank" to={`/contract-awards/${rowData?.big_ref_no}`}>{rowData.description}</Link>;
+    };
+    const awardsPublishDateRow = (rowData) => {
+        return rowData.awards_publish_date ? format(parseISO(rowData.awards_publish_date), "dd/MM/yyyy") : "-";
     };
 
     return (
@@ -93,7 +97,7 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='awards_publish_date'
+                                        body={awardsPublishDateRow}
                                         sortable
                                         header='Contract Date'
                                     ></Column>

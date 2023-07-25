@@ -1,3 +1,5 @@
+import { format, parseISO } from "date-fns";
+
 export default function NonAuthProjectsDetails(props) {
     const { projects_data } = props;
 
@@ -63,13 +65,13 @@ export default function NonAuthProjectsDetails(props) {
                             <div className="col-lg-6 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
                                 <div className="box">
                                     <h3>Project Publishing Date</h3>
-                                    <p>{projects_data?.project_publishing_date}</p>
+                                    <p>{projects_data?.project_publishing_date ? format(parseISO(projects_data?.project_publishing_date), "dd/MM/yyyy") : "-"}</p>
                                 </div>
                             </div>
                             <div className="col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
                                 <div className="box">
                                     <h3>Estimated Project Completion Date</h3>
-                                    <p>{projects_data?.estimated_project_completion_date}</p>
+                                    <p>{projects_data?.estimated_project_completion_date ? format(parseISO(projects_data?.estimated_project_completion_date), "dd/MM/yyyy") : "-"}</p>
                                 </div>
                             </div>
                         </div>

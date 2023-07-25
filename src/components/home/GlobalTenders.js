@@ -1,3 +1,4 @@
+import { format, parseISO } from "date-fns";
 import { Link } from "react-router-dom";
 
 export default function GlobalTenders({ row }) {
@@ -23,7 +24,7 @@ export default function GlobalTenders({ row }) {
                                     <strong>Ref No</strong>: {val.big_ref_no}{" "}
                                 </span>
                                 <span>
-                                    <strong>Due Date</strong> : {val.closing_date}
+                                    <strong>Due Date</strong> : {val.closing_date ? format(parseISO(val.closing_date), "dd/MM/yyyy") : ""}
                                 </span>
                             </div>
                         </div>

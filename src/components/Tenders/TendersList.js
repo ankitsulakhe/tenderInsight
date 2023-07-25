@@ -6,6 +6,7 @@ import FullScreenLoadingGrow from "../common/FullScreenLoadingGrow";
 import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { format, parseISO } from "date-fns";
 
 export default function TendersList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchTenders }) {
     const location = useLocation();
@@ -22,6 +23,14 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
 
     const DescriptionRow = (rowData) => {
         return <Link target="_blank" to={`/tenders/${rowData?.big_ref_no}`}>{rowData.description}</Link>;
+    };
+
+    const publishedDateRow = (rowData) => {
+        return format(parseISO(rowData?.published_date), "dd/MM/yyyy");
+    };
+
+    const closingDateRow = (rowData) => {
+        return format(parseISO(rowData?.closing_date), "dd/MM/yyyy");
     };
 
     return (
@@ -93,13 +102,13 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='published_date'
+                                        body={publishedDateRow}
                                         sortable
                                         header='Date'
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='closing_date'
+                                        body={closingDateRow}
                                         sortable
                                         header='Closing Date'
                                     ></Column>

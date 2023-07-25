@@ -6,6 +6,7 @@ import FullScreenLoadingGrow from "../common/FullScreenLoadingGrow";
 import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { format, parseISO } from "date-fns";
 
 export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchGrants }) {
     const location = useLocation();
@@ -22,6 +23,14 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
 
     const DescriptionRow = (rowData) => {
         return <Link target="_blank" to={`/grants/${rowData?.big_ref_no}`}>{rowData.title}</Link>;
+    };
+
+    const postDateRow = (rowData) => {
+        return rowData.post_date ? format(parseISO(rowData.post_date), "dd/MM/yyyy") : "-";
+    };
+
+    const deadlineRow = (rowData) => {
+        return rowData.deadline ? format(parseISO(rowData.deadline), "dd/MM/yyyy") : "-";
     };
 
     return (
@@ -93,13 +102,13 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='post_date'
+                                        body={postDateRow}
                                         sortable
                                         header='Grant Date'
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        field='deadline'
+                                        body={deadlineRow}
                                         sortable
                                         header='Grant Deadline'
                                     ></Column>
