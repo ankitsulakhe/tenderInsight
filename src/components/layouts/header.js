@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../logo.jpg";
 
 function Header({
     sectors_data, sectors_data_loading,
@@ -16,7 +17,7 @@ function Header({
         <header id="header" className="d-flex align-items-center">
             <div className="container d-flex align-items-center justify-content-between">
                 <Link to="">
-                    <img src="https://bidsinfoglobal.com/static/media/logo.96dc4c1272d7ec77c64e.jpg" alt="main logo" className="logo" />
+                    <img src={logo} alt="main logo" className="logo" />
                 </Link>
 
                 <nav id="navbar" className="navbar">
