@@ -1,4 +1,4 @@
-const NODE_ENV = "http://62.72.0.219/api"; // local development
+const NODE_ENV = "https://bidsinfoglobal.com/api"; // local development
 
 export const searchType = ["Any Word", "Exact Phrase", "Relevant Word"];
 export const geoLocationKeyword = ["Regions", "Country", "State & City"];
