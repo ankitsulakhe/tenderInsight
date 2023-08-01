@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { isAuth } from "../../helpers/cookies";
-import SearchBar from "../../pages-old/searchBar/SearchBar";
+import SearchBar from "./SearchBar";
 import ForgetPassword from "../common/ForgetPassword";
 import Login from "../common/Login";
 import WorldMap from "react-svg-worldmap";
