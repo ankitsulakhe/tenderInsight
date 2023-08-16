@@ -26,11 +26,7 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
     };
 
     const postDateRow = (rowData) => {
-        return rowData.post_date ? format(parseISO(rowData.post_date), "dd/MM/yyyy") : "-";
-    };
-
-    const deadlineRow = (rowData) => {
-        return rowData.deadline ? format(parseISO(rowData.deadline), "dd/MM/yyyy") : "-";
+        return rowData.post_date ? format(new Date(rowData.post_date), "dd/MM/yyyy") : "-";
     };
 
     return (
@@ -108,7 +104,7 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
                                     ></Column>
                                     <Column
                                         className='TableHeader'
-                                        body={deadlineRow}
+                                        field={'deadline'}
                                         sortable
                                         header='Grant Deadline'
                                     ></Column>

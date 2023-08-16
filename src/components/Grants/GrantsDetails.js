@@ -244,7 +244,7 @@ export default function GrantsDetails(props) {
                             >
                                 <div className="box">
                                     <h3>Post Date</h3>
-                                    <p>{grants_data?.post_date ? format(parseISO(grants_data?.post_date), "dd/MM/yyyy") : "-"}</p>
+                                    <p>{grants_data?.post_date ? format(new Date(grants_data?.post_date), "dd/MM/yyyy") : "-"}</p>
                                 </div>
                             </div>
                         </div>

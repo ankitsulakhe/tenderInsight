@@ -23,7 +23,7 @@ export default function IndianTenders({ row }) {
                                     <strong>Ref No</strong>: {val.big_ref_no}{" "}
                                 </span>
                                 <span>
-                                    <strong>Due Date</strong> : {val.closing_date ? format(parseISO(val.closing_date), "dd/MM/yyyy") : ""}
+                                    <strong>Due Date</strong> : {val.closing_date ? format(new Date(val.closing_date), "dd/MM/yyyy") : ""}
                                 </span>
                             </div>
                         </div>

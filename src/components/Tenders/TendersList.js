@@ -26,11 +26,11 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
     };
 
     const publishedDateRow = (rowData) => {
-        return format(parseISO(rowData?.published_date), "dd/MM/yyyy");
+        return format(new Date(rowData?.published_date), "dd/MM/yyyy");
     };
 
     const closingDateRow = (rowData) => {
-        return format(parseISO(rowData?.closing_date), "dd/MM/yyyy");
+        return format(new Date(rowData?.closing_date), "dd/MM/yyyy");
     };
 
     return (

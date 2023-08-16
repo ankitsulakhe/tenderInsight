@@ -254,7 +254,7 @@ export default function ContractAwardsDetails(props) {
                             >
                                 <div className="box">
                                     <h3>Award Publish Date</h3>
-                                    <p>{format(parseISO(contract_awards_data?.awards_publish_date), "dd/MM/yyyy")}</p>
+                                    <p>{format(new Date(contract_awards_data?.awards_publish_date), "dd/MM/yyyy")}</p>
                                 </div>
                             </div>
                         </div>

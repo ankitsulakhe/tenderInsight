@@ -26,11 +26,17 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
     };
 
     const publishDateRow = (rowData) => {
-        return format(parseISO(rowData.project_publishing_date), "dd/MM/yyyy");
+        if (!rowData.project_publishing_date) {
+            return "-";
+        }
+        return format(new Date(rowData?.project_publishing_date), "dd/MM/yyyy");
     };
 
     const estimatedDateRow = (rowData) => {
-        return format(parseISO(rowData.estimated_project_completion_date), "dd/MM/yyyy");
+        if (!rowData.estimated_project_completion_date) {
+            return "-";
+        }
+        return format(new Date(rowData?.estimated_project_completion_date), "dd/MM/yyyy");
     };
 
     return (
