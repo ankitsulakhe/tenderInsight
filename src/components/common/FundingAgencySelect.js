@@ -9,13 +9,13 @@ export default function FundingAgencySelect({ getFundingAgencyData, name, multip
     const fetchFunction = async (event) => {
 
         setTimeout(async () => {
-            let keyword = event.query.toLowerCase();
+            let keywords = event.query.toLowerCase();
             let res = await getFundingAgencyData({
                 pageNo: "0",
                 limit: "10",
                 sortBy: "1",
                 sortField: "code",
-                keyword: keyword
+                keywords: keywords
             })
             setRecords(res?.data?.result)
 
@@ -35,7 +35,7 @@ export default function FundingAgencySelect({ getFundingAgencyData, name, multip
             onChange={onChange}
             className="w-100"
             panelClassName="w-100 form-control"
-            placeholder="Type code or keyword..."
+            placeholder="Type code or keywords..."
         />
     )
 }

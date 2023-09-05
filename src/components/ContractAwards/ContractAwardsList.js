@@ -25,8 +25,11 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
         return <Link target="_blank" to={`/contract-awards/${rowData?.big_ref_no}`}>{rowData.description}</Link>;
     };
     const awardsPublishDateRow = (rowData) => {
-        console.log(new Date(rowData.awards_publish_date), "rowData.awards_publish_date");
-        return rowData.awards_publish_date ? format(new Date(rowData.awards_publish_date), "dd/MM/yyyy") : "-";
+        try {
+            return rowData.awards_publish_date ? format(new Date(rowData.awards_publish_date), "dd/MM/yyyy") : "-";
+        } catch (e) {
+            return "";
+        }
     };
 
     return (

@@ -9,13 +9,13 @@ export default function StateSelect({ getStatesData, name, multiple, onChange, i
     const fetchFunction = async (event) => {
 
         setTimeout(async () => {
-            let keyword = event.query.toLowerCase();
+            let keywords = event.query.toLowerCase();
             let res = await getStatesData({
                 pageNo: "0",
                 limit: "10",
                 sortBy: "1",
                 sortField: "code",
-                keyword: keyword
+                keywords: keywords
             })
             setRecords(res.data?.result || [])
 

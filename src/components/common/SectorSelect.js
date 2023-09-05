@@ -9,13 +9,13 @@ export default function SectorSelect({ getSectorsData, name, multiple, onChange,
     const fetchFunction = async (event) => {
 
         setTimeout(async () => {
-            let keyword = event.query.toLowerCase();
+            let keywords = event.query.toLowerCase();
             let res = await getSectorsData({
                 pageNo: "0",
                 limit: "10",
                 sortBy: "1",
                 sortField: "name",
-                keyword: keyword
+                keywords: keywords
             })
             setRecords(res.data?.result || [])
 

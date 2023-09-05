@@ -13,8 +13,10 @@ class TendersListPageContainer extends React.Component {
         };
     }
 
+
     fetchTenders = async (payload) => {
         const { state } = this.props.location;
+        this.setState({ tenders_loading: true });
 
         if (state?.advance_search) {
             await this.props.advanceSearchFunction({

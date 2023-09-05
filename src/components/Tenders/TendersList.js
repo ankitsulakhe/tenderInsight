@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import TenderSidebarFilter from "../common/TendersSidebarFilter";
@@ -10,6 +10,34 @@ import { format, parseISO } from "date-fns";
 
 export default function TendersList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchTenders }) {
     const location = useLocation();
+
+    useEffect(() => {
+        let payload = {};
+        if (location.state?.sectorVal && location.state.sectorVal.length > 0)
+            payload.sectors = location.state.sectorVal
+                .map((val) => {
+                    return val.name;
+                })
+                .join(",");
+
+        if (location.state?.regionsVal && location.state.regionsVal.length > 0)
+            payload.regions = location.state.regionsVal
+                .map((val) => {
+                    return val.name;
+                })
+                .join(",");
+        if (location.state?.cpvCodesVal && location.state.cpvCodesVal.length > 0)
+            payload.cpv_codes = location.state.cpvCodesVal
+                .map((val) => {
+                    return val.name;
+                })
+                .join(",");
+
+        if (Object.keys(payload).length) {
+            handleFilter(payload);
+        }
+
+    }, [location.state])
 
     const handleFilter = (payload, extra = {}) => {
         fetchTenders({
@@ -30,7 +58,14 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
     };
 
     const closingDateRow = (rowData) => {
-        return format(new Date(rowData?.closing_date), "dd/MM/yyyy");
+        try {
+            if (rowData?.closing_date)
+                return format(new Date(rowData?.closing_date), "dd/MM/yyyy");
+            else
+                return "";
+        } catch (e) {
+            console.log(e);
+        }
     };
 
     return (

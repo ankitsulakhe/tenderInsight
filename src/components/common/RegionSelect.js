@@ -8,13 +8,13 @@ export default function RegionSelect({ getRegionsData, name, multiple, onChange,
 
     const fetchFunction = async (event) => {
         setTimeout(async () => {
-            let keyword = event.query.toLowerCase();
+            let keywords = event.query.toLowerCase();
             let res = await getRegionsData({
                 pageNo: "0",
                 limit: "10",
                 sortBy: "1",
                 sortField: "code",
-                keyword: keyword
+                keywords: keywords
             })
             setRecords(res.data?.result || [])
         }, 1000);
