@@ -7,6 +7,12 @@ import WorldMap from "react-svg-worldmap";
 import ProfileSidebar from "./ProfileSidebar";
 
 function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show, countryData, navigate, getRegionsData, getSectorsData }) {
+
+    const handleClick = (e) => {
+        if (e.countryValue)
+            navigate("/tenders-list", { state: { country: e.countryName } })
+    }
+
     return (
         <section className="mainBanner p-0">
             <div className="container-fluid">
@@ -18,6 +24,7 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
                             size="responsive"
                             data={countryData}
                             richInteraction
+                            onClickFunction={(e) => handleClick(e)}
                         />
                         <SearchBar navigate={navigate} getRegionsData={getRegionsData} getSectorsData={getSectorsData} />
                     </div>

@@ -53,6 +53,10 @@ class TendersListPageContainer extends React.Component {
             if (state?.keywords)
                 payload.keywords = state.keywords;
 
+            if (state?.country) {
+                payload.country = state.country;
+            }
+
             let tenderRes = await this.props.getTendersData(payload);
             if (tenderRes.isSuccess) {
                 window.history.replaceState({}, document.title);
