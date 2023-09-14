@@ -17,6 +17,10 @@ function Header({
     e.preventDefault();
     navigate(url, { state: { [type]: [payload] } });
     setIsActive(!isActive);
+     window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
 
   };
   const [isActive, setIsActive] = useState(true);
@@ -27,10 +31,18 @@ function Header({
 
     signout(() => window.location.reload());
     setIsActive(!isActive);
+     window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
 
 }
 
   const toggleClass = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     setIsActive(!isActive);
   };
 
