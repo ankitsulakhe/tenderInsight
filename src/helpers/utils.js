@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export const convertArrayDateToString = (arr, str) => {
 
     try {
@@ -37,5 +39,13 @@ export const convertDateToRangeDate = (val) => {
         return [startDate, endDate]
     } catch (error) {
         console.log(error?.message);
+    }
+}
+
+export const handleDateDefault = (date) => {
+    try {
+        return format(new Date(date), "dd-MM-yyyy")
+    } catch (e) {
+        return "Invalid Date";
     }
 }

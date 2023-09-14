@@ -22,9 +22,6 @@ export default function AdvanceSearch(props) {
         payload.cpv_codes = payload.cpv_codes && payload.cpv_codes.map((val) => {
             return val.code
         }).join(",");
-        payload.cpv_codes = payload.cpv_codes && payload.cpv_codes.map((val) => {
-            return val.code
-        }).join(",");
 
         props.submit(payload);
     }

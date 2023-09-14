@@ -36,7 +36,7 @@ export const cpvCodeParser = (response) => {
         response.result = response.result.map(function (val) {
             let obj = {
                 _id: val?._id,
-                name: val?.description,
+                name: val?.code + "-" + val?.description,
                 code: val?.code
             }
             if (response?.by_tenders_count) {

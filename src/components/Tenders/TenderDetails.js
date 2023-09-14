@@ -1,5 +1,6 @@
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { Fragment } from "react";
+import { handleDateDefault } from "../../helpers/utils";
 
 export default function TenderDetails(props) {
     const { tenders_data } = props;
@@ -130,7 +131,7 @@ export default function TenderDetails(props) {
                             }
 
                             <div
-                                className='col-md-9 mgbtmxy'
+                                className='col-md-12 mgbtmxy'
                                 data-aos='fade-up'
                                 data-aos-delay='100'
                             >
@@ -209,7 +210,7 @@ export default function TenderDetails(props) {
                                         Date
                                     </h3>
                                     <p>
-                                        {tenders_data?.published_date ? format(new Date(tenders_data?.published_date), "dd-MM-yyyy") : "N/A"}
+                                        {tenders_data?.published_date ? handleDateDefault(tenders_data?.published_date) : "N/A"}
                                     </p>
                                 </div>
                             </div>
@@ -223,7 +224,7 @@ export default function TenderDetails(props) {
                                         Closing Date
                                     </h3>
                                     <p>
-                                        {tenders_data?.closing_date ? format(new Date(tenders_data?.closing_date), "dd-MM-yyyy") : "N/A"}
+                                        {tenders_data?.closing_date ? handleDateDefault(tenders_data?.closing_date) : "N/A"}
                                     </p>
                                 </div>
                             </div>
