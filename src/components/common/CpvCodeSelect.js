@@ -12,7 +12,7 @@ export default function CpvCodeSelect({ getCpvCodesData, name, multiple, onChang
             let keywords = event.query.toLowerCase();
             let res = await getCpvCodesData({
                 pageNo: "0",
-                limit: "10",
+                limit: "50",
                 sortBy: "1",
                 sortField: "code",
                 keywords: keywords

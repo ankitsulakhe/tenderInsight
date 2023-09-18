@@ -119,9 +119,9 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
                                 >
                                     <Column
                                         className='TableHeader'
-                                        field='address'
+                                        field='country'
                                         sortable
-                                        header='Address'
+                                        header='Country'
                                     ></Column>
                                     <Column
                                         className='TableHeader'

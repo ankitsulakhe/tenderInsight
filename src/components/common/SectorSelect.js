@@ -12,7 +12,7 @@ export default function SectorSelect({ getSectorsData, name, multiple, onChange,
             let keywords = event.query.toLowerCase();
             let res = await getSectorsData({
                 pageNo: "0",
-                limit: "10",
+                limit: "50",
                 sortBy: "1",
                 sortField: "name",
                 keywords: keywords

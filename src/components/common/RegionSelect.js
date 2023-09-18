@@ -11,7 +11,7 @@ export default function RegionSelect({ getRegionsData, name, multiple, onChange,
             let keywords = event.query.toLowerCase();
             let res = await getRegionsData({
                 pageNo: "0",
-                limit: "10",
+                limit: "50",
                 sortBy: "1",
                 sortField: "code",
                 keywords: keywords

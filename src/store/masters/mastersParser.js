@@ -176,7 +176,7 @@ export const tenderDataParser = (response) => {
         response.result = response.result.map(function (val) {
             return {
                 _id: get(val, "_id", ""),
-                address: get(val, "address", ""),
+                country: get(val, "country", ""),
                 closing_date: get(val, "closing_date", ""),
                 description: get(val, "description", ""),
                 published_date: get(val, "published_date", ""),
