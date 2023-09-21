@@ -55,7 +55,7 @@ export default function SubscribeComponent({ data, handlePlan, submit_loading, s
                             <div className="box" >
                                 <h3>{val.title}</h3>
                                 <h4>
-                                    <sup>USD</sup>{val.amount} <span> / {val.validity_month} month</span>
+                                    <sup>USD</sup>{val.amount} <span> / {val.validity_days} month</span>
                                 </h4>
                                 <div dangerouslySetInnerHTML={{ __html: val.access }}></div>
                                 <div className="btn-wrap">

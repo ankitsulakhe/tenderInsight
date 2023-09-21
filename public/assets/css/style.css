@@ -3031,3 +3031,10 @@ a.commonBtn.resetBtn {
 .p-datatable .p-sortable-column:not(.p-highlight):not(.p-sortable-disabled):hover .p-sortable-column-icon {
     color: #041c36 !important;
 }
+.limit-description {
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 90%;
+}

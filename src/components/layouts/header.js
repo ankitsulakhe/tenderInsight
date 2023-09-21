@@ -13,30 +13,30 @@ function Header({
   cpv_codes_data_loading,
   navigate,
 }) {
+  const [isActive, setIsActive] = useState(true);
+  const [DropdownMenu, setDropdownMenu] = useState(null);
+
   const handleActionClick = (e, payload, type, url) => {
     e.preventDefault();
     navigate(url, { state: { [type]: [payload] } });
     setIsActive(!isActive);
-     window.scrollTo({
+    window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
-
   };
-  const [isActive, setIsActive] = useState(true);
-  const [DropdownMenu, setDropdownMenu] = useState(null);
-  
+
   const handleSignOut = (e) => {
     e.preventDefault();
 
     signout(() => window.location.reload());
     setIsActive(!isActive);
-     window.scrollTo({
+    window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
 
-}
+  }
 
   const toggleClass = () => {
     window.scrollTo({
@@ -49,28 +49,29 @@ function Header({
   const DropdownMenuOpen = (elementId) => {
     setDropdownMenu(elementId === DropdownMenu ? null : elementId);
   };
- 
+
+  console.log(isActive, "isActive");
+
 
   return (
     <header id="header" className="d-flex align-items-center">
-        <span className={`${isActive ? "ForMobileOnly spanClsoes menuClassHide" : "ForMobileOnly spanClsoes menuClassSHow"}`} onClick={toggleClass}></span>
+      <span className={`${isActive ? "ForMobileOnly spanClsoes menuClassHide" : "ForMobileOnly spanClsoes menuClassSHow"}`} onClick={() => toggleClass()}></span>
       <div className="container d-flex align-items-center justify-content-between">
-        <Link  to="">
+        <Link to="">
           <img src={logo} alt="main logo" className="logo" />
         </Link>
 
         <nav id="navbar" className={`${isActive ? "navbar" : "navbar-mobile"}`}>
           <ul>
             <li>
-              <Link onClick={toggleClass}  to="">Home</Link>
+              <Link onClick={() => toggleClass()} to="">Home</Link>
             </li>
             <li>
-              <Link onClick={toggleClass} to="about">About Us</Link>
+              <Link onClick={() => toggleClass()} to="about">About Us</Link>
             </li>
             <li
-              className={`dropdown ${
-                DropdownMenu === "element1" ? "Open_dd_mobile" : ""
-              }`}
+              className={`dropdown ${DropdownMenu === "element1" ? "Open_dd_mobile" : ""
+                }`}
               onClick={() => DropdownMenuOpen("element1")}
             >
               <Link to="/">
@@ -78,7 +79,7 @@ function Header({
               </Link>
               <ul>
                 <li className="dropdown">
-                  <Link onClick={toggleClass} to={"/tenders-list"}>
+                  <Link onClick={() => toggleClass()} to={"/tenders-list"}>
                     <span>Tenders By Sector</span>
                   </Link>
                   <ul>
@@ -89,7 +90,7 @@ function Header({
                       sectors_data.map(function (val, ind) {
                         return (
                           <li key={ind}>
-                            <Link 
+                            <Link
                               to={"/tenders-list"}
                               onClick={(e) =>
                                 handleActionClick(
@@ -107,14 +108,14 @@ function Header({
                       })
                     )}
                     <li>
-                      <Link  onClick={toggleClass}   to={"/tenders-by-sectors"} className="AllcatLink">
+                      <Link onClick={() => toggleClass()} to={"/tenders-by-sectors"} className="AllcatLink">
                         More...
                       </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="dropdown">
-                  <Link  onClick={toggleClass}  to={"/tenders-list"}>
+                  <Link onClick={() => toggleClass()} to={"/tenders-list"}>
                     <span>Tenders By Region</span>
                   </Link>
                   <ul>
@@ -125,7 +126,7 @@ function Header({
                       regions_data.map(function (val, ind) {
                         return (
                           <li key={ind}>
-                            <Link 
+                            <Link
                               to={"/tenders-list"}
                               onClick={(e) =>
                                 handleActionClick(
@@ -143,14 +144,14 @@ function Header({
                       })
                     )}
                     <li>
-                      <Link  onClick={toggleClass}   to={"/tenders-by-regions"} className="AllcatLink">
+                      <Link onClick={() => toggleClass()} to={"/tenders-by-regions"} className="AllcatLink">
                         More...
                       </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="dropdown">
-                  <Link  onClick={toggleClass}   to={"/tenders-list"}>
+                  <Link onClick={() => toggleClass()} to={"/tenders-list"}>
                     <span>Tenders By Products/Services/CPV</span>
                   </Link>
                   <ul>
@@ -161,7 +162,7 @@ function Header({
                       cpv_codes_data.map(function (val, ind) {
                         return (
                           <li key={ind}>
-                            <Link 
+                            <Link
                               to={"/tenders-list"}
                               onClick={(e) =>
                                 handleActionClick(
@@ -179,7 +180,7 @@ function Header({
                       })
                     )}
                     <li>
-                      <Link  onClick={toggleClass}  to={"/tenders-by-cpvcodes"} className="AllcatLink">
+                      <Link onClick={() => toggleClass()} to={"/tenders-by-cpvcodes"} className="AllcatLink">
                         More...
                       </Link>
                     </li>
@@ -188,17 +189,16 @@ function Header({
               </ul>
             </li>
             <li
-              className={`dropdown ${
-                DropdownMenu === "element2" ? "Open_dd_mobile" : ""
-              }`}
+              className={`dropdown ${DropdownMenu === "element2" ? "Open_dd_mobile" : ""
+                }`}
               onClick={() => DropdownMenuOpen("element2")}
             >
-              <Link   to="/">
+              <Link to="/">
                 <span>Project</span> <i className="bi bi-chevron-down"></i>
               </Link>
               <ul>
                 <li className="dropdown">
-                  <Link  onClick={toggleClass}  to={"/projects-list"}>
+                  <Link onClick={() => toggleClass()} to={"/projects-list"}>
                     <span>Project By Sector</span>
                   </Link>
                   <ul>
@@ -209,7 +209,7 @@ function Header({
                       sectors_data.map(function (val, ind) {
                         return (
                           <li key={ind}>
-                            <Link 
+                            <Link
                               to={"/projects-list"}
                               onClick={(e) =>
                                 handleActionClick(
@@ -227,14 +227,14 @@ function Header({
                       })
                     )}
                     <li>
-                      <Link  onClick={toggleClass}   to={"/projects-by-sectors"} className="AllcatLink">
+                      <Link onClick={() => toggleClass()} to={"/projects-by-sectors"} className="AllcatLink">
                         More...
                       </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="dropdown">
-                  <Link  onClick={toggleClass}  to={"/projects-list"}>
+                  <Link onClick={() => toggleClass()} to={"/projects-list"}>
                     <span>Project By Region</span>
                   </Link>
                   <ul>
@@ -245,7 +245,7 @@ function Header({
                       regions_data.map(function (val, ind) {
                         return (
                           <li key={ind}>
-                            <Link 
+                            <Link
                               to={"/projects-list"}
                               onClick={(e) =>
                                 handleActionClick(
@@ -263,7 +263,7 @@ function Header({
                       })
                     )}
                     <li>
-                      <Link  onClick={toggleClass}  to={"/projects-by-regions"} className="AllcatLink">
+                      <Link onClick={() => toggleClass()} to={"/projects-by-regions"} className="AllcatLink">
                         More...
                       </Link>
                     </li>
@@ -272,32 +272,32 @@ function Header({
               </ul>
             </li>
             <li>
-              <Link  onClick={toggleClass}  to={"contract-awards-list"}>Contract Awards</Link>
+              <Link onClick={() => toggleClass()} to={"contract-awards-list"}>Contract Awards</Link>
             </li>
             <li>
-              <Link  onClick={toggleClass}  to={"grants-list"}>Grants</Link>
+              <Link onClick={() => toggleClass()} to={"grants-list"}>Grants</Link>
             </li>
             <li>
-              <Link  onClick={toggleClass}  to="service">Services</Link>
+              <Link onClick={() => toggleClass()} to="service">Services</Link>
             </li>
             <li>
-              <Link  onClick={toggleClass}  to="profile">Profile</Link>
+              <Link onClick={() => toggleClass()} to="profile">Profile</Link>
             </li>
             <li className="ForMobileOnly">
-              <Link  onClick={toggleClass}  to={'/advance-search'} >Advanced Search</Link>
+              <Link onClick={() => toggleClass()} to={'/advance-search'} >Advanced Search</Link>
             </li>
             <li className="ForMobileOnly">
-              <Link  onClick={toggleClass}  to="EProcurement">E - Procurement</Link>
+              <Link onClick={() => toggleClass()} to="EProcurement">E - Procurement</Link>
             </li>
             <li className="ForMobileOnly">
-              <Link  onClick={toggleClass}  to="contact">Contact Us</Link>
+              <Link onClick={() => toggleClass()} to="contact">Contact Us</Link>
             </li>
             <li className="ForMobileOnly">
-              <Link  onClick={toggleClass}  to="subscribe">Subscribe</Link>
+              <Link onClick={() => toggleClass()} to="subscribe">Subscribe</Link>
             </li>
             {isAuth() ? (
               <li className="ForMobileOnly">
-                <Link 
+                <Link
                   to="/"
                   onClick={(e) => handleSignOut(e)}
                   className="nav-link scrollto "
@@ -307,7 +307,7 @@ function Header({
               </li>
             ) : (
               <li>
-                <Link  onClick={toggleClass}  to="login" className="nav-link scrollto ">
+                <Link onClick={() => toggleClass()} to="login" className="nav-link scrollto ">
                   Login / Register
                 </Link>
               </li>
@@ -315,7 +315,7 @@ function Header({
           </ul>
           <i
             className="bi bi-list mobile-nav-toggle clickEvent"
-            onClick={toggleClass}
+            onClick={() => toggleClass()}
           ></i>
         </nav>
       </div>

@@ -50,7 +50,7 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
     }
 
     const DescriptionRow = (rowData) => {
-        return <Link target="_blank" to={`/tenders/${rowData?.big_ref_no}`}>{rowData.description}</Link>;
+        return <Link target="_blank" className="limit-description" to={`/tenders/${rowData?.big_ref_no}`}>{rowData.description }</Link>;
     };
 
     const publishedDateRow = (rowData) => {
