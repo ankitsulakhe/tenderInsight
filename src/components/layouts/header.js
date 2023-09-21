@@ -19,6 +19,7 @@ function Header({
   const handleActionClick = (e, payload, type, url) => {
     e.preventDefault();
     navigate(url, { state: { [type]: [payload] } });
+    if (isMobile)
     setIsActive(!isActive);
     window.scrollTo({
       top: 0,

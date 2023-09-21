@@ -113,22 +113,7 @@ export default function TenderDetails(props) {
                 >
                     <div className='pricing pdlr10'>
                         <div className='row'>
-                            {
-                                tenders_data?.authority_name
-                                    ?
-                                    <div
-                                        className='col-lg-3 col-md-6 mgbtmxy'
-                                        data-aos='fade-up'
-                                        data-aos-delay='100'
-                                    >
-                                        <div className='box'>
-                                            <h3> BIG Ref No </h3>
-                                            <p> {tenders_data?.big_ref_no} </p>
-                                        </div>
-                                    </div>
-                                    :
-                                    null
-                            }
+                            
 
                             <div
                                 className='col-md-12 mgbtmxy'
@@ -140,10 +125,22 @@ export default function TenderDetails(props) {
                                     <p> {tenders_data?.description} </p>
                                 </div>
                             </div>
+                           
                             {
                                 tenders_data?.authority_name
                                     ?
                                     <Fragment>
+                                         <div
+                                        className='col-lg-3 col-md-6 mgbtmxy'
+                                        data-aos='fade-up'
+                                        data-aos-delay='100'
+                                    >
+                                        <div className='box'>
+                                            <h3> BIG Ref No </h3>
+                                            <p> {tenders_data?.big_ref_no} </p>
+                                        </div>
+                                    </div>
+                                    
                                         <div
                                             className='col-lg-3 col-md-6 mgbtmxy'
                                             data-aos='fade-up'
