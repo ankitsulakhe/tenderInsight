@@ -28,7 +28,7 @@ class BusinessProfilePageContainer extends React.Component {
                                 <div className='homeLoginMain'>
                                     <div className='section-title pb-0'>
                                         <h3>
-                                            Ketan Patel - Business Profile Page
+                                            Business Profile Page
                                         </h3>
                                     </div>
                                     <div

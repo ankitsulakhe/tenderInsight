@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../logo.jpg";
 import { isAuth, signout } from "../../helpers/cookies";
-
+import { isMobile } from 'react-device-detect';
 
 function Header({
   sectors_data,
@@ -13,7 +13,7 @@ function Header({
   cpv_codes_data_loading,
   navigate,
 }) {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(!isMobile);
   const [DropdownMenu, setDropdownMenu] = useState(null);
 
   const handleActionClick = (e, payload, type, url) => {
@@ -30,7 +30,8 @@ function Header({
     e.preventDefault();
 
     signout(() => window.location.reload());
-    setIsActive(!isActive);
+    if (isMobile)
+      setIsActive(!isActive);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -43,15 +44,13 @@ function Header({
       top: 0,
       behavior: 'smooth',
     });
-    setIsActive(!isActive);
+    if (isMobile)
+      setIsActive(!isActive);
   };
 
   const DropdownMenuOpen = (elementId) => {
     setDropdownMenu(elementId === DropdownMenu ? null : elementId);
   };
-
-  console.log(isActive, "isActive");
-
 
   return (
     <header id="header" className="d-flex align-items-center">
@@ -280,9 +279,16 @@ function Header({
             <li>
               <Link onClick={() => toggleClass()} to="service">Services</Link>
             </li>
-            <li>
-              <Link onClick={() => toggleClass()} to="profile">Profile</Link>
-            </li>
+            {
+              isAuth()
+                ?
+                <li>
+                  <Link onClick={() => toggleClass()} to="profile">Profile</Link>
+                </li>
+                :
+                null
+            }
+
             <li className="ForMobileOnly">
               <Link onClick={() => toggleClass()} to={'/advance-search'} >Advanced Search</Link>
             </li>

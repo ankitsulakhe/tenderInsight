@@ -22,7 +22,6 @@ class ServiceContainer extends React.Component {
                     <section id='about' className='about pb-2'>
                         <div className='container' data-aos='fade-up'>
                             <div className='section-title fullwidth'>
-                                <h2>Service</h2>
                                 <h3 className='pt-2'>{data?.title}</h3>
                                 <p>{data?.description}</p>
                             </div>

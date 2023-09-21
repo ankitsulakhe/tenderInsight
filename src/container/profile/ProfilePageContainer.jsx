@@ -27,7 +27,7 @@ class ProfilePageContainer extends React.Component {
                             <div className='col-md-8 signupPagePadding'>
                                 <div className='homeLoginMain'>
                                     <div className='section-title pb-0'>
-                                        <h3>Ketan Patel - Profile View</h3>
+                                        <h3>Profile View</h3>
                                     </div>
                                     <div
                                         className='mainBoxLogin commonBoxShadow'

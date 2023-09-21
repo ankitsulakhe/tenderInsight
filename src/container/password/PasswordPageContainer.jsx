@@ -18,7 +18,7 @@ class PasswordPageContainer extends React.Component {
                             <div className='col-md-8 signupPagePadding'>
                                 <div className='homeLoginMain'>
                                     <div className='section-title pb-0'>
-                                        <h3>Ketan Patel - Password</h3>
+                                        <h3>Password</h3>
                                     </div>
                                     <div
                                         className='mainBoxLogin commonBoxShadow'

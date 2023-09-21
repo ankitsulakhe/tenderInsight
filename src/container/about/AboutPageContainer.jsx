@@ -20,8 +20,7 @@ class AboutPageContainer extends React.Component {
                     <section id='about' className='about'>
                         <div className='container' data-aos='fade-up'>
                             <div className='section-title'>
-                                <h2>About</h2>
-                                <h3>{data?.title_one}</h3>
+                                <h2>{data?.title_one}</h2>
                                 <p>{data?.sub_title_one}</p>
                             </div>
 

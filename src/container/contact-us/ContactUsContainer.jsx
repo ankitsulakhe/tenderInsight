@@ -26,10 +26,7 @@ class ContactUsContainer extends React.Component {
                     <section id='contact' className='contact'>
                         <div className='container' data-aos='fade-up'>
                             <div className='section-title'>
-                                <h2>Contact</h2>
-                                <h3>
-                                    <span>{data?.contact_title}</span>
-                                </h3>
+                                <h2>{data?.contact_title}</h2>
                                 <p>{data?.contact_description}</p>
                             </div>
 
