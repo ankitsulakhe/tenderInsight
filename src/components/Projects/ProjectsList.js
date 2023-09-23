@@ -120,7 +120,7 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
                                         className='TableHeader'
                                         field='project_location'
                                         sortable
-                                        header='Location'
+                                        header='Country'
                                     ></Column>
                                     <Column
                                         className='TableHeader'

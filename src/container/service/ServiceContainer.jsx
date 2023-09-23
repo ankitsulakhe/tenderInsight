@@ -16,7 +16,7 @@ class ServiceContainer extends React.Component {
 
         return (
             <Fragment>
-                <BreadCrumbs main='About Us' current={"About Us"} />
+                <BreadCrumbs main='Services' current={"Services"} />
 
                 <main className='bodyMain'>
                     <section id='about' className='about pb-2'>

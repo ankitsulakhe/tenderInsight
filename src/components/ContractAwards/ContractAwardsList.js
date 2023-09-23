@@ -85,7 +85,7 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
                                         className='TableHeader'
                                         field='project_location'
                                         sortable
-                                        header='Location'
+                                        header='Country'
                                     ></Column>
                                     <Column
                                         className='TableHeader'

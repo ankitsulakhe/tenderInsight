@@ -13,7 +13,7 @@ function Header({
   cpv_codes_data_loading,
   navigate,
 }) {
-  const [isActive, setIsActive] = useState(!isMobile);
+  const [isActive, setIsActive] = useState(true);
   const [DropdownMenu, setDropdownMenu] = useState(null);
 
   const handleActionClick = (e, payload, type, url) => {
