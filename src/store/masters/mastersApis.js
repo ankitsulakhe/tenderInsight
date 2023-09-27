@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
 import { baseUrl } from "../../helpers/constants";
 import { getCookie } from "../../helpers/cookies";
 import { GET_CONTRACT_AWARDS_DATA, GET_CONTRACT_AWARD_INFO, GET_COUNTRY_DATA, GET_CPV_CODES_DATA, GET_FUNDING_AGENCY_DATA, GET_GRANTS_DATA, GET_GRANT_INFO, GET_PROJECTS_DATA, GET_PROJECT_INFO, GET_REGIONS_DATA, GET_SECTORS_DATA, GET_STATES_DATA, GET_TENDERS_DATA, GET_TENDER_INFO } from "./mastersConstants";
-import { contractAwardDataParser, contractAwardInfoParser, cpvCodeParser, fundingAgencyParser, grantsDataParser, grantsInfoParser, homeCountryParser, projectDataParser, projectInfoParser, regionParser, sectorParser, statesParser, tenderDataParser, tenderInfoParser } from './mastersParser';
+import { contractAwardDataParser, contractAwardInfoParser, countryParser, cpvCodeParser, fundingAgencyParser, grantsDataParser, grantsInfoParser, homeCountryParser, projectDataParser, projectInfoParser, regionParser, sectorParser, statesParser, tenderDataParser, tenderInfoParser } from './mastersParser';
 
 const mastersApis = createApi({
     reducerPath: 'mastersApis',
@@ -23,14 +23,14 @@ const mastersApis = createApi({
             query: (params) => ({
                 url: GET_COUNTRY_DATA,
                 method: "GET",
-                params: {
+                params: params || {
                     pageNo: "0",
                     limit: "1000",
                     sortBy: "1",
                     sortField: "name",
                 }
             }),
-            transformResponse: (response) => response.result?.result,
+            transformResponse: (response) => countryParser(response),
             providesTags: ['country_all'],
         }),
         getHomeCountryData: build.query({

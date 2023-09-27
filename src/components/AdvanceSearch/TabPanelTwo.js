@@ -4,8 +4,9 @@ import SectorSelect from "../common/SectorSelect";
 import { geoLocationKeyword } from "../../helpers/constants";
 import StateSelect from "../common/StateSelect";
 import RegionSelect from "../common/RegionSelect";
+import CountrySelect from "../common/CountrySelect";
 
-export default function TabPanelTwo({ getCpvCodesData, getSectorsData, getRegionsData, getStatesData, formik }) {
+export default function TabPanelTwo({ getCountryData, getCpvCodesData, getSectorsData, getRegionsData, getStatesData, formik }) {
     return (
         <div className="d-flex flex-wrap signupflex">
             <div className="form-group mb-40 wid-30">
@@ -62,19 +63,35 @@ export default function TabPanelTwo({ getCpvCodesData, getSectorsData, getRegion
                         </div>
                     </div>
                     :
-                    <div className="form-group mb-40 wid-30">
-                        <label>&nbsp;&nbsp;</label>
-                        <div className="card flex justify-content-center b-0 p-0">
-                            <RegionSelect
-                                getRegionsData={getRegionsData}
-                                name="regions"
-                                multiple={true}
-                                onChange={formik.handleChange("regions")}
-                                value={formik?.values?.regions || []}
-                                placeholder={`Type ${formik?.values?.location_type} here`}
-                            />
+                    formik?.values?.location_type === "Country"
+                        ?
+                        <div className="form-group mb-40 wid-30">
+                            <label>&nbsp;&nbsp;</label>
+                            <div className="card flex justify-content-center b-0 p-0">
+                                <CountrySelect
+                                    getCountryData={getCountryData}
+                                    name="country"
+                                    multiple={true}
+                                    onChange={formik.handleChange("country")}
+                                    value={formik?.values?.country || []}
+                                    placeholder={`Type ${formik?.values?.location_type} here`}
+                                />
+                            </div>
                         </div>
-                    </div>
+                        :
+                        <div className="form-group mb-40 wid-30">
+                            <label>&nbsp;&nbsp;</label>
+                            <div className="card flex justify-content-center b-0 p-0">
+                                <RegionSelect
+                                    getRegionsData={getRegionsData}
+                                    name="regions"
+                                    multiple={true}
+                                    onChange={formik.handleChange("regions")}
+                                    value={formik?.values?.regions || []}
+                                    placeholder={`Type ${formik?.values?.location_type} here`}
+                                />
+                            </div>
+                        </div>
 
             }
 

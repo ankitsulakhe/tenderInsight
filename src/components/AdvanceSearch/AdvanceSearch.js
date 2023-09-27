@@ -19,6 +19,9 @@ export default function AdvanceSearch(props) {
         payload.regions = payload.regions && payload.regions.map((val) => {
             return val.name
         }).join(",");
+        payload.country = payload.country && payload.country.map((val) => {
+            return val.name
+        }).join(",");
         payload.cpv_codes = payload.cpv_codes && payload.cpv_codes.map((val) => {
             return val.code
         }).join(",");
