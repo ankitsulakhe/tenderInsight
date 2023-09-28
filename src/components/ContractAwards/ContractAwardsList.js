@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import TenderSidebarFilter from "../common/TendersSidebarFilter";
@@ -11,8 +11,10 @@ import { handleDateDefault } from "../../helpers/utils";
 
 export default function ContractAwardsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchContractAwards }) {
     const location = useLocation();
+    const [first, setFirst] = useState(0);
 
     const handleFilter = (payload, extra = {}) => {
+        setFirst(payload.first);
         fetchContractAwards({
             pageNo: payload.page && payload.page !== "" ? payload?.page : data.pageNo,
             limit: payload?.rows || data.limit,
@@ -103,7 +105,7 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
                                         header='Contract Date'
                                     ></Column>
                                 </DataTable>
-                                <Paginator first={Number(data.pageNo)} rows={Number(data?.limit)} totalRecords={data.count} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
+                                <Paginator first={first} rows={Number(data?.limit)} totalRecords={data.count} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
                             </Fragment>
                     }
                 </div>

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import TenderSidebarFilter from "../common/TendersSidebarFilter";
@@ -11,6 +11,7 @@ import { handleDateDefault } from "../../helpers/utils";
 
 export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchProjects }) {
     const location = useLocation();
+    const [first, setFirst] = useState(0);
 
     useEffect(() => {
         let payload = {};
@@ -41,6 +42,7 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
     }, [location.state])
 
     const handleFilter = (payload, extra = {}) => {
+        setFirst(payload.first);
         fetchProjects({
             pageNo: payload.page && payload.page !== "" ? payload?.page : data.pageNo,
             limit: payload?.rows || data.limit,
@@ -142,7 +144,7 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
                                         header='Project Deadline'
                                     ></Column>
                                 </DataTable>
-                                <Paginator first={Number(data.pageNo)} rows={Number(data?.limit)} totalRecords={data.count} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
+                                <Paginator first={first} rows={Number(data?.limit)} totalRecords={data.count} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
                             </Fragment>
                     }
                 </div>
