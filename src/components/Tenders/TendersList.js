@@ -7,6 +7,7 @@ import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { format, parseISO } from "date-fns";
+import { handleDateDefault } from "../../helpers/utils";
 
 export default function TendersList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchTenders }) {
     const location = useLocation();
@@ -54,18 +55,11 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
     };
 
     const publishedDateRow = (rowData) => {
-        return format(new Date(rowData?.published_date), "dd/MM/yyyy");
+        return handleDateDefault(rowData?.published_date);
     };
 
     const closingDateRow = (rowData) => {
-        try {
-            if (rowData?.closing_date)
-                return format(new Date(rowData?.closing_date), "dd/MM/yyyy");
-            else
-                return "";
-        } catch (e) {
-            console.log(e);
-        }
+        handleDateDefault(rowData?.closing_date);
     };
 
     return (

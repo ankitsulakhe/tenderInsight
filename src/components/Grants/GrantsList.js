@@ -7,6 +7,7 @@ import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { format, parseISO } from "date-fns";
+import { handleDateDefault } from "../../helpers/utils";
 
 export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchGrants }) {
     const location = useLocation();
@@ -26,7 +27,7 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
     };
 
     const postDateRow = (rowData) => {
-        return rowData.post_date ? format(new Date(rowData.post_date), "dd/MM/yyyy") : "-";
+        return handleDateDefault(rowData.post_date);
     };
 
     return (

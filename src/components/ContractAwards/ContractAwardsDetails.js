@@ -1,4 +1,5 @@
 import { format, parseISO } from "date-fns";
+import { handleDateDefault } from "../../helpers/utils";
 
 export default function ContractAwardsDetails(props) {
     const { contract_awards_data } = props;
@@ -254,7 +255,7 @@ export default function ContractAwardsDetails(props) {
                             >
                                 <div className="box">
                                     <h3>Award Publish Date</h3>
-                                    <p>{format(new Date(contract_awards_data?.awards_publish_date), "dd/MM/yyyy")}</p>
+                                    <p>{handleDateDefault(contract_awards_data?.awards_publish_date)}</p>
                                 </div>
                             </div>
                         </div>

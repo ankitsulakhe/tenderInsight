@@ -1,4 +1,5 @@
 import { format, parseISO } from "date-fns";
+import { handleDateDefault } from "../../helpers/utils";
 
 export default function GrantsDetails(props) {
     const { grants_data } = props;
@@ -244,7 +245,7 @@ export default function GrantsDetails(props) {
                             >
                                 <div className="box">
                                     <h3>Post Date</h3>
-                                    <p>{grants_data?.post_date ? format(new Date(grants_data?.post_date), "dd/MM/yyyy") : "-"}</p>
+                                    <p>{handleDateDefault(grants_data?.post_date)}</p>
                                 </div>
                             </div>
                         </div>

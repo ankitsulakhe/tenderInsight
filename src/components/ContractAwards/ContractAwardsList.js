@@ -7,6 +7,7 @@ import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { format, parseISO } from "date-fns";
+import { handleDateDefault } from "../../helpers/utils";
 
 export default function ContractAwardsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchContractAwards }) {
     const location = useLocation();
@@ -25,11 +26,7 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
         return <Link target="_blank" to={`/contract-awards/${rowData?.big_ref_no}`}>{rowData.description}</Link>;
     };
     const awardsPublishDateRow = (rowData) => {
-        try {
-            return rowData.awards_publish_date ? format(new Date(rowData.awards_publish_date), "dd/MM/yyyy") : "-";
-        } catch (e) {
-            return "";
-        }
+        return handleDateDefault(rowData.awards_publish_date);
     };
 
     return (

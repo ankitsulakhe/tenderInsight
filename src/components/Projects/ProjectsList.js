@@ -7,6 +7,7 @@ import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { format, parseISO } from "date-fns";
+import { handleDateDefault } from "../../helpers/utils";
 
 export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchProjects }) {
     const location = useLocation();
@@ -54,17 +55,11 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
     };
 
     const publishDateRow = (rowData) => {
-        if (!rowData.project_publishing_date) {
-            return "-";
-        }
-        return format(new Date(rowData?.project_publishing_date), "dd/MM/yyyy");
+        return handleDateDefault(rowData?.project_publishing_date)
     };
 
     const estimatedDateRow = (rowData) => {
-        if (!rowData.estimated_project_completion_date) {
-            return "-";
-        }
-        return format(new Date(rowData?.estimated_project_completion_date), "dd/MM/yyyy");
+        return handleDateDefault(rowData?.estimated_project_completion_date);
     };
 
     return (
