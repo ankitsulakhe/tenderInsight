@@ -85,7 +85,7 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
                                         className='TableHeader'
                                         field='location'
                                         sortable
-                                        header='Location'
+                                        header='Country'
                                     ></Column>
                                     <Column
                                         className='TableHeader'
