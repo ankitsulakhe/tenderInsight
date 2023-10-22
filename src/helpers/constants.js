@@ -10,5 +10,6 @@ export const tenderTypeConst = ["Live", "Archive"];
 export const loginApi = "/auth/customer-login";
 export const registerApi = "/auth/customer-register";
 export const forgetUserApi = "/auth/forgot-password";
+export const resetPasswordUserApi = "/auth/reset-password";
 
 export const baseUrl = NODE_ENV;
