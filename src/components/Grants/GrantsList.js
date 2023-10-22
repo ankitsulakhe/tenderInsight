@@ -16,8 +16,8 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
     const handleFilter = (payload, extra = {}) => {
         setFirst(payload.first);
         fetchGrants({
-            pageNo: payload.page && payload.page !== "" ? payload?.page : data.pageNo,
-            limit: payload?.rows || data.limit,
+            pageNo: payload.page,
+            limit: payload?.rows,
             sortBy: payload?.sortOrder || data.sortBy,
             sortField: payload?.sortField || data.sortField,
             ...extra

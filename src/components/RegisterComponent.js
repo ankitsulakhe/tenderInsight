@@ -7,6 +7,7 @@ import { axios } from "../helpers/axios";
 import { registerApi } from "../helpers/constants";
 
 const validateAdd = yup.object().shape({
+    username: yup.string().required("Required"),
     full_name: yup.string().required("Required"),
     email: yup.string().email().required("Required"),
     phone_no: yup
@@ -44,6 +45,7 @@ export default function RegisterComponent({ register_description, register_title
         enableReinitialize: true,
         initialValues: {
             full_name: "",
+            username: "",
             email: "",
             phone_no: "",
             organization_name: "",
@@ -100,6 +102,24 @@ export default function RegisterComponent({ register_description, register_title
                                         }
                                         helpertext={
                                             formik.errors.full_name
+                                        }
+                                    />
+                                </div>
+                                <div className="form-group mb-40 wid-50">
+                                    <label>Username * </label>
+                                    <Input
+                                        type='text'
+                                        className='form-control'
+                                        id='username'
+                                        name="username"
+                                        placeholder='Enter username'
+                                        onChange={formik.handleChange("username")}
+                                        value={formik?.values?.username || ""}
+                                        error={
+                                            Boolean(formik.errors.username)
+                                        }
+                                        helpertext={
+                                            formik.errors.username
                                         }
                                     />
                                 </div>
@@ -174,7 +194,7 @@ export default function RegisterComponent({ register_description, register_title
                                     >
                                         <option value='' disabled>Country</option>
                                         {
-                                            countryData.length > 0 && countryData.map(function (row, ind) {
+                                            countryData?.result?.length > 0 && countryData?.result.map(function (row, ind) {
                                                 return (
                                                     <option value={row.name} key={ind}>{row.name}</option>
                                                 )

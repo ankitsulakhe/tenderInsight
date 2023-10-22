@@ -9,7 +9,6 @@ class PasswordPageContainer extends React.Component {
     };
 
     render() {
-        console.log(this.props.error);
         return (
             <main className='bodyMain'>
                 <section className='profileInner'>
@@ -32,6 +31,7 @@ class PasswordPageContainer extends React.Component {
                                                     this.props.update_loading
                                                 }
                                                 success={this.props.success}
+                                                error={this.props.error}
                                             />
                                         </div>
                                     </div>

@@ -44,8 +44,8 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
     const handleFilter = (payload, extra = {}) => {
         setFirst(payload.first);
         fetchProjects({
-            pageNo: payload.page && payload.page !== "" ? payload?.page : data.pageNo,
-            limit: payload?.rows || data.limit,
+            pageNo: payload.page,
+            limit: payload?.rows,
             sortBy: payload?.sortOrder || data.sortBy,
             sortField: payload?.sortField || data.sortField,
             ...extra

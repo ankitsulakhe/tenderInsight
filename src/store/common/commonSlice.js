@@ -73,9 +73,7 @@ export const updatePassword = createAsyncThunk("updatePassword", async (payload,
         const response = await api_update_password(payload);
         return response;
     } catch (error) {
-        thunkAPI.rejectWithValue(error?.response?.data?.message || error.message)
-        // state.response = error?.response?.data?.message || error.message;
-        throw new Error(error);
+        return thunkAPI.rejectWithValue(error?.response?.data?.message || error.message)
     }
 });
 
@@ -84,8 +82,7 @@ export const subscribePlan = createAsyncThunk("subscribePlan", async (payload, t
         const response = await api_subscribe_plan(payload);
         return response;
     } catch (error) {
-        thunkAPI.rejectWithValue(error?.response?.data?.message || error.message)
-        throw new Error(error);
+        return thunkAPI.rejectWithValue(error?.response?.data?.message || error.message)
     }
 });
 
@@ -172,7 +169,7 @@ export const commonSlice = createSlice({
         });
         builder.addCase(updatePassword.rejected, (state, action) => {
             state.update_loading = false;
-            console.log(action)
+            state.error = action.payload;
         });
         // business profile submit
         builder.addCase(subscribePlan.pending, (state, action) => {

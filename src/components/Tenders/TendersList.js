@@ -42,10 +42,12 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
     }, [location.state])
 
     const handleFilter = (payload, extra = {}) => {
+
+        console.log(payload, "payload");
         setFirst(payload.first);
         fetchTenders({
-            pageNo: payload.page && payload.page !== "" ? payload?.page : data.pageNo,
-            limit: payload?.rows || data.limit,
+            pageNo: payload.page,
+            limit: payload?.rows,
             sortBy: payload?.sortOrder || data.sortBy,
             sortField: payload?.sortField || data.sortField,
             ...extra

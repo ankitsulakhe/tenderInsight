@@ -49,3 +49,9 @@ export const handleDateDefault = (date) => {
         return "Invalid Date";
     }
 }
+
+export const NewLineText = ({text, className}) => {
+    const newText = text.split('\n').map(str => <p className={className}>{str}</p>);
+
+    return newText;
+}

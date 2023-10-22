@@ -16,7 +16,7 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
     const handleFilter = (payload, extra = {}) => {
         setFirst(payload.first);
         fetchContractAwards({
-            pageNo: payload.page && payload.page !== "" ? payload?.page : data.pageNo,
+            pageNo: payload.page,
             limit: payload?.rows || data.limit,
             sortBy: payload?.sortOrder || data.sortBy,
             sortField: payload?.sortField || data.sortField,

@@ -10,7 +10,7 @@ const validateAdd = yup.object().shape({
 });
 
 const ForgotPasswordComponent = (props) => {
-    const { submit, loading, data, success } = props;
+    const { submit, loading, data, success, error } = props;
 
     const formik = useFormik({
         enableReinitialize: true,
@@ -30,9 +30,9 @@ const ForgotPasswordComponent = (props) => {
                 Password Reset
             </p>
             {
-                props.success ?
+                props.success || props.error ?
                     <div className={`alert ${success ? 'alert-success' : 'alert-danger'}`}>
-                        {props.response.message}
+                        {success.message || error}
                     </div>
                     :
                     null

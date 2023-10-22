@@ -47,7 +47,7 @@ export default function SubscribeComponent({ data, handlePlan, submit_loading, s
                                         ?
                                         <ul className="checboixpackage">
                                             {
-                                                val.access.map(function (dd, key) {
+                                                val?.access && val?.access?.map(function (dd, key) {
                                                     return (
                                                         <li
                                                             key={key}
