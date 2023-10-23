@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import TenderSidebarFilter from "../common/TendersSidebarFilter";
@@ -16,8 +16,12 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
 
     const setFilter = (e) => {
         setSidebarFilter(e);
-        handleFilter()
     }
+
+    useEffect(() => {
+        if (sidebarFilter && Object.keys(sidebarFilter).length > 0)
+            handleFilter();
+    }, [sidebarFilter])
 
     const handleFilter = (payload, extra = {}) => {
         setFirst(payload?.first !== undefined ? payload.first : data.pageNo);

@@ -51,8 +51,12 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
 
     const setFilter = (e) => {
         setSidebarFilter(e);
-        handleFilter()
     }
+
+    useEffect(() => {
+        if (sidebarFilter && Object.keys(sidebarFilter).length > 0)
+            handleFilter();
+    }, [sidebarFilter])
 
     const handleFilter = (payload) => {
         setFirst(payload?.first !== undefined ? payload.first : data.pageNo);
