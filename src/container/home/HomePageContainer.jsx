@@ -60,6 +60,7 @@ class HomePageContainer extends React.Component {
                     params={this.props.params}
                     getSectorsData={this.props.getSectorsData}
                     getRegionsData={this.props.getRegionsData}
+                    getCountryData={this.props.getCountryData}
                 />
 
                 <TopCategories data={this.props.home_page?.data} />

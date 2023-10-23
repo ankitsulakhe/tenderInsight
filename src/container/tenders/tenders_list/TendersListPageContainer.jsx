@@ -54,7 +54,11 @@ class TendersListPageContainer extends React.Component {
                 payload.keywords = state.keywords;
 
             if (state?.country) {
-                payload.country = state.country;
+                payload.country = state.country
+                    .map((val) => {
+                        return val.name;
+                    })
+                    .join(",");
             }
 
             let tenderRes = await this.props.getTendersData(payload);

@@ -6,21 +6,26 @@ import FullScreenLoadingGrow from "../common/FullScreenLoadingGrow";
 import { Paginator } from "primereact/paginator";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
-import { format, parseISO } from "date-fns";
 import { handleDateDefault } from "../../helpers/utils";
 
-export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchGrants }) {
+export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodesData, getCountryData, getFundingAgencyData, data, loading, fetchGrants }) {
     const location = useLocation();
     const [first, setFirst] = useState(0);
+    const [sidebarFilter, setSidebarFilter] = useState({});
+
+    const setFilter = (e) => {
+        setSidebarFilter(e);
+        handleFilter()
+    }
 
     const handleFilter = (payload, extra = {}) => {
-        setFirst(payload.first);
+        setFirst(payload?.first !== undefined ? payload.first : data.pageNo);
         fetchGrants({
-            pageNo: payload.page,
-            limit: payload?.rows,
+            pageNo: payload?.page !== undefined ? payload.page : data.pageNo,
+            limit: payload?.rows !== undefined ? payload.rows : data.limit,
             sortBy: payload?.sortOrder || data.sortBy,
             sortField: payload?.sortField || data.sortField,
-            ...extra
+            ...sidebarFilter
         })
     }
 
@@ -47,8 +52,9 @@ export default function GrantsList({ getRegionsData, getSectorsData, getCpvCodes
                                 getRegionsData={getRegionsData}
                                 getSectorsData={getSectorsData}
                                 getCpvCodesData={getCpvCodesData}
+                                getCountryData={getCountryData}
                                 getFundingAgencyData={getFundingAgencyData}
-                                onSubmit={(d) => handleFilter({}, d)}
+                                onSubmit={(d) => setFilter(d)}
                                 noticeType="Grants"
                                 {...location.state}
                             />

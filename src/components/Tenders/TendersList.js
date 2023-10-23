@@ -9,9 +9,10 @@ import { useLocation } from 'react-router-dom';
 import { format, parseISO } from "date-fns";
 import { handleDateDefault } from "../../helpers/utils";
 
-export default function TendersList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchTenders }) {
+export default function TendersList({ getRegionsData, getSectorsData, getCpvCodesData, getCountryData, getFundingAgencyData, data, loading, fetchTenders }) {
     const location = useLocation();
     const [first, setFirst] = useState(0);
+    const [sidebarFilter, setSidebarFilter] = useState({});
 
     useEffect(() => {
         let payload = {};
@@ -35,27 +36,37 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
                 })
                 .join(",");
 
+        if (location.state?.country && location.state.country.length > 0)
+            payload.country = location.state.country
+                .map((val) => {
+                    return val.name;
+                })
+                .join(",");
+
         if (Object.keys(payload).length) {
             handleFilter(payload);
         }
 
-    }, [location.state])
+    }, [location.state]);
 
-    const handleFilter = (payload, extra = {}) => {
+    const setFilter = (e) => {
+        setSidebarFilter(e);
+        handleFilter()
+    }
 
-        console.log(payload, "payload");
-        setFirst(payload.first);
+    const handleFilter = (payload) => {
+        setFirst(payload?.first !== undefined ? payload.first : data.pageNo);
         fetchTenders({
-            pageNo: payload.page,
-            limit: payload?.rows,
+            pageNo: payload?.page !== undefined ? payload.page : data.pageNo,
+            limit: payload?.rows !== undefined ? payload.rows : data.limit,
             sortBy: payload?.sortOrder || data.sortBy,
             sortField: payload?.sortField || data.sortField,
-            ...extra
+            ...sidebarFilter
         })
     }
 
     const DescriptionRow = (rowData) => {
-        return <Link target="_blank" className="limit-description" to={`/tenders/${rowData?.big_ref_no}`}>{rowData.description }</Link>;
+        return <Link target="_blank" className="limit-description" to={`/tenders/${rowData?.big_ref_no}`}>{rowData.description}</Link>;
     };
 
     const publishedDateRow = (rowData) => {
@@ -65,6 +76,8 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
     const closingDateRow = (rowData) => {
         handleDateDefault(rowData?.closing_date);
     };
+
+    // console.log(data, "data");
 
     return (
         <div className='row'>
@@ -81,8 +94,9 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
                                 getRegionsData={getRegionsData}
                                 getSectorsData={getSectorsData}
                                 getCpvCodesData={getCpvCodesData}
+                                getCountryData={getCountryData}
                                 getFundingAgencyData={getFundingAgencyData}
-                                onSubmit={(d) => handleFilter({}, d)}
+                                onSubmit={(d) => setFilter(d)}
                                 noticeType={"Tender"}
                                 {...location.state}
                             />
@@ -146,7 +160,7 @@ export default function TendersList({ getRegionsData, getSectorsData, getCpvCode
                                         header='Closing Date'
                                     ></Column>
                                 </DataTable>
-                                <Paginator first={first} rows={Number(data?.limit)} totalRecords={data.count} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
+                                <Paginator first={first} rows={Number(data?.limit)} totalRecords={Number(data.count)} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
                             </Fragment>
                     }
                 </div>

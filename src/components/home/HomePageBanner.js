@@ -7,7 +7,7 @@ import WorldMap from "react-svg-worldmap";
 import ProfileSidebar from "./ProfileSidebar";
 import ResetPassword from "../common/ResetPassword";
 
-function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show, countryData, navigate, params, getRegionsData, getSectorsData }) {
+function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show, countryData, navigate, params, getRegionsData, getSectorsData, getCountryData }) {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
 
@@ -29,7 +29,7 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
                             richInteraction
                             onClickFunction={(e) => handleClick(e)}
                         />
-                        <SearchBar navigate={navigate} getRegionsData={getRegionsData} getSectorsData={getSectorsData} />
+                        <SearchBar navigate={navigate} getRegionsData={getRegionsData} getSectorsData={getSectorsData} getCountryData={getCountryData} />
                     </div>
                     {
                         queryParams.get("token") && queryParams.get("reset") === "password"

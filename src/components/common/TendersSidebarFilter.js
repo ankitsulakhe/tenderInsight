@@ -7,8 +7,9 @@ import SectorSelect from "./SectorSelect";
 import RegionSelect from "./RegionSelect";
 import FundingAgencySelect from "./FundingAgencySelect";
 import { noticeTypeConst } from "../../helpers/constants";
+import CountrySelect from "./CountrySelect";
 
-export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, sectorVal = [], cpvCodesVal = [], regionsVal = [], noticeType }) {
+export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData, getCountryData, getSectorsData, getCpvCodesData, getFundingAgencyData, sectorVal = [], cpvCodesVal = [], regionsVal = [], country = [], noticeType }) {
 
     const handleSubmit = (values) => {
         let payload = { ...values };
@@ -22,6 +23,9 @@ export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData,
         payload.cpv_codes = payload.cpv_codes && payload.cpv_codes.map((val) => {
             return val.code
         }).join(",");
+        payload.country = payload.country && payload.country.map((val) => {
+            return val.name
+        }).join(",");
 
         onSubmit(payload);
     }
@@ -33,6 +37,7 @@ export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData,
             cpv_codes: cpvCodesVal,
             sectors: sectorVal,
             regions: regionsVal,
+            country: country,
             location: "",
             notice_type: "",
             funding_agency: ""
@@ -91,7 +96,7 @@ export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData,
                     </div>
                     <div className='colsP form-group'>
                         <label htmlFor='regions'>
-                            Region / Country
+                            Region
                         </label>
                         <RegionSelect
                             name="regions"
@@ -100,6 +105,19 @@ export default function TenderSidebarFilter({ onSubmit, loading, getRegionsData,
                             value={formik?.values?.regions || []}
                             multiple={true}
                             getRegionsData={getRegionsData}
+                        />
+                    </div>
+                    <div className='colsP form-group'>
+                        <label htmlFor='country'>
+                            Country
+                        </label>
+                        <CountrySelect
+                            name="country"
+                            id="country"
+                            onChange={formik.handleChange("country")}
+                            value={formik?.values?.country || []}
+                            multiple={true}
+                            getCountryData={getCountryData}
                         />
                     </div>
                     <div className='colsP form-group'>

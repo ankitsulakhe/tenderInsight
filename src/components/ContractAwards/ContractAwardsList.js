@@ -9,18 +9,24 @@ import { useLocation } from 'react-router-dom';
 import { format, parseISO } from "date-fns";
 import { handleDateDefault } from "../../helpers/utils";
 
-export default function ContractAwardsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchContractAwards }) {
+export default function ContractAwardsList({ getRegionsData, getSectorsData, getCpvCodesData, getCountryData, getFundingAgencyData, data, loading, fetchContractAwards }) {
     const location = useLocation();
     const [first, setFirst] = useState(0);
+    const [sidebarFilter, setSidebarFilter] = useState({});
+
+    const setFilter = (e) => {
+        setSidebarFilter(e);
+        handleFilter()
+    }
 
     const handleFilter = (payload, extra = {}) => {
-        setFirst(payload.first);
+        setFirst(payload?.first !== undefined ? payload.first : data.pageNo);
         fetchContractAwards({
-            pageNo: payload.page,
-            limit: payload?.rows || data.limit,
+            pageNo: payload?.page !== undefined ? payload.page : data.pageNo,
+            limit: payload?.rows !== undefined ? payload.rows : data.limit,
             sortBy: payload?.sortOrder || data.sortBy,
             sortField: payload?.sortField || data.sortField,
-            ...extra
+            ...sidebarFilter
         })
     }
 
@@ -46,8 +52,9 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
                                 getRegionsData={getRegionsData}
                                 getSectorsData={getSectorsData}
                                 getCpvCodesData={getCpvCodesData}
+                                getCountryData={getCountryData}
                                 getFundingAgencyData={getFundingAgencyData}
-                                onSubmit={(d) => handleFilter({}, d)}
+                                onSubmit={(d) => setFilter(d)}
                                 noticeType="Contract Award"
                                 {...location.state}
                             />
@@ -105,7 +112,7 @@ export default function ContractAwardsList({ getRegionsData, getSectorsData, get
                                         header='Contract Date'
                                     ></Column>
                                 </DataTable>
-                                <Paginator first={first} rows={Number(data?.limit)} totalRecords={data.count} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
+                                <Paginator first={first} rows={Number(data?.limit)} totalRecords={Number(data.count)} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
                             </Fragment>
                     }
                 </div>

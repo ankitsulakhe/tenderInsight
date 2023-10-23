@@ -48,6 +48,16 @@ class ProjectsListPageContainer extends React.Component {
                         return val.name;
                     })
                     .join(",");
+            if (state?.keywords)
+                payload.keywords = state.keywords;
+
+            if (state?.country) {
+                payload.country = state.country
+                    .map((val) => {
+                        return val.name;
+                    })
+                    .join(",");
+            }
 
             let projectsRes = await this.props.getProjectsData(payload);
             if (projectsRes.isSuccess) {

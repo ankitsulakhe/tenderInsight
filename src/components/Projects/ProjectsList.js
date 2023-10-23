@@ -9,9 +9,10 @@ import { useLocation } from 'react-router-dom';
 import { format, parseISO } from "date-fns";
 import { handleDateDefault } from "../../helpers/utils";
 
-export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCodesData, getFundingAgencyData, data, loading, fetchProjects }) {
+export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCodesData, getCountryData, getFundingAgencyData, data, loading, fetchProjects }) {
     const location = useLocation();
     const [first, setFirst] = useState(0);
+    const [sidebarFilter, setSidebarFilter] = useState({});
 
     useEffect(() => {
         let payload = {};
@@ -35,20 +36,32 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
                 })
                 .join(",");
 
+        if (location.state?.country && location.state.country.length > 0)
+            payload.country = location.state.country
+                .map((val) => {
+                    return val.name;
+                })
+                .join(",");
+
         if (Object.keys(payload).length) {
             handleFilter(payload);
         }
 
     }, [location.state])
 
-    const handleFilter = (payload, extra = {}) => {
-        setFirst(payload.first);
+    const setFilter = (e) => {
+        setSidebarFilter(e);
+        handleFilter()
+    }
+
+    const handleFilter = (payload) => {
+        setFirst(payload?.first !== undefined ? payload.first : data.pageNo);
         fetchProjects({
-            pageNo: payload.page,
-            limit: payload?.rows,
+            pageNo: payload?.page !== undefined ? payload.page : data.pageNo,
+            limit: payload?.rows !== undefined ? payload.rows : data.limit,
             sortBy: payload?.sortOrder || data.sortBy,
             sortField: payload?.sortField || data.sortField,
-            ...extra
+            ...sidebarFilter
         })
     }
 
@@ -79,8 +92,9 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
                                 getRegionsData={getRegionsData}
                                 getSectorsData={getSectorsData}
                                 getCpvCodesData={getCpvCodesData}
+                                getCountryData={getCountryData}
                                 getFundingAgencyData={getFundingAgencyData}
-                                onSubmit={(d) => handleFilter({}, d)}
+                                onSubmit={(d) => setFilter(d)}
                                 noticeType={"Project"}
                                 {...location.state}
                             />
@@ -144,7 +158,7 @@ export default function ProjectsList({ getRegionsData, getSectorsData, getCpvCod
                                         header='Project Deadline'
                                     ></Column>
                                 </DataTable>
-                                <Paginator first={first} rows={Number(data?.limit)} totalRecords={data.count} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
+                                <Paginator first={first} rows={Number(data?.limit)} totalRecords={Number(data.count)} rowsPerPageOptions={[15, 25, 50]} onPageChange={(val) => handleFilter(val)} />
                             </Fragment>
                     }
                 </div>

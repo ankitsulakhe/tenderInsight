@@ -42,7 +42,6 @@ class AdvanceSearchContainer extends React.Component {
         return (
             <Fragment>
                 <BreadCrumbs main='Advance Search' current={"Advance Search"} />
-
                 <main className='bodyMain'>
                     <section
                         className='formContact section-bg'

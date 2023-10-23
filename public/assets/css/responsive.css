@@ -56,10 +56,11 @@
         padding: 10px;
     }
     .selectSearch {
-        width: 49%;
+        width: 100%;
+        margin-top: 10px;
     }
     .selectButton {
-        width: 35%;
+        width: 100%;
         margin: 20px auto 10px auto;
     }
     .searcHhome {

@@ -14,6 +14,7 @@ const mapDispatch = {
     getCpvCodesData: mastersApis.endpoints.getCpvCodesData.initiate,
     getFundingAgencyData: mastersApis.endpoints.getFundingAgencyData.initiate,
     getRegionsData: mastersApis.endpoints.getRegionsData.initiate,
+    getCountryData: mastersApis.endpoints.getCountryData.initiate,
     getGrantsData: mastersApis.endpoints.getGrantsData.initiate,
     advanceSearchFunction
 };
