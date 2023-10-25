@@ -2035,6 +2035,7 @@ a.commonBtn {
     display: block;
     text-align: left;
     padding-bottom: 10px;
+    text-transform: capitalize;
 }
 
 button.commonBtn.loginBtn {
