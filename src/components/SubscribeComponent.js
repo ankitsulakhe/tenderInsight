@@ -39,9 +39,16 @@ export default function SubscribeComponent({ data, handlePlan, submit_loading, s
                         >
                             <div className="box" >
                                 <h3>{val.title}</h3>
-                                <h4>
-                                    <sup>USD</sup>{val.amount} <span> / {val.validity_days} month</span>
-                                </h4>
+                                {
+                                    val.amount > 0
+                                        ?
+                                        <h4>
+                                            <sup>USD</sup>{val.amount} <span> / {val.validity_days} month</span>
+                                        </h4>
+                                        :
+                                        null
+                                }
+
                                 {
                                     val.plan_name === "CUSTOMISE_PACKAGE"
                                         ?
