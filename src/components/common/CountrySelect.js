@@ -20,6 +20,8 @@ export default function CountrySelect({ getCountryData, name, multiple, onChange
         }, 1000);
     }
 
+    console.log(value, "value");
+
     return (
         <AutoComplete
             id={id}

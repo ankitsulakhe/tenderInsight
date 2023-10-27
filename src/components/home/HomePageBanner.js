@@ -12,8 +12,11 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
     const queryParams = new URLSearchParams(location.search);
 
     const handleClick = (e) => {
-        if (e.countryValue)
-            navigate("/tenders-list", { state: { country: e.countryName } })
+        if (e.countryValue) {
+            let country = countryData.find((obj) => obj.str_code === e.countryCode);
+            console.log(country, "country");
+            navigate("/tenders-list", { state: { country: [country] } })
+        }
     }
 
     return (

@@ -8,9 +8,13 @@ export const homeCountryParser = (response) => {
         if (!response) {
             return [];
         }
-
         response = response.result.map(function (val) {
             let obj = {
+                _id: val?._id,
+                name: val?.name,
+                num_code: val?.num_code,
+                code: val?.num_code,
+                str_code: val?.str_code,
                 country: val?.str_code,
                 value: val?.count
             }
