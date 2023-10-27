@@ -25,6 +25,12 @@ export default function AdvanceSearch(props) {
         payload.cpv_codes = payload.cpv_codes && payload.cpv_codes.map((val) => {
             return val.code
         }).join(",");
+        payload.funding_agency = payload.funding_agency && payload.funding_agency.map((val) => {
+            return val.name
+        }).join(",");
+        payload.state = payload.state && payload.state.map((val) => {
+            return val.name
+        }).join(",");
 
         props.submit(payload);
     }
