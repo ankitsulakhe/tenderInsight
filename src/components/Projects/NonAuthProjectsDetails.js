@@ -87,6 +87,7 @@ export default function NonAuthProjectsDetails(props) {
                     Project Financer & Client Details
                     <i className="bi bi-chevron-down icon-show"></i>
                     <i className="bi bi-chevron-up icon-close"></i>
+                    <i className='bi bi-lock-fill locIcons'></i>
                 </div>
                 <div
                     id="otherInformation"
