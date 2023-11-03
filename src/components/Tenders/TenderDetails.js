@@ -16,6 +16,14 @@ export default function TenderDetails(props) {
                     Authority Name & Contact
                     <i className='bi bi-chevron-down icon-show'></i>
                     <i className='bi bi-chevron-up icon-close'></i>
+                    {
+                        tenders_data?.authority_name
+                            ?
+                           ''
+                            :
+                            <i className='bi bi-lock-fill locIcons'></i>
+                    }
+                   
                 </div>
                 <div
                     id='TenderDetails'

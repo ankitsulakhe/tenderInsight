@@ -3039,3 +3039,9 @@ a.commonBtn.resetBtn {
     display: block;
     width: 90%;
 }
+
+.faq .faq-list .question i.locIcons {
+    position: relative;
+    top: unset;
+    transform: unset;
+}
