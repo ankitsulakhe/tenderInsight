@@ -15,7 +15,7 @@ export default function GrantsDetails(props) {
                     <i className="bi bi-chevron-down icon-show"></i>
                     <i className="bi bi-chevron-up icon-close"></i>
                     {
-                        grants_data?.authority_name
+                        grants_data?.donor
                             ?
                            ''
                             :

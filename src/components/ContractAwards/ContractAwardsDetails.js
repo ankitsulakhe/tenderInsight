@@ -15,7 +15,7 @@ export default function ContractAwardsDetails(props) {
                     <i className="bi bi-chevron-down icon-show"></i>
                     <i className="bi bi-chevron-up icon-close"></i>
                     {
-                        contract_awards_data?.authority_name
+                        contract_awards_data?.org_name
                             ?
                            ''
                             :

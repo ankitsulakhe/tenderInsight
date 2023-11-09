@@ -82,20 +82,52 @@ export default function NonAuthProjectsDetails(props) {
 
             <li>
                 <div
-                    className="collapsed question cursor-not-allowed"
+                    data-bs-toggle="collapse"
+                    href="#otherInformation"
+                    className={`collapsed question ${projects_data?.client_name ? '' : 'cursor-not-allowed'}`}
                 >
                     Project Financer & Client Details
                     <i className="bi bi-chevron-down icon-show"></i>
                     <i className="bi bi-chevron-up icon-close"></i>
-                    <i className='bi bi-lock-fill locIcons'></i>
+                    {
+                        projects_data?.client_name
+                            ?
+                            ''
+                            :
+                            <i className='bi bi-lock-fill locIcons'></i>
+                    }
+
                 </div>
                 <div
                     id="otherInformation"
-                    className="collapse"
+                    className={`collapse`}
                     data-bs-parent=".faq-list"
                 >
+                    <div className="pricing pdlr10">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                                <div class="box">
+                                    <h3>Client Name</h3>
+                                    <p>{projects_data?.client_name}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                                <div class="box">
+                                    <h3>Client Address</h3>
+                                    <p>{projects_data?.client_address}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mgbtmxy" data-aos="fade-up" data-aos-delay="100">
+                                <div class="box">
+                                    <h3>Financer Name</h3>
+                                    <p>{projects_data?.funding_agency}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </li>  <li>
+            </li>
+            <li>
                 <div
                     data-bs-toggle="collapse"
                     href="#otherInformationProject"
