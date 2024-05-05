@@ -24,6 +24,7 @@ const SearchBar = ({ getRegionsData, getSectorsData, getCountryData, navigate })
     return (
         <div className="searcHhome">
             <div className='mainSearchflex'>
+                {/* <h2 className='f-data-fil'>Filter Your Data</h2> */}
                 <div className='flexSearch'>
                     <div className="selectInput">
                         <input onChange={(e) => setKeywords(e.target.value)} type="text" size="30" name="search_text" className="form-control customInput customInputIcon" id="input1" placeholder="Free text search..." />
@@ -64,10 +65,13 @@ const SearchBar = ({ getRegionsData, getSectorsData, getCountryData, navigate })
                     </div>
 
                     <div className="selectButton">
-                        <button onClick={() => handleSubmit()} className="awe-btn awe-btn-13 custombutton" id="btn-search1" ><i className="bi bi-search"></i></button>
+                        <button onClick={() => handleSubmit()} className="awe-btn awe-btn-13 custombutton" id="btn-search1" >Search <i className="bi bi-search"></i></button>                       
                     </div>
                 </div>
-                <Link to={"/advance-search"} className='advancBtn'><i className="bi bi-funnel-fill"></i>Advanced Search</Link>
+                <div className="flex-wrap-btn">
+                        <Link to={"/advance-search"} className='advancBtn'><i className="bi bi-funnel-fill"></i>Advanced Search</Link>
+                        <Link to={"/login"} className='loginBtnPop'><i className="bi bi-people"></i>Sign In</Link>                    
+                    </div>
             </div>
         </div>
     );

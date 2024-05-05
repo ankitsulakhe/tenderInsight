@@ -99,7 +99,7 @@ function App() {
               <nav id="navbar" className="navbar">
                 <ul>
                   <li>
-                    <Link to="">Home</Link>
+                    <Link to="">Homsse</Link>
                   </li>
                   <li>
                     <Link to="about">About Us</Link>

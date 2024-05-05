@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../logo.png";
 
 function Footer({ links, contactDetails }) {
     return (
@@ -9,40 +10,15 @@ function Footer({ links, contactDetails }) {
                     <div className="container">
                         <div className="row">
 
-                            <div className="col-lg-3 col-md-6 footer-contact">
-                                <h3>Bidsinfoglobal</h3>
+                            <div className="col-lg-6 col-md-6 footer-contact">
+                            <img src={logo} alt="main logo" className="logo" />
+                                <h2 className="titlepsocons">Contact Info :</h2>
                                 <p>{contactDetails?.address}</p>
+                                <div className="flex-contacts">
                                 <p><strong>Phone:</strong> {contactDetails?.phone}</p>
                                 <p><strong>Email:</strong> {contactDetails?.email}</p>
-                            </div>
-
-                            <div className="col-lg-3 col-md-6 footer-links">
-                                <h4>Useful Links</h4>
-                                <ul>
-                                    <li><i className="bx bx-chevron-right"></i>  <Link to="">Home</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i> <Link to="/about">About Us</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/advance-search">Advanced Search</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/contact">Contact Us</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/login">Login / Register</Link></li>
-                                    {/* <li><i className="bx bx-chevron-right"></i><Link to="termandcondition">Terms and condition </Link></li> */}
-                                </ul>
-                            </div>
-
-                            <div className="col-lg-3 col-md-6 footer-links">
-                                <h4>Our Services</h4>
-                                <ul>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/tenders-list">Tenders</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/projects-list">Project</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/contract-awards-list">Contract Awards</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/grants-list">Grants </Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/subscribe">Subscribe</Link></li>
-                                    <li><i className="bx bx-chevron-right"></i><Link to="/EProcurement">E - Procurement</Link></li>
-
-
-                                </ul>
-                            </div>
-
-                            <div className="col-lg-3 col-md-6 footer-links">
+                                </div>
+                                <div className="footer-links">
                                 <h4>{links?.title}</h4>
                                 <p>{links?.description}</p>
                                 <div className="social-links mt-3">
@@ -54,6 +30,25 @@ function Footer({ links, contactDetails }) {
                                     {links?.whatsapp ? <Link to="/" className="linkedin"><i className="bx bxl-whatsapp"></i></Link> : null}
                                 </div>
                             </div>
+                            </div>
+
+                            <div className="col-lg-6 col-md-6 footer-links">
+                                <h4>Useful Links</h4>
+                                <ul>
+                                    <li><i className="bx bx-chevron-right"></i>  <Link to="">Home</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i> <Link to="/about">About Us</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/advance-search">Advanced Search</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/contact">Contact Us</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/login">Login / Register</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/tenders-list">Tenders</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/projects-list">Project</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/contract-awards-list">Contract Awards</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/grants-list">Grants </Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/subscribe">Subscribe</Link></li>
+                                    <li><i className="bx bx-chevron-right"></i><Link to="/EProcurement">E - Procurement</Link></li>
+                                </ul>
+                            </div>
+
 
                         </div>
                     </div>
@@ -61,7 +56,7 @@ function Footer({ links, contactDetails }) {
 
                 <div className="container py-3">
                     <div className="copyright">
-                        &copy; Copyright <strong><span>Bidsinfoglobal</span></strong>. All Rights Reserved
+                        &copy; Copyright <strong><span>TenderInsight</span></strong>. All Rights Reserved
                     </div>
                 </div>
             </footer>

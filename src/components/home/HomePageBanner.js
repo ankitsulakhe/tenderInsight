@@ -6,6 +6,7 @@ import Login from "../common/Login";
 import WorldMap from "react-svg-worldmap";
 import ProfileSidebar from "./ProfileSidebar";
 import ResetPassword from "../common/ResetPassword";
+import BannerVider from "../../bgVideo.mp4"
 
 function HomePageBanner({ login_title, login_description, forget_password, handleShowPassword, show, countryData, navigate, params, getRegionsData, getSectorsData, getCountryData }) {
     const location = useLocation();
@@ -23,18 +24,20 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
         <section className="mainBanner p-0">
             <div className="container-fluid">
                 <div className="row">
-                    <div className={`col-md-8 px-0 flevalgin`}>
-                        <WorldMap
-                            color="#003c5e"
-                            borderColor="#003c5e"
-                            size="responsive"
-                            data={countryData}
-                            richInteraction
-                            onClickFunction={(e) => handleClick(e)}
-                        />
-                        <SearchBar navigate={navigate} getRegionsData={getRegionsData} getSectorsData={getSectorsData} getCountryData={getCountryData} />
+                    <div className={`col-md-12 px-0 flevalgin`}>                   
+                    <video id="bannerVideo" autoPlay muted loop>
+                       <source src={BannerVider} type="video/mp4" />
+                    </video>                    
                     </div>
-                    {
+                    <div className="seacrh_bar">
+                        <div className="bannerText">
+                            <h1>Stay ahead with<br/> Competition Analysis Report</h1>
+                            <h2>Get detailed insights into your competitors' bidding behaviour</h2>
+                        </div>
+                    <SearchBar navigate={navigate} getRegionsData={getRegionsData} getSectorsData={getSectorsData} getCountryData={getCountryData} />
+                   
+                    </div>
+                    {/* {
                         queryParams.get("token") && queryParams.get("reset") === "password"
                             ?
                             <div className="col-md-4 bg-grey">
@@ -76,7 +79,8 @@ function HomePageBanner({ login_title, login_description, forget_password, handl
                                     <ProfileSidebar {...isAuth()} />
                                 </div>
                     }
-
+                    <div className="full-wid">
+                    </div> */}
                 </div>
             </div >
         </section >

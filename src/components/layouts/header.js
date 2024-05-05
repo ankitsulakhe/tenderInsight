@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../logo.jpg";
+import logo from "../../logo.png";
 import { isAuth, signout } from "../../helpers/cookies";
 import { isMobile } from 'react-device-detect';
 
