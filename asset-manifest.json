@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.333933e6.css",
-    "main.js": "/static/js/main.9fe968e3.js",
-    "static/js/787.20cdf53d.chunk.js": "/static/js/787.20cdf53d.chunk.js",
-    "static/media/bgVideo.mp4": "/static/media/bgVideo.3cbcb9b97eff8647a1d9.mp4",
-    "static/media/primeicons.svg": "/static/media/primeicons.e1441b135b3ca9ad643c.svg",
-    "static/media/tenderWhy.png": "/static/media/tenderWhy.3235d2267a782c7058c7.png",
-    "static/media/primeicons.eot": "/static/media/primeicons.d44157bdfa026dc877af.eot",
-    "static/media/primeicons.woff": "/static/media/primeicons.10d3152104f2208ac82a.woff",
-    "static/media/primeicons.ttf": "/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
-    "static/media/primeicons.woff2": "/static/media/primeicons.78172950b335ccdb94e2.woff2",
-    "static/media/logo.png": "/static/media/logo.7e8c51120ba2ddaa03e0.png",
-    "static/media/color.png": "/static/media/color.6441e63a57ccc5105bad.png",
-    "index.html": "/index.html",
-    "main.333933e6.css.map": "/static/css/main.333933e6.css.map",
-    "main.9fe968e3.js.map": "/static/js/main.9fe968e3.js.map",
-    "787.20cdf53d.chunk.js.map": "/static/js/787.20cdf53d.chunk.js.map"
+    "main.css": "/tenderInsight/static/css/main.9fd98958.css",
+    "main.js": "/tenderInsight/static/js/main.2bebbf50.js",
+    "static/js/787.20cdf53d.chunk.js": "/tenderInsight/static/js/787.20cdf53d.chunk.js",
+    "static/media/bgVideo.mp4": "/tenderInsight/static/media/bgVideo.3cbcb9b97eff8647a1d9.mp4",
+    "static/media/primeicons.svg": "/tenderInsight/static/media/primeicons.e1441b135b3ca9ad643c.svg",
+    "static/media/tenderWhy.png": "/tenderInsight/static/media/tenderWhy.3235d2267a782c7058c7.png",
+    "static/media/primeicons.eot": "/tenderInsight/static/media/primeicons.d44157bdfa026dc877af.eot",
+    "static/media/primeicons.woff": "/tenderInsight/static/media/primeicons.10d3152104f2208ac82a.woff",
+    "static/media/primeicons.ttf": "/tenderInsight/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
+    "static/media/primeicons.woff2": "/tenderInsight/static/media/primeicons.78172950b335ccdb94e2.woff2",
+    "static/media/logo.png": "/tenderInsight/static/media/logo.7e8c51120ba2ddaa03e0.png",
+    "static/media/color.png": "/tenderInsight/static/media/color.6441e63a57ccc5105bad.png",
+    "index.html": "/tenderInsight/index.html",
+    "main.9fd98958.css.map": "/tenderInsight/static/css/main.9fd98958.css.map",
+    "main.2bebbf50.js.map": "/tenderInsight/static/js/main.2bebbf50.js.map",
+    "787.20cdf53d.chunk.js.map": "/tenderInsight/static/js/787.20cdf53d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.333933e6.css",
-    "static/js/main.9fe968e3.js"
+    "static/css/main.9fd98958.css",
+    "static/js/main.2bebbf50.js"
   ]
 }
